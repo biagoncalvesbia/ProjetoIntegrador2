@@ -1,0 +1,14 @@
+.hover-btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hover-btn:hover {
+    background-color: #F08080;
+}
+
+.navbar{
+    background: aquamarine;
+    padding: 10px 20px; 
+    width: 997%;
+    max-width: 1950px;
+}

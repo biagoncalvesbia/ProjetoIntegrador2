@@ -1,0 +1,3 @@
+[submodule "AgendaAI"]
+	path = AgendaAI
+	url = https://github.com/juh22jjuh/AgendaAi.git
