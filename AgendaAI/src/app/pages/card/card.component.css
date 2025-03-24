@@ -1,0 +1,25 @@
+.carousel-inner img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px; 
+}
+  
+  .custom-btn {
+    background-color: aquamarine; 
+    color: black; 
+    border: none; 
+  }
+  .custom-btn:hover {
+    background-color: rgb(110, 153, 139); 
+  }
+  
+  .custom-btn {
+    background-color: aquamarine; 
+    color: black; 
+    border: none;
+    padding: 10px 20px; 
+}
+
+.custom-btn:hover {
+    background-color: rgb(110, 153, 139); 
+}

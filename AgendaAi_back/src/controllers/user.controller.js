@@ -29,3 +29,21 @@ export const Register = async (req, res) => {
     return res.status(500).json({message: "Internal server error"})
   }
 }
+
+export const Login = async (req, res)  => {
+  const {email, password, confirmPass} = req.body
+
+  const verifyUser = await User.findOne({
+    email: email
+  })
+
+  if(verifyUser) {
+    try {
+      if(password === confirmPass) {
+        
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}

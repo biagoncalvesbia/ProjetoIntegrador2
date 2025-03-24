@@ -1,0 +1,235 @@
+/* Fundo da página */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Seção do Jumbotron */
+.jumbotron-section {
+    background-color: hsl(0, 0%, 100%);
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container do conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Títulos e textos */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #207c74;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1rem;
+    color: hsl(0, 0%, 0%);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.motto {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Estilização do cartão */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Campos do formulário */
+.form-outline {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+/* Botão de cadastro */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color:aquamarine;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: rgb(110, 153, 139);
+}
+
+/* Estilização dos botões de login social */
+.social-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-social {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.btn-social:hover {
+    color: aquamarine;
+}
+
+  /* Fundo da página */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Seção do Jumbotron */
+.jumbotron-section {
+    background-color: hsl(0, 0%, 100%);
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container do conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Títulos e textos */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #207c74;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1rem;
+    color: hsl(0, 0%, 0%);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.motto {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Estilização do cartão */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Campos do formulário */
+.form-outline {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+/* Botão de cadastro */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color:aquamarine;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: rgb(110, 153, 139);
+}
+
+/* Estilização dos botões de login social */
+.social-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-social {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.btn-social:hover {
+    color: aquamarine;
+}

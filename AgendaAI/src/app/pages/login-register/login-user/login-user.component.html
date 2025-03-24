@@ -1,24 +1,75 @@
-<div class="container-fluid " >
-    <div class="container-sm border border-0 " style="margin-right: 0,05%; margin-left: 0,05%; margin-top: 4%; ">
-      <div class="shadow p-3 mb-5 bg-body-tertiary rounded" style="margin-left: 30%; margin-right: 30%;">
-      <form>
-          <h1 style="margin-left: 35%; margin-right: 35%;">Login usuario</h1>
-          <div class="mb-3" style="margin-right: 15%; margin-left: 15%; margin-bottom: 10%;">
-            <label for="endereco" class="form-label">Email</label>
-            <input type="email" class="form-control" id="endereco" >
-          </div>
-          <div class="mb-3"style="margin-right: 15%; margin-left: 15%; margin-bottom: 10%;">
-            <label for="exampleInputPassword1" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-    
-          <a routerLink="/usser-establishment" routerLinkActive="true" style="margin-top: 1%; margin-right: 30%; margin-left: 15%; margin-bottom: 2px;">login empresa</a>
-        <a routerLink="/register-establishment" routerLinkActive="true" style="margin-top: 1%; margin-right: 30%; margin-left: 15%; margin-bottom: 2px;">Cadastrar empresa</a>
-        <a routerLink="/register" routerLinkActive="true" style="margin-top: 1%; margin-right: 30%; margin-left: 15%; margin-bottom: 2px;">Cadastrar</a>
-        <a routerLink="/forgotpassword" routerLinkActive="true" style="margin-top: 1%; margin-right: 30%; margin-left: 15%; margin-bottom: 2px;">Esqueci minha senha</a>
-          <button type="submit" class="btn btn-primary"  style="margin-top: 1%; margin-right: 30%; margin-left: 15%; margin-bottom: 1px;">Entrar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <br>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgendaAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Section: Design Block -->
+    <section class="jumbotron-section">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <!-- Texto de Boas-Vindas -->
+                    <div class="col-lg-6">
+                        <h2 class="title">Seja bem-vindo ao AgendaAI!</h2>
+                        <h3 class="subtitle">Somos muito mais do que uma simples agenda online!</h3>          
+                        <p class="description">
+                            O AgendaAI foi criado para facilitar sua rotina. Aqui você encontra as melhores condições 
+                            para organizar seus agendamentos, otimizar seu tempo e proporcionar uma experiência incrível.
+                            Seja você um profissional da beleza ou alguém em busca do melhor atendimento, 
+                            o AgendaAI está pronto para te ajudar.
+                        </p>
+                        <p class="motto"> Agende. Organize. Cresça. </p>
+                    </div>
+
+                    <!-- Formulário de Cadastro -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <form>
+
+                                    <div class="row">
+
+                                    <div class="form-outline">
+                                        <input type="email" id="email" class="form-control" />
+                                        <label class="form-label" for="email">E-mail</label>
+                                    </div>
+
+                                    <div class="form-outline">
+                                        <input type="password" id="password" class="form-control" />
+                                        <label class="form-label" for="password">Senha</label>
+                                    </div>
+
+                                    <a routerLink="/register" style="color: black;">Cadastrar-se</a>
+                                    <a routerLink="/register-establishment" style="color: black;">Cadastrar minha empresa</a>
+                                    <a routerLink="/login-establishment" style="color: black;">Logar minha empresa</a>
+
+
+                                    <button type="submit" class="btn-primary">Entrar</button>
+
+                                   
+
+                                    <div class="social-login">
+                                        <p> Fazer login com:</p>
+                                        <button class="btn-social"><i class="fab fa-facebook-f"></i></button>
+                                        <button class="btn-social"><i class="fab fa-google"></i></button>
+                                        <button class="btn-social"><i class="fab fa-twitter"></i></button>
+                                        
+                                    </div>
+                                    </div>
+                                
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

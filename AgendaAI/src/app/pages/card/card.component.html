@@ -1,18 +1,67 @@
-<div class="container-fluid">
-  <img src="assets/images/logo.png" class="img-fluid rounded-start" 
-       style="width: 100%; height: 250px; object-fit: cover;">
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="../../../assets/images/cabeleleira.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../../../assets/images/manicure.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../../assets/images/massagem.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>\
+  </button>
 </div>
+
 <br>
 <form class="d-flex">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Pesquisar </button>
+  <input class="form-control me-2" type="search" placeholder="Buscar por categoria" aria-label="Search">
+  <button class="btn custom-btn" type="submit">Pesquisar</button>
 </form> 
+
 <br>
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="assets/images/logo.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-img-top">  </h5>
-    <p class="card-text"> sobre  </p>
-    <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn btn-primary"> Fazer meu agendamento</a>
+<div class="d-flex flex-wrap justify-content-center gap-3">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/images/pedicure.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pedicure</h5>
+      <p class="card-text">Agende seu horário e descubra o prazer de ter pés bem cuidados!</p>
+      <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn">Fazer meu agendamento</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/images/manicure.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Manicure</h5>
+      <p class="card-text">Venha transformar suas unhas e realçar sua beleza com a gente! Agende seu horário.</p>
+      <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn">Fazer meu agendamento</a>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/images/massagem.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Massagem</h5>
+      <p class="card-text">Agende sua sessão e descubra o poder do toque para restaurar sua energia</p>
+      <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn">Fazer meu agendamento</a>
+    </div>
+  </div>
+  
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/images/maquiagem.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Maquiagem</h5>
+      <p class="card-text">Venha se transformar com a gente! Agende seu horário e brilhe.</p>
+      <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn">Fazer meu agendamento</a>
+    </div>
   </div>
 </div>

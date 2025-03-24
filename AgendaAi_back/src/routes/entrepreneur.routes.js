@@ -1,10 +1,8 @@
 import { Router } from "express";
 const router = Router();
 
-router.post("/", (req, res) => {
-  res.send("Rota de usuários funcionando!");
+router.get("/", (req, res) => {
+  res.send("Rota de empreendedores funcionando!");
 });
 
 export default router;
-
-
