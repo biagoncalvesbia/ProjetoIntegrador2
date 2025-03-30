@@ -27,8 +27,8 @@ export const Register = async (req, res) => {
      password,
      confpass
     })
-    await Entrepreneur.save()
-    return res.status(201).json(Entrepreneur)
+    await user.save()
+    res.status(201).json(user)
   } catch (error) {
     console.error(error)
     return res.status(500).json({message: "Internal server error"})

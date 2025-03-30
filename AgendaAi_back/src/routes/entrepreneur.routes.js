@@ -1,8 +1,6 @@
-import { Router } from "express";
-const router = Router();
+import { Router } from "express"
+import { Register } from "../controllers/entrepreneur.controller.js"
 
-router.get("/", (req, res) => {
-  res.send("Rota de empreendedores funcionando!");
-});
+export const routerEnt = Router()
 
-export default router;
+routerEnt.post("/register", Register)
