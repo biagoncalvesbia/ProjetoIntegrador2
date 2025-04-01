@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: aquamarine; border-radius: 10px; width: 100%;">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+          <button type="button" class="btn-close" aria-label="Close" 
+              routerLink="/pre-agendamento" routerLinkActive="active">
+          </button>
+          
+          <div class="navbar-brand text-center w-100" style="font-weight: bold; font-size: 1.2rem;">Nome do Salão</div>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+  </nav>
+  <br>
+  <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container-sm border rounded p-4 shadow-lg" style="max-width: 600px;">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Preencha com seu nome</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">Preencha com sua idade</label>
+        <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="Idade">
+      </div>
+      <div class="col-md-4" style="width: 100%;">
+        <label for="inputHorario" class="form-label">Escolha um horário de atendimento</label>
+        <select id="inputHorario" class="form-select">
+          <option selected>Selecionar</option>
+          <option>8:00</option>
+          <option>9:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>19:00</option>
+          <option>20:00</option>
+        </select>
+      </div>
+      <br>
+      <div class="col-md-4" style="width: 100%;">
+        <label for="inputCabelo" class="form-label">Selecione o seu tamanho de cabelo</label>
+        <select id="inputCabelo" class="form-select">
+          <option selected>Selecionar</option>
+          <option>Pequeno</option>
+          <option>Médio</option>
+          <option>Grande</option>
+        </select>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descreva o que você gostaria de fazer</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="formFileSm" class="form-label">Deixe uma foto de inspiração</label>
+        <input class="form-control form-control-sm" id="formFileSm" type="file">
+      </div>
+      <a routerLink="/agendamento" routerLinkActive="active" class="btn custom-btn">Fazer meu agendamento</a>
+    </div>
+  </div>
+  

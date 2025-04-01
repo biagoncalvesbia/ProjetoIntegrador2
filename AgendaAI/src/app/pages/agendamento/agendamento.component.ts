@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+
+
 @Component({
-  selector: 'app-register',
+  selector: 'app-agendamento',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  templateUrl: './agendamento.component.html',
+  styleUrl: './agendamento.component.css'
 })
-export class RegisterComponent {
+export class AgendamentoComponent {
 
 }

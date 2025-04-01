@@ -9,6 +9,7 @@ import { LoginEstablishmentComponent } from './pages/login-register/login-establ
 import { BaseboardComponent } from './pages/baseboard/baseboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
+import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
 
 export const routes: Routes = [
 
@@ -41,6 +42,9 @@ export const routes: Routes = [
     },
     {
         path: 'pre-agendamento', component: PreAgendamentoComponent
+    },
+    {
+        path: 'agendamento', component: AgendamentoComponent
     }
 
 ];
