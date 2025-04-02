@@ -43,7 +43,11 @@ const entrepreneurSchema = new mongoose.Schema({
         type: String,
         require: true,
         maxLenght: 8
-    }
+    },
+    created_at: {
+        type: Date,
+        default: Date.now,
+      }
 
 })
 
