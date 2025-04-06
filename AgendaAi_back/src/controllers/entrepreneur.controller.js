@@ -1,4 +1,5 @@
 import { Entrepreneur } from "../models/Entrepreneur.js"
+import createToken from "../utils/createToken.js"
 
 export const Register = async (req, res) => {
   const {name, endereco, cep, telefone, email, Horario, Tipos_atendimento, Funciona_finaldesemana, password, confpass} = req.body
@@ -28,6 +29,7 @@ export const Register = async (req, res) => {
      confpass
     })
     await entrepreneur.save()
+    
     res.status(201).json(entrepreneur)
   } catch (error) {
     console.error(error)
@@ -44,9 +46,15 @@ export const Login = async (req, res)  => {
 
   if(verifyEntrepreneur) {
     try {
-      if(password === confpass) {
-        
+      if(password !== confpass) {
+        throw new Error("Senhas nao coincidem")
       }
+      const token = createToken({name: verifyEntrepreneur.password})
+      res.status(200).json({
+        ...verifyEntrepreneur,
+        password: undefined,
+        token: token
+      })
     } catch (error) {
       console.error(error)
     }

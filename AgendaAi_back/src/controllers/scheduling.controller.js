@@ -1,26 +1,26 @@
+import { Entrepreneur } from "../models/Entrepreneur.js";
 import { Scheduling } from "../models/Scheduling.js"
-
+import { User } from "../models/User.js";
 export const Register = async (req, res) => {
-    const {name, age, horario, tamanho_cabelo, descricao, imagem, user_id, entreprenuer_id} = req.body;
-    
-    try {
-        // Validação básica dos campos obrigatórios
-        if (!name || !horario || !user_id || !entreprenuer_id) {
-            return res.status(400).json({ error: "Campos obrigatórios faltando" });
-        }
+    const { age, horario, tamanho_cabelo, descricao, imagem, user_id, entrepreneur_id } = req.body;
 
+    try {
         const createScheduling = await Scheduling.create({
-                name,
-                age,
-                horario,
-                tamanho_cabelo,
-                descricao,
-                imagem,
-                user_id,
-                entreprenuer_id
+            age,
+            horario,
+            tamanho_cabelo,
+            descricao,
+            imagem,
+            user_id,
+            entrepreneur_id
         });
         await createScheduling.save()
-
+        await User.findByIdAndUpdate(user_id, {
+            $push: { schedulings: createScheduling._id },
+        });
+        await Entrepreneur.findByIdAndUpdate(entrepreneur_id, {
+            $push: { schedulings: createScheduling._id },
+        });
         return res.status(201).json(createScheduling);
     } catch (error) {
         console.error("Erro ao criar agendamento:", error);
