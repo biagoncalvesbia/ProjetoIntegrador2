@@ -22,6 +22,12 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    schedulings: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Scheduling"
+      }
+    ],
     created_at: {
       type: Date,
       default: Date.now,

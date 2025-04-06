@@ -34,6 +34,12 @@ const entrepreneurSchema = new mongoose.Schema({
         type: Boolean,
         require: true,
     },
+    schedulings: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Scheduling"
+        }
+    ],
     password: {
         type: String,
         require: true,

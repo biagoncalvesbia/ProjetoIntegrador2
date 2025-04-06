@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { Register } from "../controllers/entrepreneur.controller.js"
+import { Register } from "../controllers/scheduling.controller.js"
 
-export const routerEnt = Router()
+export const routerSched = Router()
 
-routerEnt.post("/register", Register)
+routerSched.post("/register", Register)

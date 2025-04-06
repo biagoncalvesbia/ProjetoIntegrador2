@@ -15,7 +15,7 @@ export const Register = async (req, res) => {
   }
 
   try {
-    const user = await User.create({
+    const entrepreneur = await Entrepreneur.create({
      name,
      endereco,
      cep,
@@ -27,8 +27,8 @@ export const Register = async (req, res) => {
      password,
      confpass
     })
-    await user.save()
-    res.status(201).json(user)
+    await entrepreneur.save()
+    res.status(201).json(entrepreneur)
   } catch (error) {
     console.error(error)
     return res.status(500).json({message: "Internal server error"})
