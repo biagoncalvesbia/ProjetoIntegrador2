@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgendaAI</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Section: Design Block -->
@@ -31,46 +30,45 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <form>
-                                    <div class="row">
+                                <form [formGroup]="userRegisterForm" (ngSubmit)="registerUser()">
+                                    <div class="row">   
                                         <div class="col-md-6">
                                             <div class="form-outline">
-                                                <input type="text" id="firstName" class="form-control" />
-                                                <label class="form-label" for="firstName">Nome</label>
+                                                <input type="text" id="name" class="form-control" formControlName="name" />
+                                                <label class="form-label" for="name">Nome</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-outline">
-                                                <input type="text" id="lastName" class="form-control" />
-                                                <label class="form-label" for="lastName">Sobrenome</label>
+                                                <input type="text" id="surname" class="form-control" formControlName="surname"/>
+                                                <label class="form-label" for="surname">Sobrenome</label>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="email" id="email" class="form-control" />
+                                        <input type="email" id="email" class="form-control" formControlName="email"/>
                                         <label class="form-label" for="email">E-mail</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="password" id="password" class="form-control" />
+                                        <input type="password" id="password" class="form-control" formControlName="password"/>
                                         <label class="form-label" for="password">Senha</label>
                                     </div>
-                                    
+                                  
                                     <div class="form-outline">
-                                      <input type="password" id="password" class="form-control" />
-                                      <label class="form-label" for="password"> Confirmar Senha</label>
-                                  </div>
+                                        <input type="password" id="confirmPass" class="form-control" formControlName="confirmPass"/>
+                                        <label class="form-label" for="confirmPass">Confirmar Senha</label>
+                                    </div>
                                      
-                                  <a routerLink="/register" style="color: rgb(110, 153, 139);"> <strong>Fazer login</strong></a>
-                                    <button type="submit" class="btn-primary"><strong>Cadastrar</strong></button>
+                                    <a routerLink="/login" style="color: rgb(110, 153, 139);"><strong>Fazer login</strong></a>
+                                    <button type="submit" class="btn btn-primary" [disabled]="!userRegisterForm.valid"><strong>Cadastrar</strong></button>
 
                                     <div class="social-login">
                                         <p> Cadastrar-se com:</p>
                                         <button class="btn-social"><i class="fab fa-facebook-f"></i></button>
                                         <button class="btn-social"><i class="fab fa-google"></i></button>
                                         <button class="btn-social"><i class="fab fa-twitter"></i></button>
-                                        
                                     </div>
                                 </form>
                             </div>

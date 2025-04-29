@@ -3,7 +3,10 @@ import createToken from "../utils/createToken.js"
 import { hashPass } from "../utils/hashPass.js"
 
 export const Register = async (req, res) => {
-  const { name, email, password, confirmPass, role } = req.body
+  const { name, surname, email, password, confirmPass } = req.body
+  console.log({
+    name, surname, email, password, confirmPass
+  })
   const verifyUser = await User.findOne({
     email: email
   })
@@ -23,8 +26,7 @@ export const Register = async (req, res) => {
       name,
       email,
       hash,
-      password,
-      role
+      surname
     })
     await user.save()
     return res.status(201).json(user)
@@ -37,20 +39,25 @@ export const Register = async (req, res) => {
 export const Login = async (req, res) => {
   const { email, password } = req.body
 
-  const verifyUser = await User.findOne({
-    email: email
-  })
+  if (!email || !password) throw new Error("Email e senha são obrigatórios")
+  try {
+    const verifyUser = await User.findOne({
+      email: email
+    })
 
-  if (verifyUser) {
-    try {
-      const token = createToken({name: verifyUser.name, id: verifyUser._id})
-      res.status(200).json({
-        ...verifyUser,
-        password: undefined,
-        token: token
-      })
-    } catch (error) {
-      console.error(error)
+    if (verifyUser) {
+      try {
+        const token = createToken({ name: verifyUser.name, id: verifyUser._id })
+        res.status(200).json({
+          ...verifyUser,
+          password: undefined,
+          token: token
+        })
+      } catch (error) {
+        console.error(error)
+      }
     }
+  } catch (error) {
+    console.error(error)
   }
 }
