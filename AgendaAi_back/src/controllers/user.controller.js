@@ -4,9 +4,6 @@ import { hashPass } from "../utils/hashPass.js"
 
 export const Register = async (req, res) => {
   const { name, surname, email, password, confirmPass } = req.body
-  console.log({
-    name, surname, email, password, confirmPass
-  })
   const verifyUser = await User.findOne({
     email: email
   })
@@ -19,14 +16,14 @@ export const Register = async (req, res) => {
     return res.status(400).json({ message: "Passwords do not match" })
   }
 
-  const hash = hashPass(password)
+  const hash = await hashPass(password)
 
   try {
     const user = await User.create({
-      name,
-      email,
-      hash,
-      surname
+      name: name,
+      email: email,
+      password: hash,
+      surname: surname
     })
     await user.save()
     return res.status(201).json(user)

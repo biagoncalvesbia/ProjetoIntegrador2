@@ -4,7 +4,6 @@ import {routerEnt} from "./routes/entrepreneur.routes.js";
 import dotenv from 'dotenv/config.js'
 import { routerSched } from './routes/scheduling.router.js';
 import cors from 'cors'
-
 export const app = express();
 app.use(cors())
 app.use(express.json());

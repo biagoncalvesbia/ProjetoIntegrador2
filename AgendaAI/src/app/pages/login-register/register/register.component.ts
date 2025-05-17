@@ -32,8 +32,13 @@ export class RegisterComponent implements OnInit{
     if(this.userRegisterForm.valid) {
       const user: IUser = this.userRegisterForm.value
       try {
-        const response = await this.userService.register(user)
-        console.log(response)
+         this.userService.register(user).subscribe({
+          next: (data) => {
+            console.log('Usuario registrado', data)
+            this.router.navigate(['/', '/'])
+          },
+          error: (error) => console.log(error)
+        })
       } catch (error) {
         console.error('Erro ao registrar usuário', error);
       }

@@ -24,7 +24,7 @@ export class LoginUserComponent implements OnInit {
     if(this.userLoginForm.valid) {
       const user: ILogin = this.userLoginForm.value
       try {
-        const response = await this.userService.authenticate(user)
+        const response = this.userService.authenticate(user)
         console.log(response)
       } catch (error) {
         console.error(error)

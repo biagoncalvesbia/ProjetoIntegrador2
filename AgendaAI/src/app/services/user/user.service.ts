@@ -4,6 +4,7 @@ import type { IUser } from '../../types/User';
 import { HttpClient } from '@angular/common/http';
 import type { Observable } from 'rxjs';
 import type { ILogin } from '../../types/Login';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class UserService {
   private platformId = inject(PLATFORM_ID);
   private isBrowser = isPlatformBrowser(this.platformId);
 
-  constructor() {
+  constructor(private router: Router) {
     this.checkAuthentication();
   }
 
@@ -33,9 +34,8 @@ export class UserService {
 }
 
   // Registro de novo usuário
-  async register(user: IUser): Promise<Observable<IUser>> {
-    const response = await this.http.post<IUser>('http://localhost:3000/user/register', user);
-    console.log(response)
+   register(user: IUser): Observable<IUser>{
+    const response = this.http.post<IUser>('http://localhost:3000/user/register', user);
     return response
   }
 
@@ -49,6 +49,7 @@ export class UserService {
           localStorage.setItem('user_logged', JSON.stringify(response));
           this.userLogged = response;
           this.isAuthenticated = true;
+          this.router.navigate(['/', '/'])
         }
       },
       error: (err) => {

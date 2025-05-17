@@ -1,4 +1,3 @@
-
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="width: 98%; margin: auto; ">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
@@ -13,31 +12,45 @@
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
+    <span class="visually-hidden">Prévia</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
+    <span class="visually-hidden">Próximo</span>
   </button>
 </div>
 
 <br>
-<p>Bem vindo {{logged?._doc?.name}}</p>
-<form class="d-flex" style="margin: auto; width: 98%;">
-  <input class="form-control me-2" type="search" placeholder="Buscar por categoria" aria-label="Search" >
-  <button class="btn custom-btn" type="submit"><strong>Pesquisar</strong></button>
-</form> 
+
 
 <br>
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
+<div class="container-fluid p-5">
+  <h2 *ngIf="logged" class="fs-2 fw-bold">Bem vindo {{logged?._doc?.name}}</h2>
+  <h2 *ngIf="!logged" class="fs-2 fw-bold">Seja Bem Vindo a Nossa Página</h2>
+  <form class="d-flex" style="margin-bottom: 10px;">
+    <input class="form-control" type="search" placeholder="Buscar por categoria" aria-label="Search">
+    <button class="btn custom-btn" type="submit"><strong>Pesquisar</strong></button>
+  </form>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 justify-content-center">
+     <div class="col">
+      <div class="card h-100">
+        <img class="card-img-top" src="assets/images/maquiagem.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Maquiagem</h5>
+          <p class="card-text">Venha se transformar com a gente! Agende seu horário e brilhe.</p>
+          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu
+              agendamento</strong></a>
+        </div>
+      </div>
+    </div>
     <div class="col">
       <div class="card h-100">
         <img class="card-img-top" src="assets/images/pedicure.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Pedicure</h5>
           <p class="card-text">Agende seu horário e descubra o prazer de ter pés bem cuidados!</p>
-          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu agendamento</strong></a>
+          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu
+              agendamento</strong></a>
         </div>
       </div>
     </div>
@@ -48,7 +61,8 @@
         <div class="card-body">
           <h5 class="card-title">Manicure</h5>
           <p class="card-text">Venha transformar suas unhas e realçar sua beleza com a gente! Agende seu horário.</p>
-          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu agendamento</strong></a>
+          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu
+              agendamento</strong></a>
         </div>
       </div>
     </div>
@@ -59,7 +73,8 @@
         <div class="card-body">
           <h5 class="card-title">Massagem</h5>
           <p class="card-text">Agende sua sessão e descubra o poder do toque para restaurar sua energia</p>
-          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu agendamento</strong></a>
+          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu
+              agendamento</strong></a>
         </div>
       </div>
     </div>
@@ -70,10 +85,10 @@
         <div class="card-body">
           <h5 class="card-title">Maquiagem</h5>
           <p class="card-text">Venha se transformar com a gente! Agende seu horário e brilhe.</p>
-          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu agendamento</strong></a>
+          <a routerLink="/pre-agendamento" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu
+              agendamento</strong></a>
         </div>
       </div>
-    </div>
+    </div>   
   </div>
 </div>
-
