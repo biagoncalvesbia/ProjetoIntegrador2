@@ -10,6 +10,7 @@ import { BaseboardComponent } from './pages/baseboard/baseboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
+import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 
 export const routes: Routes = [
 
@@ -45,6 +46,9 @@ export const routes: Routes = [
     },
     {
         path: 'agendamento', component: AgendamentoComponent
+    },
+    {
+        path: 'perfil-user', component: PerfilUserComponent
     }
 
 ];
