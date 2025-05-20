@@ -18,7 +18,7 @@ const entrepreneurSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
-    emial:{
+    email:{
         type: String,
         require: true,
     },
@@ -31,7 +31,7 @@ const entrepreneurSchema = new mongoose.Schema({
         require: true,
     },
     Funciona_finaldesemana: {
-        type: Boolean,
+        type: String,
         require: true,
     },
     schedulings: [

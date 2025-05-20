@@ -13,7 +13,6 @@ import { NgIf } from '@angular/common';
 })
 
 
-
 export class RegisterComponent implements OnInit{
   public userRegisterForm!: FormGroup;
   constructor(private userService: UserService, private fb: FormBuilder, private router: Router) { } 

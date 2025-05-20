@@ -31,65 +31,64 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <form>
+                                <form [formGroup]="entrepreneurRegisterForm" (ngSubmit)="registerEntrepreneur()">
                                   
                                     <div class="form-outline">
-                                        <input type="string" id="name" class="form-control" />
+                                        <input type="text" id="name" class="form-control" formControlName="name" />
                                         <label class="form-label" for="name">Nome do estabelecimento</label>
                                     </div> 
 
                                     <div class="form-outline">
-                                        <input type="string" id="endereco" class="form-control" />
+                                        <input type="text" id="endereco" class="form-control" formControlName="endereco"/>
                                         <label class="form-label" for="endereco">Endereço</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="string" id="cep" class="form-control" />
+                                        <input type="number" id="cep" class="form-control" formControlName="cep"/>
                                         <label class="form-label" for="cep">CEP</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="string" id="telefone" class="form-control" />
+                                        <input type="number" id="telefone" class="form-control" formControlName="telefone"/>
                                         <label class="form-label" for="telefone">Telefone</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="email" id="email" class="form-control" />
+                                        <input type="email" id="email" class="form-control" formControlName="email" />
                                         <label class="form-label" for="email">Email</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="string" id="Horario" class="form-control" />
-                                        <label class="form-label" for="horario">Horario de Funcionamento</label>
+                                        <input type="text" id="Horario" class="form-control" formControlName="Horario" />
+                                        <label class="form-label" for="Horario">Horario de Funcionamento</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="string" id="Tipos_atendimentos" class="form-control" />
+                                        <input type="text" id="Tipos_atendimentos" class="form-control" formControlName="Tipos_atendimentos"/>
                                         <label class="form-label" for="Tipos_atendimentos">Tipo de atendimento</label>
                                     </div>
 
-                                        <div class="col-md-4" style=" width: 100%;">
-                                        <label for="inputState" class="form-label" style="width: 100%;">Funciona aos feriados?</label>
-                                        <select id="inputState" class="form-select">
-                                          <option selected>Sim</option>
-                                          <option>Não</option>
-                                        </select>
-                                      </div>
+                                    <div class="form-outline">
+                                        <input type="text" id="Funciona_finaldesemana" class="form-control" formControlName="Funciona_finaldesemana"/>
+                                        <label class="form-label" for="Funciona_finaldesemana">Funciona nos feriados?</label>
+                                    </div>
+                                   
                                         <br>
                                       <div class="form-outline">
-                                        <input type="password" id="password" class="form-control" />
+                                        <input type="password" id="password" class="form-control" formControlName="password"/>
                                         <label class="form-label" for="password">Senha</label>
                                     </div>
 
                                     <div class="form-outline">
-                                        <input type="password" id="confpass" class="form-control" />
+                                        <input type="password" id="confpass" class="form-control" formControlName="confpass" />
                                         <label class="form-label" for="confpass">Confirmar Senha</label>
                                     </div>
                                  
 
                                     <a routerLink="/login-establishment" style="color: rgb(110, 153, 139);"><strong>Logar minha empresa</strong></a>
 
-                                    <button type="submit" class="btn-primary"> <strong>Cadastrar estabelecimento</strong> </button>
+                                    <button type="submit" class="btn-primary" [disabled]="!entrepreneurRegisterForm.valid"><strong>Cadastrar estabelecimento</strong></button>
+                                    
                                 </form>
                             </div>
                         </div>
