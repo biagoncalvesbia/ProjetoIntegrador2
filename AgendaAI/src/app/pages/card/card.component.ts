@@ -2,6 +2,7 @@ import { Component, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule, NgIf } from '@angular/common';
+import { EntrepreneurService } from '../../services/user/entrepreneur/entrepreneur.service';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -12,9 +13,9 @@ import { CommonModule, NgIf } from '@angular/common';
 export class CardComponent implements OnInit {
   public logged: any = {}
   
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private entrepreneurService: EntrepreneurService){}
 
   ngOnInit(): void {
-    this.logged = this.userService.getUserData()
+    this.logged = this.userService.getUserData() || this.entrepreneurService.getUserData()
   }
 }

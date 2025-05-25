@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { entrepreneurService } from '../../../services/user/entrepreneur/entrepreneur.service';
+import { EntrepreneurService } from '../../../services/user/entrepreneur/entrepreneur.service';
 import {  FormGroup,  FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { ILoginEntrepreneur } from '../../../types/LoginEntrepreneur';
+import type { IEntrepreneur } from '../../../types/entrepreneur';
 @Component({
   selector: 'app-login-establishment',
   imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf],
@@ -12,7 +13,7 @@ import { ILoginEntrepreneur } from '../../../types/LoginEntrepreneur';
 })
 export class LoginEstablishmentComponent implements OnInit {
   public entrepreneurLoginForm!: FormGroup;
-  constructor(private entrepreneurService: entrepreneurService, private fb: FormBuilder, private router: Router) { }
+  constructor(private entrepreneurService: EntrepreneurService, private fb: FormBuilder, private router: Router) { }
   ngOnInit(): void {
     this.entrepreneurLoginForm = this.fb.group({
       email: ['', Validators.required],
@@ -22,7 +23,8 @@ export class LoginEstablishmentComponent implements OnInit {
 
   async loginEstablishment() {
     if(this.entrepreneurLoginForm.valid) {
-      const entrepreneur: ILoginEntrepreneur = this.entrepreneurLoginForm.value
+      const entrepreneur: IEntrepreneur = this.entrepreneurLoginForm.value
+      console.log(entrepreneur)
       try {
         const response = this.entrepreneurService.authenticate(entrepreneur)
         console.log(response)

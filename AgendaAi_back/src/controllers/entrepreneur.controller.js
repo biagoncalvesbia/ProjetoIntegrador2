@@ -1,6 +1,6 @@
 import { Entrepreneur } from "../models/Entrepreneur.js"
 import createToken from "../utils/createToken.js"
-
+import { hashPass } from "../utils/hashPass.js"
 export const Register = async (req, res) => {
   const {name, endereco, cep, telefone, email, Horario, Tipos_atendimento, Funciona_finaldesemana, password, confpass} = req.body
   const verifyEntrepreneur = await Entrepreneur.findOne({
@@ -15,6 +15,8 @@ export const Register = async (req, res) => {
     return res.status(400).json({message: "Passwords do not match"})
   }
 
+  const hash = await hashPass(password)
+
   try {
     const entrepreneur = await Entrepreneur.create({
      name,
@@ -25,8 +27,7 @@ export const Register = async (req, res) => {
      Horario,
      Tipos_atendimento,
      Funciona_finaldesemana,
-     password,
-     confpass
+     hash
     })
     await entrepreneur.save()
     
@@ -38,7 +39,7 @@ export const Register = async (req, res) => {
 }
 
 export const Login = async (req, res)  => {
-  const {email, password, confpass} = req.body
+  const {email, password} = req.body
 
   const verifyEntrepreneur = await Entrepreneur.findOne({
     email: email
@@ -46,9 +47,6 @@ export const Login = async (req, res)  => {
 
   if(verifyEntrepreneur) {
     try {
-      if(password !== confpass) {
-        throw new Error("Senhas nao coincidem")
-      }
       const token = createToken({name: verifyEntrepreneur.password})
       res.status(200).json({
         ...verifyEntrepreneur,

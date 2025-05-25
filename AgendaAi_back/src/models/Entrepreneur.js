@@ -45,11 +45,6 @@ const entrepreneurSchema = new mongoose.Schema({
         require: true,
         maxLenght: 8
     },
-    confpass:{
-        type: String,
-        require: true,
-        maxLenght: 8
-    },
     created_at: {
         type: Date,
         default: Date.now,

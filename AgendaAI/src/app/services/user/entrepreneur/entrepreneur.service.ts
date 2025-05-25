@@ -1,6 +1,6 @@
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import type { IEntrepreneur } from '../../../types/entrepreneur';
+import { IEntrepreneur } from '../../../types/entrepreneur';
 import { HttpClient } from '@angular/common/http';
 import type { Observable } from 'rxjs';
 import type { ILoginEntrepreneur } from '../../../types/LoginEntrepreneur';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class entrepreneurService {
+export class EntrepreneurService {
   private http = inject(HttpClient);
   public entrepreneurLogged: any = null;
   isAuthenticated: boolean = false;
@@ -40,7 +40,7 @@ export class entrepreneurService {
   }
 
   // Autenticação de usuário
-  authenticate(entrepreneur: IEntrepreneur): Observable<ILoginEntrepreneur> {
+  authenticate(entrepreneur: IEntrepreneur): Observable<any> {
     const observable = this.http.post<IEntrepreneur>('http://localhost:3000/entrepreneur/login', entrepreneur);
   
     observable.subscribe({

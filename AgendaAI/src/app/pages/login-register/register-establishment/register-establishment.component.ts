@@ -1,6 +1,6 @@
 import { Component, inject, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { entrepreneurService } from '../../../services/user/entrepreneur/entrepreneur.service';
+import { EntrepreneurService } from '../../../services/user/entrepreneur/entrepreneur.service';
 import { IEntrepreneur} from '../../../types/entrepreneur';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
@@ -14,7 +14,7 @@ import { NgIf } from '@angular/common';
 })
 export class RegisterEstablishmentComponent implements OnInit{
   public entrepreneurRegisterForm!: FormGroup;
-  constructor(private entrepreneurService:entrepreneurService, private fb: FormBuilder, private router: Router) { } 
+  constructor(private entrepreneurService: EntrepreneurService, private fb: FormBuilder, private router: Router) { } 
 
   ngOnInit(): void {
     this.entrepreneurRegisterForm = this.fb.group({
