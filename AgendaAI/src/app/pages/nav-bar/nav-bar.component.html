@@ -18,8 +18,7 @@
             </button>
 
             <div class="dropdown-content" *ngIf="dropdownOpen">
-              <button (click)="perfil()">Perfil</button>
-              <button (click)="config()">Configurações</button>
+              <button routerLink="/perfil-user" (click)="perfil()">Perfil</button>
               <button (click)="logout()">Sair</button>
             </div>
           </div>

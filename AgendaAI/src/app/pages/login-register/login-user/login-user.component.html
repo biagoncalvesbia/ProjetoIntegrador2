@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgendaAI</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Section: Design Block -->
-    <section class="jumbotron-section">
-        <div class="jumbotron">
-            <div class="container">
-                <div class="row">
-                    <!-- Texto de Boas-Vindas -->
-                    <div class="col-lg-6">
-                        <h2 class="title">Seja bem-vindo ao AgendaAI!</h2>
-                        <h3 class="subtitle">Somos muito mais do que uma simples agenda online!</h3>          
-                        <p class="description">
-                            O AgendaAI foi criado para facilitar sua rotina. Aqui você encontra as melhores condições 
-                            para organizar seus agendamentos, otimizar seu tempo e proporcionar uma experiência incrível.
-                            Seja você um profissional da beleza ou alguém em busca do melhor atendimento, 
-                            o AgendaAI está pronto para te ajudar.
-                        </p>
-                        <p class="motto"> Agende. Organize. Cresça. </p>
-                    </div>
-
-                    <!-- Formulário de Cadastro -->
+<div class="container-fluid" style="width: 100%;">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: aquamarine;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AgendaAi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    </nav>
+    </div>
+    <br>
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
@@ -52,24 +34,11 @@
 
                                     <button type="submit" class="btn-primary" [disabled]="!userLoginForm.valid"><strong>Entrar</strong></button>
 
-                                   
-
-                                    <div class="social-login">
-                                        <p>Fazer login com:</p>
-                                        <button class="btn-social"><i class="fab fa-facebook-f"></i></button>
-                                        <button class="btn-social"><i class="fab fa-google"></i></button>
-                                        <button class="btn-social"><i class="fab fa-twitter"></i></button>
-                                        
-                                    </div>
                                     </div>
                                 
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+                    <br>
+<app-footer></app-footer>

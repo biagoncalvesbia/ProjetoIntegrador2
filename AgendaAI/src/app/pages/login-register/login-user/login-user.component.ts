@@ -4,9 +4,10 @@ import { UserService } from '../../../services/user/user.service';
 import {  FormGroup,  FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ILogin } from '../../../types/Login';
 import { NgIf } from '@angular/common';
+import { FooterComponent } from "../../footer/footer.component";
 @Component({
   selector: 'app-login-user',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent],
   templateUrl: './login-user.component.html',
   styleUrl: './login-user.component.css'
 })

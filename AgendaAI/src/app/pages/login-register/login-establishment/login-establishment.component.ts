@@ -5,9 +5,10 @@ import {  FormGroup,  FormBuilder, Validators, FormsModule, ReactiveFormsModule 
 import { NgIf } from '@angular/common';
 import { ILoginEntrepreneur } from '../../../types/LoginEntrepreneur';
 import type { IEntrepreneur } from '../../../types/entrepreneur';
+import { FooterComponent } from "../../footer/footer.component";
 @Component({
   selector: 'app-login-establishment',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent],
   templateUrl: './login-establishment.component.html',
   styleUrl: './login-establishment.component.css'
 })

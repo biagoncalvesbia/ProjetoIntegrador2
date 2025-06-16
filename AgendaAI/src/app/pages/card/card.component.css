@@ -23,4 +23,54 @@
 
 .custom-btn:hover {
     background-color: rgb(110, 153, 139); 
+
+}
+
+ .jumbotron-section {
+  width: 100vw;              /* largura total da viewport */
+  padding: 40px 20px;        /* espaçamento vertical e horizontal */
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;   /* centraliza o conteúdo horizontalmente */
+}
+
+.welcome-text {
+  max-width: 1300px;
+  width: 100%;               /* para respeitar max-width mas ocupar todo espaço disponível */
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+
+  .welcome-text h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(110, 153, 139)
+  }
+
+  .welcome-text p {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+  }
+
+  .welcome-text .motto {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: rgb(110, 153, 139)
+   
+  }
+  .titulo-padrao {
+  font-size: 1.2rem; 
+  font-weight: bold;  /* Deixa o texto em negrito */
+  margin-bottom: 1rem;
+  color: #333;
 }

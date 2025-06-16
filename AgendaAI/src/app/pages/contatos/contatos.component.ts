@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 
 @Component({
-  selector: 'app-perfil-user',
+  selector: 'app-contatos',
   imports: [NavBarComponent],
-  templateUrl: './perfil-user.component.html',
-  styleUrl: './perfil-user.component.css'
+  templateUrl: './contatos.component.html',
+  styleUrl: './contatos.component.css'
 })
-export class PerfilUserComponent {
+export class ContatosComponent {
 
 }

@@ -4,11 +4,12 @@ import { EntrepreneurService } from '../../../services/user/entrepreneur/entrepr
 import { IEntrepreneur} from '../../../types/entrepreneur';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
+import { FooterComponent } from "../../footer/footer.component";
 
 
 @Component({
   selector: 'app-register-establishment',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent],
   templateUrl: './register-establishment.component.html',
   styleUrl: './register-establishment.component.css'
 })

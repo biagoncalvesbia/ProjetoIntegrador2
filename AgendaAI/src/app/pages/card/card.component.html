@@ -1,3 +1,4 @@
+
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="width: 98%; margin: auto; ">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
@@ -19,14 +20,9 @@
     <span class="visually-hidden">Próximo</span>
   </button>
 </div>
-
-<br>
-
-
-<br>
 <div class="container-fluid p-5">
-  <h2 *ngIf="logged" class="fs-2 fw-bold">Bem vindo {{logged?._doc?.name}}</h2>
-  <h2 *ngIf="!logged" class="fs-2 fw-bold">Seja Bem Vindo a Nossa Página</h2>
+ <p *ngIf="logged" class="titulo-padrao">Bem vindo {{logged?._doc?.name}}</p>
+<p *ngIf="!logged" class="titulo-padrao">Seja bem vindo a nossa pagina</p>
   <form class="d-flex" style="margin-bottom: 10px;">
     <input class="form-control" type="search" placeholder="Buscar por categoria" aria-label="Search">
     <button class="btn custom-btn" type="submit"><strong>Pesquisar</strong></button>
@@ -60,7 +56,7 @@
         <img class="card-img-top" src="assets/images/manicure.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Manicure</h5>
-          <p class="card-text">Venha transformar suas unhas e realçar sua beleza com a gente! Agende seu horário.</p>
+          <p class="card-text">Venha transformar suas unhas e sua beleza com a gente! Agende seu horário.</p>
           <a routerLink="/perfil-user" routerLinkActive="active" class="btn custom-btn"><strong>Fazer meu
               agendamento</strong></a>
         </div>

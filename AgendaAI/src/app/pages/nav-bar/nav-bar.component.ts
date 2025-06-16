@@ -3,10 +3,11 @@ import { Component, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { NgIf } from '@angular/common';
+import { PerfilUserComponent } from '../perfil-user/perfil-user.component';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [RouterLink, RouterLinkActive, NgIf],
+  imports: [RouterLink, RouterLinkActive, NgIf, PerfilUserComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })

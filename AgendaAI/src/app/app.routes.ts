@@ -11,6 +11,10 @@ import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
 import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ContatosComponent } from './pages/contatos/contatos.component';
+
 
 export const routes: Routes = [
 
@@ -49,6 +53,15 @@ export const routes: Routes = [
     },
     {
         path: 'perfil-user', component: PerfilUserComponent
-    }
+    },
+    {
+        path: 'footer', component: FooterComponent
+    },
+    {
+        path: 'perfil', component: PerfilComponent
+    },
+   {
+        path: 'contatos', component: ContatosComponent
+   }
 
 ];
