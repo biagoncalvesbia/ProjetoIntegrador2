@@ -6,8 +6,8 @@
 }
   
   .custom-btn {
-    background-color: aquamarine; 
-    color: black; 
+    background-color: rgb(110, 153, 139); 
+    color: rgb(255, 255, 255); 
     border: none; 
   }
   .custom-btn:hover {
@@ -15,14 +15,14 @@
   }
   
   .custom-btn {
-    background-color: aquamarine; 
-    color: black; 
+    background-color: rgb(110, 153, 139); 
+    color: rgb(255, 255, 255); 
     border: none;
     padding: 10px 20px; 
 }
 
 .custom-btn:hover {
-    background-color: rgb(110, 153, 139); 
+    background-color: rgb(152, 211, 191); 
 
 }
 
@@ -72,5 +72,5 @@
   font-size: 1.2rem; 
   font-weight: bold;  /* Deixa o texto em negrito */
   margin-bottom: 1rem;
-  color: #333;
+  color: #000000;
 }

@@ -10,10 +10,12 @@ import { BaseboardComponent } from './pages/baseboard/baseboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
-import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { ContatosComponent } from './pages/contatos/contatos.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
+import { EquipeComponent } from './pages/equipe/equipe.component';
+import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
+import { ConfUserComponent } from './pages/conf-user/conf-user.component';
 
 
 export const routes: Routes = [
@@ -58,10 +60,19 @@ export const routes: Routes = [
         path: 'footer', component: FooterComponent
     },
     {
-        path: 'perfil', component: PerfilComponent
+        path: 'perfil', component: PerfilUserComponent
     },
    {
         path: 'contatos', component: ContatosComponent
+   },
+   {
+        path: 'sobre', component: SobreComponent
+   },
+   {
+        path: 'equipe' , component: EquipeComponent
+   },
+   {
+        path: 'conf_user ' , component: ConfUserComponent
    }
 
 ];

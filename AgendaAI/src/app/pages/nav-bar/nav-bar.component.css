@@ -12,23 +12,23 @@ body {
 }
 
 .custom-btn:hover {
-  background-color: rgb(110, 153, 139);
+  background-color: aquamarine;
 }
 
 .custom-btn {
-  background-color: aquamarine;
+  background-color: rgb(110, 153, 139);
   color: black;
   border: none;
   padding: 10px 20px;
 }
 
 .custom-btn:hover {
-  background-color: rgb(110, 153, 139);
+  background-color: aquamarine;
 }
 
 /* Navbar estilizada */
 .navbar {
-  background: rgb(44, 150, 132);
+  background: linear-gradient(135deg, aquamarine 0%, rgb(110, 153, 139) 100%);
   padding: 10px 20px;
   width: 100%;
   max-width: 100%;

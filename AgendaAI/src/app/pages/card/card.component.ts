@@ -3,11 +3,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule, NgIf } from '@angular/common';
 import { EntrepreneurService } from '../../services/user/entrepreneur/entrepreneur.service';
-import { PerfilUserComponent } from '../perfil-user/perfil-user.component';
+import { ConfUserComponent } from '../conf-user/conf-user.component';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive, NgIf, CommonModule, PerfilUserComponent],
+  imports: [RouterLink,RouterLinkActive, NgIf, CommonModule, ConfUserComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })

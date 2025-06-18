@@ -5,9 +5,10 @@ import {  FormGroup,  FormBuilder, Validators, FormsModule, ReactiveFormsModule 
 import { ILogin } from '../../../types/Login';
 import { NgIf } from '@angular/common';
 import { FooterComponent } from "../../footer/footer.component";
+import { NavBarComponent } from "../../nav-bar/nav-bar.component";
 @Component({
   selector: 'app-login-user',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, NavBarComponent],
   templateUrl: './login-user.component.html',
   styleUrl: './login-user.component.css'
 })
