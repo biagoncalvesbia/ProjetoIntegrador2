@@ -4,10 +4,11 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { NgIf } from '@angular/common';
 import { PerfilUserComponent } from '../perfil-user/perfil-user.component';
+import { RegisterComponent } from '../login-register/register/register.component';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [RouterLink, RouterLinkActive, NgIf, PerfilUserComponent],
+  imports: [RouterLink, RouterLinkActive, NgIf, PerfilUserComponent, RegisterComponent ],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
