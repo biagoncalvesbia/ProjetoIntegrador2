@@ -16,6 +16,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { EquipeComponent } from './pages/equipe/equipe.component';
 import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 import { ConfUserComponent } from './pages/conf-user/conf-user.component';
+import { ContatoComponent } from './pages/contato/contato.component';
 
 
 export const routes: Routes = [
@@ -73,6 +74,10 @@ export const routes: Routes = [
    },
    {
         path: 'conf_user ' , component: ConfUserComponent
-   }
+   },
+{
+        path: 'contato' , component: ContatoComponent
+}
+
 
 ];

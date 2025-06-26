@@ -1,16 +1,19 @@
-<div class="container-fluid" style="width: 100%;">
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: aquamarine;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">AgendaAi</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    </nav>
-    </div>
+    <header>
+        <nav>
+            <link rel="stylesheet" href="style.css">
+            <div class="logo">
+                <i class="fas fa-calendar-check" href="#" ></i>
+                AgendaAI
+            </div>
+        </nav>
+    </header>
     <br>
-                    <div class="col-lg-6">
+    <br>
+    <br>
+    <br>
+    <br>
+
+                    <div class="center">
                         <div class="card">
                             <div class="card-body">
                                 <form [formGroup]="userRegisterForm" (ngSubmit)="registerUser()">
@@ -44,7 +47,7 @@
                                         <label class="form-label" for="confirmPass">Confirmar Senha</label>
                                     </div>
                                      
-                                    <a routerLink="/login-user" style="color: rgb(110, 153, 139);"><strong>Fazer login</strong></a>
+                                    <a routerLink="/login-establishment" style="color: rgb(110, 153, 139);"><strong>Fazer login</strong></a>
                                     <button type="submit" class="btn btn-primary" [disabled]="!userRegisterForm.valid"><strong>Cadastrar</strong></button>
                                 </form>
                             </div>

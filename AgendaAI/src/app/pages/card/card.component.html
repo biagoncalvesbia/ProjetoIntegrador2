@@ -1,22 +1,5 @@
 <body>
     <!-- Header -->
-    <header>
-        <nav>
-            <link rel="stylesheet" href="style.css">
-            <div class="logo">
-                <i class="fas fa-calendar-check"></i>
-                AgendaAI
-            </div>
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Buscar salões, serviços ou localização...">
-            </div>
-            <div class="user-actions">
-                <a href="#" routerLink="/login-user" class="btn-outline">Entrar</a>
-                <a href="#" routerLink="/register" class="btn-outline">Cadastrar</a>
-            </div>
-        </nav>
-    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -81,7 +64,7 @@
                             <h3 class="salon-name">Nails Art Studio</h3>
                             <div class="salon-rating">
                                 <i class="fas fa-star"></i>
-                                <span>4.6</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="salon-location">
@@ -93,10 +76,9 @@
                             <span class="service-tag">Pedicure</span>
                             <span class="service-tag">Nail Art</span>
                         </div>
-                        <div class="price-range">R$ 25 - R$ 80</div>
                         <div class="card-actions">
-                            <a href="#" class="btn-secondary" onclick="openBookingModal('Nails Art Studio')">Ver Detalhes</a>
-                            <a href="#" class="btn-primary" onclick="openBookingModal('Nails Art Studio')">Agendar</a>
+                            <a href="#" class="btn-secondary" routerLink="/pre-agendamento">Ver Detalhes</a>
+                            <a href="#" class="btn-primary" routerLink="/agendamento">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +92,7 @@
                             <h3 class="salon-name">Organic Beauty</h3>
                             <div class="salon-rating">
                                 <i class="fas fa-star"></i>
-                                <span>4.9</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="salon-location">
@@ -122,10 +104,10 @@
                             <span class="service-tag">Argiloterapia</span>
                             <span class="service-tag">Detox Facial</span>
                         </div>
-                        <div class="price-range">R$ 90 - R$ 250</div>
+                        <div class="price-range"></div>
                         <div class="card-actions">
-                            <a href="#" class="btn-secondary" onclick="openBookingModal('Organic Beauty')">Ver Detalhes</a>
-                            <a href="#" class="btn-primary" onclick="openBookingModal('Organic Beauty')">Agendar</a>
+                          <a href="#" class="btn-secondary" routerLink="/pre-agendamento">Ver Detalhes</a>
+                            <a href="#" class="btn-primary" routerLink="/agendamento">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +121,7 @@
                             <h3 class="salon-name">Laser Center</h3>
                             <div class="salon-rating">
                                 <i class="fas fa-star"></i>
-                                <span>4.5</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="salon-location">
@@ -151,10 +133,10 @@
                             <span class="service-tag">Rejuvenescimento</span>
                             <span class="service-tag">Remoção de Tatuagem</span>
                         </div>
-                        <div class="price-range">R$ 150 - R$ 500</div>
+                        <div class="price-range"></div>
                         <div class="card-actions">
-                            <a href="#" class="btn-secondary" onclick="openBookingModal('Laser Center')">Ver Detalhes</a>
-                            <a href="#" class="btn-primary" onclick="openBookingModal('Laser Center')">Agendar</a>
+                          <a href="#" class="btn-secondary" routerLink="/pre-agendamento">Ver Detalhes</a>
+                            <a href="#" class="btn-primary" routerLink="/agendamento">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -168,7 +150,7 @@
                             <h3 class="salon-name">Gentleman's Club</h3>
                             <div class="salon-rating">
                                 <i class="fas fa-star"></i>
-                                <span>4.8</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="salon-location">
@@ -180,10 +162,10 @@
                             <span class="service-tag">Barba</span>
                             <span class="service-tag">Tratamento Capilar</span>
                         </div>
-                        <div class="price-range">R$ 35 - R$ 120</div>
+                        <div class="price-range"></div>
                         <div class="card-actions">
-                            <a href="#" class="btn-secondary" onclick="openBookingModal('Gentleman\'s Club')">Ver Detalhes</a>
-                            <a href="#" class="btn-primary" onclick="openBookingModal('Gentleman\'s Club')">Agendar</a>
+                          <a href="#" class="btn-secondary" routerLink="/pre-agendamento">Ver Detalhes</a>
+                            <a href="#" class="btn-primary" routerLink="/agendamento">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -197,7 +179,7 @@
                             <h3 class="salon-name">Brow Studio</h3>
                             <div class="salon-rating">
                                 <i class="fas fa-star"></i>
-                                <span>4.7</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="salon-location">
@@ -209,10 +191,10 @@
                             <span class="service-tag">Micropigmentação</span>
                             <span class="service-tag">Extensão de Cílios</span>
                         </div>
-                        <div class="price-range">R$ 30 - R$ 200</div>
+                        <div class="price-range"></div>
                         <div class="card-actions">
-                            <a href="#" class="btn-secondary" onclick="openBookingModal('Brow Studio')">Ver Detalhes</a>
-                            <a href="#" class="btn-primary" onclick="openBookingModal('Brow Studio')">Agendar</a>
+                            <a href="#" class="btn-secondary" routerLink="/pre-agendamento">Ver Detalhes</a>
+                            <a href="#" class="btn-primary" routerLink="/agendamento">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -226,7 +208,7 @@
                             <h3 class="salon-name">Hydra Clinic</h3>
                             <div class="salon-rating">
                                 <i class="fas fa-star"></i>
-                                <span>4.6</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="salon-location">
@@ -238,10 +220,10 @@
                             <span class="service-tag">Peeling</span>
                             <span class="service-tag">Microagulhamento</span>
                         </div>
-                        <div class="price-range">R$ 100 - R$ 300</div>
+                        <div class="price-range"></div>
                         <div class="card-actions">
-                            <a href="#" class="btn-secondary" onclick="openBookingModal('Hydra Clinic')">Ver Detalhes</a>
-                            <a href="#" class="btn-primary" onclick="openBookingModal('Hydra Clinic')">Agendar</a>
+                            <a href="#" class="btn-secondary" routerLink="/pre-agendamento">Ver Detalhes</a>
+                            <a href="#" class="btn-primary" routerLink="/agendamento">Agendar</a>
                         </div>
                     </div>
                 </div>

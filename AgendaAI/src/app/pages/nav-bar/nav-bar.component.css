@@ -28,7 +28,7 @@ body {
 
 /* Navbar estilizada */
 .navbar {
-  background: linear-gradient(135deg, aquamarine 0%, rgb(110, 153, 139) 100%);
+   background-color:  rgb(100, 143, 128);
   padding: 10px 20px;
   width: 100%;
   max-width: 100%;
