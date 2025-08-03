@@ -2,18 +2,17 @@ import { Component, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { CommonModule, NgIf } from '@angular/common';
-import { EntrepreneurService } from '../../services/user/entrepreneur/entrepreneur.service';
-import { LoginEstablishmentComponent } from '../login-register/login-establishment/login-establishment.component';
-import { RegisterComponent } from '../login-register/register/register.component';
-import { AgendamentoComponent } from '../agendamento/agendamento.component';
-import { PreAgendamentoComponent } from '../pre-agendamento/pre-agendamento.component';
+import { EntrepreneurService } from '../../services/entrepreneur/entrepreneur.service';
+import { RegisterComponent } from '../../pages/login-register/register/register.component';
+import { AgendamentoComponent } from '../../pages/agendamento/agendamento.component';
+import { PreAgendamentoComponent } from '../../pages/pre-agendamento/pre-agendamento.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive, NgIf, CommonModule, RegisterComponent, PreAgendamentoComponent, AgendamentoComponent, LoginEstablishmentComponent, ],
+  imports: [RouterLink,RouterLinkActive, NgIf, CommonModule, RegisterComponent, PreAgendamentoComponent, AgendamentoComponent],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrl: './card.component.css',
 })
 export class CardComponent implements OnInit {
   public logged: any = {}

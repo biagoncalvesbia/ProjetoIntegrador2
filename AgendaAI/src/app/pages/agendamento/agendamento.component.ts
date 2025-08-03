@@ -6,7 +6,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'app-agendamento',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './agendamento.component.html',
-  styleUrl: './agendamento.component.css'
+  styleUrl: './agendamento.component.css',
+  standalone: true
 })
 export class AgendamentoComponent {
 

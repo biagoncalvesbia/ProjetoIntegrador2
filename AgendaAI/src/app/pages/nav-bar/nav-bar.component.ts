@@ -1,16 +1,15 @@
-import { EntrepreneurService } from './../../services/user/entrepreneur/entrepreneur.service';
+import { EntrepreneurService } from '../../services/entrepreneur/entrepreneur.service';
 import { Component, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { NgIf } from '@angular/common';
-import { PerfilUserComponent } from '../perfil-user/perfil-user.component';
-import { RegisterComponent } from '../login-register/register/register.component';
 
 @Component({
   selector: 'app-nav-bar',
-  imports: [RouterLink, RouterLinkActive, NgIf, PerfilUserComponent, RegisterComponent ],
+  imports: [RouterLink, NgIf ],
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrls: ['./nav-bar.component.css'],
+  standalone: true
 })
 export class NavBarComponent implements OnInit {
   public logged: any = {}

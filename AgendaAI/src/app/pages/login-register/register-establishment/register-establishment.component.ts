@@ -1,17 +1,17 @@
 import { Component, inject, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { EntrepreneurService } from '../../../services/user/entrepreneur/entrepreneur.service';
+import { EntrepreneurService } from '../../../services/entrepreneur/entrepreneur.service';
 import { IEntrepreneur} from '../../../types/entrepreneur';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
-import { FooterComponent } from "../../footer/footer.component";
 
 
 @Component({
   selector: 'app-register-establishment',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf ],
   templateUrl: './register-establishment.component.html',
-  styleUrl: './register-establishment.component.css'
+  styleUrl: './register-establishment.component.css',
+  standalone: true
 })
 export class RegisterEstablishmentComponent implements OnInit{
   public entrepreneurRegisterForm!: FormGroup;
@@ -20,15 +20,16 @@ export class RegisterEstablishmentComponent implements OnInit{
   ngOnInit(): void {
     this.entrepreneurRegisterForm = this.fb.group({
       name: ['', Validators.required],
-      endereco: ['', Validators.required],
-      cep: ['', Validators.required],
+      estabe: ['', Validators.required],
+      cpf: ['', Validators.required],
       telefone: ['', Validators.required],
-      email: ['', Validators.required],
-      Horario: ['', Validators.required],
-      Tipos_atendimentos: ['', Validators.required],
-      Funciona_finaldesemana: ['', Validators.required],
-      password:['', Validators.required],
-      confpass: ['', Validators.required],
+      cep: ['', Validators.required],
+      rua: ['', Validators.required],
+      numero: ['', Validators.required],
+      comple: ['', Validators.required],
+      bairro: ['', Validators.required],
+      cidade: ['', Validators.required],
+      estado: ['', Validators.required],
     })
   }
 

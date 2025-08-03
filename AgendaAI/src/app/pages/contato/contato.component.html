@@ -1,37 +1,35 @@
-<app-nav-bar></app-nav-bar>
-<body>
-        <div class="content">
+  <app-nav></app-nav>
+       <div class="content">
             <div class="contact-form">
-                <form action="#" method="POST">
+                <form [formGroup]="contatoRegisterForm" (ngSubmit)="registerContato()">
                    
-
-                    <div class="form-group">
+                    <div class="form-group" >
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" formControlName="email">
                     </div>
 
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone">
+                        <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" formControlName="telefone">
                     </div>
 
                     <div class="form-group">
-                        <label for="assunto">Assunto</label>
-                        <select id="assunto" name="assunto" required>
+                          <label for="assunto">Assunto</label>
+                         <select id="assunto" name="assunto"  formControlName="assunto">
                             <option value="">Selecione um assunto</option>
                             <option value="duvida">Dúvida</option>
                             <option value="suporte">Suporte Técnico</option>
                             <option value="sugestao">Sugestão</option>
                             <option value="outro">Outro</option>
-                        </select>
+                        </select>  
                     </div>
 
                     <div class="form-group">
                         <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." required></textarea>
+                        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui..." formControlName="mensagem"></textarea>
                     </div>
 
-                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                    <button type="submit" class="btn-submit" [disabled]="!contatoRegisterForm.valid">Enviar Mensagem</button>
                 </form>
             </div>
 
@@ -73,6 +71,12 @@
                 </div>
             </div>
         </div>
-</body>
 
 
+<!--  <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="suporte">Suporte Técnico</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outro">Outro</option>
+                        </select>  -->

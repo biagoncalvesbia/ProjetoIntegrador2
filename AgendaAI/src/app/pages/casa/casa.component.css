@@ -1,0 +1,35 @@
+.carousel-inner img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px; 
+  
+}
+  
+  .custom-btn {
+    background-color: rgb(110, 153, 139); 
+    color: rgb(255, 255, 255); 
+    border: none; 
+  }
+  .custom-btn:hover {
+    background-color: rgb(110, 153, 139); 
+  }
+  
+  .custom-btn {
+    background-color: rgb(110, 153, 139); 
+    color: rgb(255, 255, 255); 
+    border: none;
+    padding: 10px 20px; 
+}
+
+
+
+
+.botão{
+                background: transparent;
+            border: 2px solid rgb(192, 63, 63);
+            color: rgb(19, 18, 18);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+}

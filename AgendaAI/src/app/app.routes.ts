@@ -10,13 +10,15 @@ import { BaseboardComponent } from './pages/baseboard/baseboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
-import { FooterComponent } from './pages/footer/footer.component';
-import { ContatosComponent } from './pages/contatos/contatos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
-import { EquipeComponent } from './pages/equipe/equipe.component';
 import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 import { ConfUserComponent } from './pages/conf-user/conf-user.component';
+import { EquipeComponent } from './pages/equipe/equipe.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { CasaComponent } from './pages/casa/casa.component';
 import { ContatoComponent } from './pages/contato/contato.component';
+import { CardtelasComponent } from './pages/cardtelas/cardtelas.component';
+import { NavComponent } from './pages/nav/nav.component';
 
 
 export const routes: Routes = [
@@ -25,10 +27,6 @@ export const routes: Routes = [
         path: '', component:HomeComponent
     },
      
-    {
-        path: 'nav-bar', component:NavBarComponent
-    },
-    
     {
         path: 'register', component: RegisterComponent
     },
@@ -58,26 +56,31 @@ export const routes: Routes = [
         path: 'perfil-user', component: PerfilUserComponent
     },
     {
-        path: 'footer', component: FooterComponent
-    },
-    {
         path: 'perfil', component: PerfilUserComponent
     },
    {
-        path: 'contatos', component: ContatosComponent
+        path: 'sobre', component: SobreComponent
    },
    {
-        path: 'sobre', component: SobreComponent
+        path: 'conf_user ' , component: ConfUserComponent
    },
    {
         path: 'equipe' , component: EquipeComponent
    },
    {
-        path: 'conf_user ' , component: ConfUserComponent
+        path: 'footer', component: FooterComponent
    },
-{
-        path: 'contato' , component: ContatoComponent
-}
-
+   {
+        path: 'casa', component:CasaComponent
+   },
+   {
+        path: 'contato', component:ContatoComponent
+   },
+   {
+       path: 'cardtelas', component:CardtelasComponent
+   },
+   {
+       path: 'nav', component:NavComponent
+   }
 
 ];

@@ -28,11 +28,8 @@
                                     </div>
 
                                     <a routerLink="/register" style="color: rgb(110, 153, 139);"><strong>Cadastrar-se</strong></a>
-                                    <a routerLink="/register-establishment" style="color: rgb(110, 153, 139);"><strong>Cadastrar minha empresa</strong></a>
                                   
-
-
-                                    <button type="submit" class="btn-primary" [disabled]="!userLoginForm.valid"><strong>Entrar</strong></button>
+                                    <button type="submit" class="btn-primary" [disabled]="!userLoginForm.valid" routerLink="/cardtelas" ><strong>Entrar</strong></button>
 
                                     </div>
                                 
@@ -40,5 +37,6 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-<app-footer></app-footer>
+                  <br>
+
+  <app-footer></app-footer>     

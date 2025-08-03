@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-sobre',
+  selector: 'app-nav',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './sobre.component.html',
-  styleUrl: './sobre.component.css',
-  standalone: true
+  templateUrl: './nav.component.html',
+  styleUrl: './nav.component.css'
 })
-export class SobreComponent {
+export class NavComponent {
 
 }

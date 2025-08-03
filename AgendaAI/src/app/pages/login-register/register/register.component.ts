@@ -4,15 +4,16 @@ import { UserService } from '../../../services/user/user.service';
 import { IUser } from '../../../types/User';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
-import { LoginEstablishmentComponent } from '../login-establishment/login-establishment.component';
+import { LoginUserComponent } from '../login-user/login-user.component';
 import { FooterComponent } from "../../footer/footer.component";
 
 
 @Component({
   selector: 'app-register',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, LoginEstablishmentComponent, FooterComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, LoginUserComponent],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
+  standalone: true
 })
 
 

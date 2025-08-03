@@ -1,11 +1,11 @@
 <body>
-    <!-- Header -->
-
-    <!-- Hero Section -->
     <section class="hero">
         <h1>Encontre o Salão Perfeito</h1>
         <p>Descubra e agende serviços de beleza nos melhores salões da sua região. Mais de 500 estabelecimentos parceiros esperando por você!</p>
     </section>
+
+    <p *ngIf="logged" class="titulo-padrao">Bem vindo {{logged?._doc?.name}}</p>
+    <p *ngIf="!logged" class="titulo-padrao">Seja bem vindo a nossa pagina</p>
 
     <!-- Filters -->
     <section class="filters">
@@ -304,154 +304,4 @@
         </div>
     </div>
 
-    <script>
-        // Salon services data
-        const salonServices = {
-            'Glamour Studio': [
-                { name: 'Corte Feminino Premium', description: 'Corte personalizado com lavagem e finalização', price: 'R$ 120' },
-                { name: 'Coloração Completa', description: 'Coloração profissional com produtos importados', price: 'R$ 280' },
-                { name: 'Tratamento Capilar', description: 'Hidratação profunda e reconstrução', price: 'R$ 150' },
-                { name: 'Manicure Premium', description: 'Cuidados completos para as unhas', price: 'R$ 45' }
-            ],
-            'Zen Beauty Spa': [
-                { name: 'Massagem Relaxante', description: 'Massagem corporal com óleos essenciais', price: 'R$ 120' },
-                { name: 'Limpeza de Pele Profunda', description: 'Tratamento facial completo', price: 'R$ 180' },
-                { name: 'Aromaterapia', description: 'Sessão de relaxamento com aromas terapêuticos', price: 'R$ 90' },
-                { name: 'Reflexologia', description: 'Massagem nos pés para bem-estar geral', price: 'R$ 80' }
-            ],
-            'Hair & Style': [
-                { name: 'Corte Masculino', description: 'Corte moderno com acabamento', price: 'R$ 45' },
-                { name: 'Corte Feminino', description: 'Corte com lavagem e escova', price: 'R$ 80' },
-                { name: 'Barba Completa', description: 'Aparar e modelar a barba', price: 'R$ 35' },
-                { name: 'Penteado para Festa', description: 'Penteado elaborado para ocasiões especiais', price: 'R$ 120' }
-            ],
-            'Nails Art Studio': [
-                { name: 'Manicure Simples', description: 'Cuidados básicos para as unhas', price: 'R$ 25' },
-                { name: 'Pedicure Completa', description: 'Cuidados completos para os pés', price: 'R$ 40' },
-                { name: 'Nail Art Personalizada', description: 'Decoração artística nas unhas', price: 'R$ 60' },
-                { name: 'Alongamento de Unhas', description: 'Alongamento com gel ou acrílico', price: 'R$ 80' }
-            ],
-            'Organic Beauty': [
-                { name: 'Tratamento Facial Natural', description: 'Limpeza com produtos orgânicos', price: 'R$ 150' },
-                { name: 'Argiloterapia', description: 'Tratamento corporal com argila', price: 'R$ 120' },
-                { name: 'Detox Facial', description: 'Limpeza profunda desintoxicante', price: 'R$ 180' },
-                { name: 'Massagem com Pedras Quentes', description: 'Relaxamento com pedras vulcânicas', price: 'R$ 200' }
-            ],
-            'Laser Center': [
-                { name: 'Depilação a Laser - Pernas', description: 'Sessão completa nas pernas', price: 'R$ 200' },
-                { name: 'Depilação a Laser - Axilas', description: 'Remoção de pelos das axilas', price: 'R$ 80' },
-                { name: 'Rejuvenescimento Facial', description: 'Tratamento anti-idade com laser', price: 'R$ 300' },
-                { name: 'Remoção de Manchas', description: 'Tratamento para manchas na pele', price: 'R$ 250' }
-            ],
-            'Gentleman\'s Club': [
-                { name: 'Corte Clássico', description: 'Corte tradicional masculino', price: 'R$ 35' },
-                { name: 'Corte + Barba', description: 'Serviço completo de corte e barba', price: 'R$ 65' },
-                { name: 'Tratamento Capilar Masculino', description: 'Hidratação específica para homens', price: 'R$ 80' },
-                { name: 'Relaxamento com Toalha Quente', description: 'Experiência premium de barbearia', price: 'R$ 45' }
-            ],
-            'Brow Studio': [
-                { name: 'Design de Sobrancelhas', description: 'Modelagem perfeita das sobrancelhas', price: 'R$ 30' },
-                { name: 'Micropigmentação', description: 'Técnica de preenchimento permanente', price: 'R$ 200' },
-                { name: 'Extensão de Cílios', description: 'Alongamento natural dos cílios', price: 'R$ 120' },
-                { name: 'Henna para Sobrancelhas', description: 'Coloração natural com henna', price: 'R$ 45' }
-            ],
-            'Hydra Clinic': [
-                { name: 'Hidrafacial', description: 'Limpeza e hidratação profunda', price: 'R$ 180' },
-                { name: 'Peeling Químico', description: 'Renovação celular da pele', price: 'R$ 220' },
-                { name: 'Microagulhamento', description: 'Estímulo de colágeno natural', price: 'R$ 250' },
-                { name: 'Limpeza de Pele Profissional', description: 'Remoção de cravos e impurezas', price: 'R$ 120' }
-            ]
-        };
-
-        function openBookingModal(salonName) {
-            const modal = document.getElementById('bookingModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const serviceOptions = document.getElementById('serviceOptions');
-            
-            modalTitle.textContent = `Agendar em ${salonName}`;
-            
-            // Clear previous services
-            serviceOptions.innerHTML = '';
-            
-            // Add services for this salon
-            const services = salonServices[salonName] || [];
-            services.forEach((service, index) => {
-                const serviceDiv = document.createElement('div');
-                serviceDiv.className = 'service-option';
-                serviceDiv.onclick = () => selectService(serviceDiv);
-                serviceDiv.innerHTML = `
-                    <div class="service-info">
-                        <h4>${service.name}</h4>
-                        <p>${service.description}</p>
-                    </div>
-                    <div class="service-price">${service.price}</div>
-                `;
-                serviceOptions.appendChild(serviceDiv);
-            });
-            
-            modal.classList.add('active');
-            
-            // Set minimum date to today
-            const dateInput = document.getElementById('appointmentDate');
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
-        }
-
-        function closeBookingModal() {
-            const modal = document.getElementById('bookingModal');
-            modal.classList.remove('active');
-            
-            // Reset form
-            document.getElementById('bookingForm').reset();
-            
-            // Clear selected services
-            document.querySelectorAll('.service-option').forEach(option => {
-                option.classList.remove('selected');
-            });
-        }
-
-        function selectService(element) {
-            // Remove selection from other services
-            document.querySelectorAll('.service-option').forEach(option => {
-                option.classList.remove('selected');
-            });
-            
-            // Select clicked service
-            element.classList.add('selected');
-        }
-
-        // Form submission
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const selectedService = document.querySelector('.service-option.selected');
-            if (!selectedService) {
-                alert('Por favor, selecione um serviço.');
-                return;
-            }
-            
-            alert('Agendamento realizado com sucesso! Você receberá uma confirmação por e-mail em breve.');
-            closeBookingModal();
-        });
-
-        // Close modal when clicking outside
-        document.getElementById('bookingModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeBookingModal();
-            }
-        });
-
-        // Search functionality
-        document.querySelector('.search-bar input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                const searchTerm = this.value.toLowerCase();
-                alert(`Buscando por: "${searchTerm}"`);
-            }
-        });
-
-        // Filter functionality
-        document.querySelector('.btn-primary').addEventListener('click', function() {
-            alert('Filtros aplicados! Resultados atualizados.');
-        });
-    </script>
 </body>

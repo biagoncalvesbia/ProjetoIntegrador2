@@ -5,8 +5,16 @@ const entrepreneurSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    endereco: {
+    estabe: {
         type: String,
+        require: true,
+    },
+    cpf: {
+        type: String,
+        require: true,
+    },
+    telefone: {
+        type: Number,
         require: true,
     },
     cep: {
@@ -14,36 +22,29 @@ const entrepreneurSchema = new mongoose.Schema({
         require: true,
         maxLenght: 8
     },
-    telefone: {
-        type: Number,
-        require: true,
+    rua: {
+        type: String,
+        require:true,
     },
-    email:{
+    numero:{
         type: String,
         require: true,
     },
-    Horario: {
+    comple: {
         type: String,
         require: true
     },  
-    Tipos_atendimento:{
+    bairro:{
         type: String,
         require: true,
     },
-    Funciona_finaldesemana: {
+    cidade: {
         type: String,
         require: true,
     },
-    schedulings: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Scheduling"
-        }
-    ],
-    password: {
+    estado: {
         type: String,
         require: true,
-        maxLenght: 8
     },
     created_at: {
         type: Date,
@@ -53,3 +54,10 @@ const entrepreneurSchema = new mongoose.Schema({
 })
 
 export const Entrepreneur = mongoose.model('Entrepreneur', entrepreneurSchema)
+
+//     schedulings: [
+ //       {
+   //         type: mongoose.Schema.Types.ObjectId,
+     //       ref: "Scheduling"
+       // }
+   // ],

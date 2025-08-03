@@ -1,15 +1,7 @@
-
        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #000000;
-            background: linear-gradient(135deg, #fcfcfc 0%, #f0f2f5 100%);
         }
 
         .container {

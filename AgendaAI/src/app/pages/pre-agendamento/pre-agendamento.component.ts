@@ -7,7 +7,8 @@ import { AgendamentoComponent } from '../agendamento/agendamento.component';
   selector: 'app-pre-agendamento',
   imports: [RouterLink, RouterLinkActive, NavBarComponent, AgendamentoComponent],
   templateUrl: './pre-agendamento.component.html',
-  styleUrl: './pre-agendamento.component.css'
+  styleUrl: './pre-agendamento.component.css',
+  standalone: true
 })
 export class PreAgendamentoComponent {
 

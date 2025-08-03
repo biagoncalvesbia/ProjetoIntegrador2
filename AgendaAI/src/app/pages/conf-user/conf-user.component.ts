@@ -5,7 +5,8 @@ import { NavBarComponent } from "../nav-bar/nav-bar.component";
   selector: 'app-conf-user',
   imports: [NavBarComponent],
   templateUrl: './conf-user.component.html',
-  styleUrl: './conf-user.component.css'
+  styleUrl: './conf-user.component.css',
+  standalone: true
 })
 export class ConfUserComponent {
 

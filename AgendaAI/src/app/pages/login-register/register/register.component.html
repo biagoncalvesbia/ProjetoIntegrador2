@@ -1,4 +1,4 @@
-    <header>
+\    <header>
         <nav>
             <link rel="stylesheet" href="style.css">
             <div class="logo">
@@ -12,7 +12,6 @@
     <br>
     <br>
     <br>
-
                     <div class="center">
                         <div class="card">
                             <div class="card-body">
@@ -44,10 +43,10 @@
                                   
                                     <div class="form-outline">
                                         <input type="password" id="confirmPass" class="form-control" formControlName="confirmPass"/>
-                                        <label class="form-label" for="confirmPass">Confirmar Senha</label>
+                                        <label class="form-label" for="confirmPass" routerLink="">Confirmar Senha</label>
                                     </div>
                                      
-                                    <a routerLink="/login-establishment" style="color: rgb(110, 153, 139);"><strong>Fazer login</strong></a>
+                                    <a routerLink="/login-user" style="color: rgb(110, 153, 139);"><strong>Fazer login</strong></a>
                                     <button type="submit" class="btn btn-primary" [disabled]="!userRegisterForm.valid"><strong>Cadastrar</strong></button>
                                 </form>
                             </div>

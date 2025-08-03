@@ -6,11 +6,14 @@ import { ILogin } from '../../../types/Login';
 import { NgIf } from '@angular/common';
 import { FooterComponent } from "../../footer/footer.component";
 import { NavBarComponent } from "../../nav-bar/nav-bar.component";
+import { CardtelasComponent } from '../../cardtelas/cardtelas.component';
+
 @Component({
   selector: 'app-login-user',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, NavBarComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, NavBarComponent, CardtelasComponent ],
   templateUrl: './login-user.component.html',
-  styleUrl: './login-user.component.css'
+  styleUrl: './login-user.component.css',
+  standalone:true
 })
 export class LoginUserComponent implements OnInit {
   public userLoginForm!: FormGroup;
@@ -19,7 +22,7 @@ export class LoginUserComponent implements OnInit {
     this.userLoginForm = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    })  
   }
 
   async loginUser() {
@@ -27,6 +30,7 @@ export class LoginUserComponent implements OnInit {
       const user: ILogin = this.userLoginForm.value
       try {
         const response = this.userService.authenticate(user)
+        
       } catch (error) {
         console.error(error)
       }

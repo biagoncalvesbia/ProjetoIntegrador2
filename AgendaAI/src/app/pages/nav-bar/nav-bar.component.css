@@ -11,10 +11,6 @@ body {
   border: none;
 }
 
-.custom-btn:hover {
-  background-color: aquamarine;
-}
-
 .custom-btn {
   background-color: rgb(110, 153, 139);
   color: black;
@@ -28,12 +24,12 @@ body {
 
 /* Navbar estilizada */
 .navbar {
-   background-color:  rgb(100, 143, 128);
+  background-color:  rgb(100, 143, 128);
   padding: 10px 20px;
   width: 100%;
-  max-width: 100%;
-  border-radius: 0 0 10px 10px;
-  /* Cantos arredondados apenas na parte inferior */
+  max-width: 220%;
+  padding: 2rem;
+  
 }
 
 /* menu.component.css */
@@ -48,7 +44,7 @@ body {
   right: -20px;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
   display: flex;
   flex-direction: column;

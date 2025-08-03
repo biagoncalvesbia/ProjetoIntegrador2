@@ -1,9 +1,9 @@
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { IEntrepreneur } from '../../../types/entrepreneur';
+import { IEntrepreneur } from '../../types/entrepreneur';
 import { HttpClient } from '@angular/common/http';
 import type { Observable } from 'rxjs';
-import type { ILoginEntrepreneur } from '../../../types/LoginEntrepreneur';
+import type { ILoginEntrepreneur } from '../../types/LoginEntrepreneur';
 import { Router } from '@angular/router';
 
 @Injectable({
