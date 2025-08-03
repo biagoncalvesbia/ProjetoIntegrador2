@@ -30,7 +30,7 @@ export class LoginUserComponent implements OnInit {
       const user: ILogin = this.userLoginForm.value
       try {
         const response = this.userService.authenticate(user)
-        
+        console.log(response.subscribe(user => console.log(user)))
       } catch (error) {
         console.error(error)
       }
