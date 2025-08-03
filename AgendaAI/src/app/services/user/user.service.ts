@@ -47,23 +47,21 @@ export class UserService {
   }
 
   // Authenticate user
-  authenticate(user: ILogin): Observable<ILogin> {
+  authenticate(user: ILogin): Observable<ILogin | null> {
     return this.http.post<ILogin>('http://localhost:3000/user/login', user).pipe(
       tap((response) => {
         if (response && this.isBrowser) {
+          console.log("FEZ LOGIN")
           localStorage.setItem('user_logged', JSON.stringify(response));
           this.userLogged = response;
           this.isAuthenticated = true;
-          this.router.navigate(['/']); // Navigate after successful login
+          this.router.navigate(['/cardtelas']); // Navigate after successful login
         }
       }),
       catchError((err) => {
         console.error('Error during authentication:', err);
         this.clearAuthData(); // Clear authentication data on error
-        // Re-throw or return an observable with an error
-        return new Observable<ILogin>(() => {throw new Error(err.message  )})
-        // Or if you want to handle it silently and return an empty observable:
-        // return of(null as unknown as ILogin); // Cast to ILogin to satisfy type
+        return of(null as ILogin | null); // Return an Observable of the correct type
       })
     );
   }
