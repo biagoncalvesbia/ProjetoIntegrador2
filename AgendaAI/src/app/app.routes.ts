@@ -19,6 +19,7 @@ import { CasaComponent } from './pages/casa/casa.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { CardtelasComponent } from './pages/cardtelas/cardtelas.component';
 import { NavComponent } from './pages/nav/nav.component';
+import { SenhaComponent } from './pages/senha/senha.component';
 
 
 export const routes: Routes = [
@@ -81,6 +82,9 @@ export const routes: Routes = [
    },
    {
        path: 'nav', component:NavComponent
+   },
+   {
+     path: 'senha', component: SenhaComponent
    }
 
 ];

@@ -1,10 +1,10 @@
-<body>
+
+    <p *ngIf="logged" class="titulo-padrao">Bem vindo {{logged?._doc?.name}}</p> 
     <section class="hero">
         <h1>Encontre o Salão Perfeito</h1>
         <p>Descubra e agende serviços de beleza nos melhores salões da sua região. Mais de 500 estabelecimentos parceiros esperando por você!</p>
     </section>
-
-    <p *ngIf="logged" class="titulo-padrao">Bem vindo {{logged?._doc?.name}}</p>   
+  
 
     <!-- Filters -->
     <section class="filters">
@@ -303,4 +303,3 @@
         </div>
     </div>
 
-</body>

@@ -1,7 +1,11 @@
-/* Definição da fonte padrão */
 body {
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
 }
   .logo {
    font-size: 2rem;
