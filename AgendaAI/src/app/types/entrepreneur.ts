@@ -1,6 +1,7 @@
 export interface IEntrepreneur{
      name: string
-     estabe: string
+     horario: string
+     tipo: string
      cpf: string
      telefone: string
      cep: string
@@ -10,4 +11,5 @@ export interface IEntrepreneur{
      bairro: string
      cidade: string
      estado: string
+     image: string 
 }

@@ -2,7 +2,7 @@ import { Entrepreneur } from "../models/Entrepreneur.js"
 import createToken from "../utils/createToken.js"
 import { hashPass } from "../utils/hashPass.js"
 export const Register = async (req, res) => {
-  const {name, estabe, cpf, telefone, cep, rua, numero, comple, bairro, cidade, estado } = req.body
+  const {name, horario, tipo, cpf, telefone, cep, rua, numero, comple, bairro, cidade, estado, image} = req.body
   const verifyEntrepreneur = await Entrepreneur.findOne({
     email: email
   })
@@ -20,7 +20,8 @@ export const Register = async (req, res) => {
   try {
     const entrepreneur = await Entrepreneur.create({
      name,
-     estabe,
+     horario,
+     tipo,
      cpf,
      telefone,
      cep,
@@ -30,6 +31,7 @@ export const Register = async (req, res) => {
      bairro,
      cidade,
      estado,
+     image,
      hash
     })
     await entrepreneur.save()

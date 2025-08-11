@@ -3,17 +3,21 @@ body {
   font-family: "Poppins", sans-serif;
 
 }
-
+  .logo {
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
+   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
 /* Botão personalizado */
 .custom-btn {
   background-color: aquamarine;
-  color: black;
+  color: rgb(253, 251, 251);
   border: none;
 }
 
 .custom-btn {
   background-color: rgb(110, 153, 139);
-  color: black;
+  color: rgb(247, 243, 243);
   border: none;
   padding: 10px 20px;
 }
@@ -28,10 +32,8 @@ body {
   padding: 10px 20px;
   width: 100%;
   max-width: 220%;
-  padding: 2rem;
-  
+  padding: 1rem; 
 }
-
 /* menu.component.css */
 .dropdown {
   position: relative;
@@ -86,3 +88,8 @@ body {
   padding: 10px 10px;
   border: none;
 }
+.custom-spacing {
+  margin-left: 30px; /* ou 15px, como preferir */
+}
+
+

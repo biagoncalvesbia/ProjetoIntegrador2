@@ -66,7 +66,7 @@ body {
 .btn-primary {
     width: 100%;
     padding: 10px;
-    background-color:aquamarine;
+    background-color:rgb(110, 153, 139);
     color: black;
     border: none;
     border-radius: 5px;
@@ -75,7 +75,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: rgb(110, 153, 139);
+    background-color: aquamarine;
 }
 
 /* Estilização dos botões de login social */
@@ -93,9 +93,7 @@ body {
     color: #333;
 }
 
-.btn-social:hover {
-    color: aquamarine;
-}
+
 
   /* Fundo da página */
 body {
@@ -194,7 +192,7 @@ body {
 .btn-primary {
     width: 100%;
     padding: 10px;
-    background-color:aquamarine;
+    background-color:rgb(110, 153, 139);
     color: black;
     border: none;
     border-radius: 5px;
@@ -203,7 +201,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: rgb(110, 153, 139);
+    background-color: aquamarine
 }
 
 /* Estilização dos botões de login social */
@@ -225,11 +223,6 @@ body {
     color: aquamarine;
 }
 
-/* Definição da fonte padrão */
-body {
-  font-family: "Poppins", sans-serif;
-
-}
 
 /* Botão personalizado */
 .custom-btn {
@@ -254,14 +247,7 @@ body {
 }
 
 /* Navbar estilizada */
-.navbar {
-  background: rgb(44, 150, 132);
-  padding: 10px 20px;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 0 0 10px 10px;
-  /* Cantos arredondados apenas na parte inferior */
-}
+
 
 /* menu.component.css */
 .dropdown {
@@ -317,3 +303,18 @@ body {
   padding: 10px 10px;
   border: none;
 }
+
+
+        header {
+            background: linear-gradient(135deg, rgb(110, 153, 139) 0%, rgb(110, 153, 139) 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+ .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }

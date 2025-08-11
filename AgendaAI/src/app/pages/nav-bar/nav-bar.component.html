@@ -1,11 +1,32 @@
 <div class="container-fluid" style="width: 100%;">
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="  background-color:  rgb(100, 143, 128);">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: rgb(100, 143, 128);">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">AgendaAi</a>
+      <div class="logo" routerLink="/" style="color: #f1f1f1;" >AgendaAI</div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+ <br>
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <button class="btn custom-btn" type="submit" routerLink="/login-user"
-          *ngIf="!logged"><strong>Login</strong></button>
-         <div *ngIf="logged">
+        <ul class="navbar-nav custom-spacing me-auto mb-2 mb-lg-0">
+ 
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/contato">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink="/equipe">Equipe</a>
+          </li>
+        </ul>
+
+        <button class="btn custom-btn" type="submit" routerLink="/login-user" *ngIf="!logged">
+          <strong>Login</strong>
+        </button>
+
+        <div *ngIf="logged">
           <div class="dropdown" [class.open]="dropdownOpen">
             <button (click)="toggleDropdown()" id="btn_profile">
               <h1>{{primary_letter}}</h1>
