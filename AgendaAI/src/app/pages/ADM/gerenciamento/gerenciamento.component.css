@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, rgb(100, 143, 128) 0%,  rgb(100, 143, 128) 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.empresas-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.empresas-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.empresas-header h1 {
+  color: #2d3748;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.empresas-header h1 i {
+  color: #667eea;
+  margin-right: 15px;
+}
+
+.empresas-header p {
+  color:  rgb(100, 143, 128);
+  font-size: 1.1rem;
+}
+
+.search-section {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-box i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color:  rgb(100, 143, 128);
+  font-size: 1.1rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: rgb(100, 143, 128);
+}
+
+.empresas-table-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.empresas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.empresas-table thead {
+  background: linear-gradient(135deg,rgba(153, 197, 182, 1), rgba(153, 197, 182, 1));
+  color: white;
+}
+
+.empresas-table th {
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.empresas-table tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.empresas-table tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+.empresas-table td {
+  padding: 20px 15px;
+  vertical-align: middle;
+}
+
+.empresa-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.empresa-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.empresa-info strong {
+  color: #2d3748;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.empresa-info p {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.categoria-badge {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.categoria-badge.beleza {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.categoria-badge.saude {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.categoria-badge.fitness {
+  background: #bee3f8;
+  color: #2b6cb0;
+}
+
+.contato-info p {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contato-info i {
+  color: #718096;
+  width: 15px;
+}
+
+.status-badge {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-badge.ativo {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-badge.inativo {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.action-buttons button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.btn-toggle.active {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.btn-toggle:hover {
+  transform: scale(1.1);
+}
+
+.btn-edit {
+  background: #bee3f8;
+  color: #2b6cb0;
+}
+
+.btn-edit:hover {
+  background: #90cdf4;
+  transform: scale(1.1);
+}
+
+.btn-delete {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.btn-delete:hover {
+  background: #feb2b2;
+  transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+  .empresas-table-container {
+    overflow-x: auto;
+  }
+
+  .empresas-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .empresas-header h1 {
+    font-size: 2rem;
+  }
+
+  .empresa-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .contato-info p {
+    justify-content: center;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+}

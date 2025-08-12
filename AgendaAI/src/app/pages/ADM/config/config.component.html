@@ -1,0 +1,451 @@
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cogs"></i> Configurações do Sistema</h1>
+            <p>Gerencie as configurações gerais da plataforma AgendaAI</p>
+        </header>
+
+        <div class="settings-tabs">
+            <button class="tab-btn active" onclick="showTab('general')">
+                <i class="fas fa-sliders-h"></i> Geral
+            </button>
+            <button class="tab-btn" onclick="showTab('notifications')">
+                <i class="fas fa-bell"></i> Notificações
+            </button>
+            <button class="tab-btn" onclick="showTab('security')">
+                <i class="fas fa-shield-alt"></i> Segurança
+            </button>
+            <button class="tab-btn" onclick="showTab('backup')">
+                <i class="fas fa-database"></i> Backup
+            </button>
+            <button class="tab-btn" onclick="showTab('integrations')">
+                <i class="fas fa-plug"></i> Integrações
+            </button>
+        </div>
+
+        <div class="tab-content active" id="general">
+            <div class="settings-section">
+                <h2><i class="fas fa-sliders-h"></i> Configurações Gerais</h2>
+                
+                <div class="setting-group">
+                    <h3>Informações do Site</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nome do Site</label>
+                            <input type="text" value="AgendaAI" placeholder="Nome do site">
+                        </div>
+                        <div class="form-group">
+                            <label>Slogan</label>
+                            <input type="text" value="Simplifique seus agendamentos" placeholder="Slogan do site">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea placeholder="Descrição do site">Plataforma completa para agendamentos online, conectando clientes e empresas de forma simples e eficiente.</textarea>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Configurações de Agendamento</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Antecedência Mínima (horas)</label>
+                            <input type="number" value="2" min="1" max="48">
+                        </div>
+                        <div class="form-group">
+                            <label>Antecedência Máxima (dias)</label>
+                            <input type="number" value="30" min="1" max="365">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Horário de Funcionamento</label>
+                            <div class="time-inputs">
+                                <input type="time" value="08:00"> até <input type="time" value="18:00">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Fuso Horário</label>
+                            <select>
+                                <option value="America/Sao_Paulo" selected>Brasília (GMT-3)</option>
+                                <option value="America/New_York">Nova York (GMT-5)</option>
+                                <option value="Europe/London">Londres (GMT+0)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Configurações de Interface</h3>
+                    <div class="toggle-group">
+                        <div class="toggle-item">
+                            <label>Modo Escuro Disponível</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Mostrar Avaliações</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Permitir Cancelamentos</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="notifications">
+            <div class="settings-section">
+                <h2><i class="fas fa-bell"></i> Configurações de Notificações</h2>
+                
+                <div class="setting-group">
+                    <h3>Notificações por Email</h3>
+                    <div class="toggle-group">
+                        <div class="toggle-item">
+                            <label>Novos Agendamentos</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Cancelamentos</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Novos Usuários</label>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Relatórios Semanais</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Configurações de Email</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email do Remetente</label>
+                            <input type="email" value="noreply@agendaai.com" placeholder="Email do remetente">
+                        </div>
+                        <div class="form-group">
+                            <label>Nome do Remetente</label>
+                            <input type="text" value="AgendaAI" placeholder="Nome do remetente">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Templates de Email</h3>
+                    <div class="template-list">
+                        <div class="template-item">
+                            <div class="template-info">
+                                <h4>Confirmação de Agendamento</h4>
+                                <p>Email enviado quando um agendamento é confirmado</p>
+                            </div>
+                            <button class="btn-edit" onclick="editTemplate('confirmation')">
+                                <i class="fas fa-edit"></i> Editar
+                            </button>
+                        </div>
+                        <div class="template-item">
+                            <div class="template-info">
+                                <h4>Lembrete de Agendamento</h4>
+                                <p>Email enviado 24h antes do agendamento</p>
+                            </div>
+                            <button class="btn-edit" onclick="editTemplate('reminder')">
+                                <i class="fas fa-edit"></i> Editar
+                            </button>
+                        </div>
+                        <div class="template-item">
+                            <div class="template-info">
+                                <h4>Cancelamento</h4>
+                                <p>Email enviado quando um agendamento é cancelado</p>
+                            </div>
+                            <button class="btn-edit" onclick="editTemplate('cancellation')">
+                                <i class="fas fa-edit"></i> Editar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="security">
+            <div class="settings-section">
+                <h2><i class="fas fa-shield-alt"></i> Configurações de Segurança</h2>
+                
+                <div class="setting-group">
+                    <h3>Autenticação</h3>
+                    <div class="toggle-group">
+                        <div class="toggle-item">
+                            <label>Autenticação de Dois Fatores</label>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Login com Google</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Login com Facebook</label>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Políticas de Senha</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Comprimento Mínimo</label>
+                            <input type="number" value="8" min="6" max="20">
+                        </div>
+                        <div class="form-group">
+                            <label>Expiração (dias)</label>
+                            <input type="number" value="90" min="30" max="365">
+                        </div>
+                    </div>
+                    <div class="toggle-group">
+                        <div class="toggle-item">
+                            <label>Exigir Letras Maiúsculas</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Exigir Números</label>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <label>Exigir Símbolos</label>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Logs de Segurança</h3>
+                    <div class="log-list">
+                        <div class="log-item">
+                            <div class="log-icon success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="log-info">
+                                <h4>Login Administrativo</h4>
+                                <p>admin@agendaai.com - 15/01/2024 14:30</p>
+                            </div>
+                        </div>
+                        <div class="log-item">
+                            <div class="log-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="log-info">
+                                <h4>Tentativa de Login Falhada</h4>
+                                <p>unknown@email.com - 15/01/2024 12:15</p>
+                            </div>
+                        </div>
+                        <div class="log-item">
+                            <div class="log-icon success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="log-info">
+                                <h4>Configuração Alterada</h4>
+                                <p>admin@agendaai.com - 14/01/2024 16:45</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="backup">
+            <div class="settings-section">
+                <h2><i class="fas fa-database"></i> Backup e Restauração</h2>
+                
+                <div class="setting-group">
+                    <h3>Backup Automático</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Frequência</label>
+                            <select>
+                                <option value="daily" selected>Diário</option>
+                                <option value="weekly">Semanal</option>
+                                <option value="monthly">Mensal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Horário</label>
+                            <input type="time" value="02:00">
+                        </div>
+                    </div>
+                    <div class="toggle-item">
+                        <label>Backup Automático Ativo</label>
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Backups Recentes</h3>
+                    <div class="backup-list">
+                        <div class="backup-item">
+                            <div class="backup-info">
+                                <h4>Backup Completo</h4>
+                                <p>15/01/2024 02:00 - 245 MB</p>
+                            </div>
+                            <div class="backup-actions">
+                                <button class="btn-download" onclick="downloadBackup('2024-01-15')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                                <button class="btn-restore" onclick="restoreBackup('2024-01-15')">
+                                    <i class="fas fa-undo"></i> Restaurar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="backup-item">
+                            <div class="backup-info">
+                                <h4>Backup Completo</h4>
+                                <p>14/01/2024 02:00 - 243 MB</p>
+                            </div>
+                            <div class="backup-actions">
+                                <button class="btn-download" onclick="downloadBackup('2024-01-14')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                                <button class="btn-restore" onclick="restoreBackup('2024-01-14')">
+                                    <i class="fas fa-undo"></i> Restaurar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="backup-item">
+                            <div class="backup-info">
+                                <h4>Backup Completo</h4>
+                                <p>13/01/2024 02:00 - 241 MB</p>
+                            </div>
+                            <div class="backup-actions">
+                                <button class="btn-download" onclick="downloadBackup('2024-01-13')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                                <button class="btn-restore" onclick="restoreBackup('2024-01-13')">
+                                    <i class="fas fa-undo"></i> Restaurar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Ações Manuais</h3>
+                    <div class="manual-actions">
+                        <button class="btn-backup" onclick="createBackup()">
+                            <i class="fas fa-save"></i> Criar Backup Agora
+                        </button>
+                        <button class="btn-import" onclick="importBackup()">
+                            <i class="fas fa-upload"></i> Importar Backup
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="integrations">
+            <div class="settings-section">
+                <h2><i class="fas fa-plug"></i> Integrações</h2>
+                
+                <div class="setting-group">
+                    <h3>APIs Externas</h3>
+                    <div class="integration-list">
+                        <div class="integration-item">
+                            <div class="integration-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>Google Calendar</h4>
+                                <p>Sincronização com Google Calendar</p>
+                                <span class="status connected">Conectado</span>
+                            </div>
+                            <button class="btn-configure" onclick="configureIntegration('google')">
+                                <i class="fas fa-cog"></i> Configurar
+                            </button>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>WhatsApp Business</h4>
+                                <p>Notificações via WhatsApp</p>
+                                <span class="status disconnected">Desconectado</span>
+                            </div>
+                            <button class="btn-configure" onclick="configureIntegration('whatsapp')">
+                                <i class="fas fa-cog"></i> Configurar
+                            </button>
+                        </div>
+                        
+                        <div class="integration-item">
+                            <div class="integration-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="integration-info">
+                                <h4>Stripe</h4>
+                                <p>Processamento de pagamentos</p>
+                                <span class="status connected">Conectado</span>
+                            </div>
+                            <button class="btn-configure" onclick="configureIntegration('stripe')">
+                                <i class="fas fa-cog"></i> Configurar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="save-section">
+            <button class="btn-save" onclick="saveSettings()">
+                <i class="fas fa-save"></i> Salvar Todas as Configurações
+            </button>
+            <button class="btn-reset" onclick="resetSettings()">
+                <i class="fas fa-undo"></i> Restaurar Padrões
+            </button>
+        </div>
+    </div>
+
+</body>

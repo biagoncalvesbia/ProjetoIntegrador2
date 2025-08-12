@@ -1,0 +1,125 @@
+ <body>
+    <div class="feedback-container">
+        <header class="feedback-header">
+            <h1><i class="fas fa-comments"></i> Reclamações e Sugestões</h1>
+            <p>Gerencie o feedback dos usuários</p>
+        </header>
+
+        <div class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> Todas (12)
+                </button>
+                <button class="filter-btn" data-filter="reclamacao">
+                    <i class="fas fa-exclamation-triangle"></i> Reclamações (7)
+                </button>
+                <button class="filter-btn" data-filter="sugestao">
+                    <i class="fas fa-lightbulb"></i> Sugestões (5)
+                </button>
+                <button class="filter-btn" data-filter="pendente">
+                    <i class="fas fa-clock"></i> Pendentes (8)
+                </button>
+            </div>
+        </div>
+
+        <div class="feedback-grid">
+            <div class="feedback-card" data-type="reclamacao" data-status="pendente">
+                <div class="feedback-header">
+                    <div class="feedback-type reclamacao">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Reclamação
+                    </div>
+                    <div class="feedback-status pendente">Pendente</div>
+                </div>
+                <div class="feedback-content">
+                    <h3>Problema no sistema de agendamento</h3>
+                    <p>O sistema não está permitindo cancelar agendamentos com menos de 24h de antecedência, mesmo quando a política da empresa permite.</p>
+                    <div class="feedback-meta">
+                        <span><i class="fas fa-user"></i> João Silva</span>
+                        <span><i class="fas fa-envelope"></i> joaoemail.com</span>
+                        <span><i class="fas fa-calendar"></i> 15/01/2024</span>
+                    </div>
+                </div>
+                <div class="feedback-actions">
+                    <button class="btn-resolve"><i class="fas fa-check"></i> Resolver</button>
+                    <button class="btn-respond"><i class="fas fa-reply"></i> Responder</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i> Excluir</button>
+                </div>
+            </div>
+
+            <div class="feedback-card" data-type="sugestao" data-status="pendente">
+                <div class="feedback-header">
+                    <div class="feedback-type sugestao">
+                        <i class="fas fa-lightbulb"></i>
+                        Sugestão
+                    </div>
+                    <div class="feedback-status pendente">Pendente</div>
+                </div>
+                <div class="feedback-content">
+                    <h3>Adicionar sistema de avaliações</h3>
+                    <p>Seria interessante ter um sistema onde os clientes possam avaliar os serviços após o atendimento, ajudando outros usuários na escolha.</p>
+                    <div class="feedback-meta">
+                        <span><i class="fas fa-user"></i> Maria Santos</span>
+                        <span><i class="fas fa-envelope"></i> mariaemail.com</span>
+                        <span><i class="fas fa-calendar"></i> 14/01/2024</span>
+                    </div>
+                </div>
+                <div class="feedback-actions">
+                    <button class="btn-resolve"><i class="fas fa-check"></i> Resolver</button>
+                    <button class="btn-respond"><i class="fas fa-reply"></i> Responder</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i> Excluir</button>
+                </div>
+            </div>
+
+            <div class="feedback-card" data-type="reclamacao" data-status="resolvida">
+                <div class="feedback-header">
+                    <div class="feedback-type reclamacao">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Reclamação
+                    </div>
+                    <div class="feedback-status resolvida">Resolvida</div>
+                </div>
+                <div class="feedback-content">
+                    <h3>Dificuldade para encontrar empresas</h3>
+                    <p>O sistema de busca não está funcionando corretamente. Quando procuro por "salão de beleza", não aparecem resultados relevantes.</p>
+                    <div class="feedback-meta">
+                        <span><i class="fas fa-user"></i> Ana Costa</span>
+                        <span><i class="fas fa-envelope"></i> anaemail.com</span>
+                        <span><i class="fas fa-calendar"></i> 13/01/2024</span>
+                    </div>
+                </div>
+                <div class="feedback-actions">
+                    <button class="btn-respond"><i class="fas fa-reply"></i> Responder</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i> Excluir</button>
+                </div>
+            </div>
+
+            <div class="feedback-card" data-type="sugestao" data-status="pendente">
+                <div class="feedback-header">
+                    <div class="feedback-type sugestao">
+                        <i class="fas fa-lightbulb"></i>
+                        Sugestão
+                    </div>
+                    <div class="feedback-status pendente">Pendente</div>
+                </div>
+                <div class="feedback-content">
+                    <h3>App mobile nativo</h3>
+                    <p>Seria ótimo ter um aplicativo mobile nativo para facilitar o uso no celular. O site responsivo é bom, mas um app seria melhor.</p>
+                    <div class="feedback-meta">
+                        <span><i class="fas fa-user"></i> Carlos Oliveira</span>
+                        <span><i class="fas fa-envelope"></i> carlosemail.com</span>
+                        <span><i class="fas fa-calendar"></i> 12/01/2024</span>
+                    </div>
+                </div>
+                <div class="feedback-actions">
+                    <button class="btn-resolve"><i class="fas fa-check"></i> Resolver</button>
+                    <button class="btn-respond"><i class="fas fa-reply"></i> Responder</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i> Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="reclamacoes.js"></script>
+</body>
+

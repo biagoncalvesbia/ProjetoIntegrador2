@@ -19,6 +19,12 @@ import { CasaComponent } from './pages/casa/casa.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { CardtelasComponent } from './pages/cardtelas/cardtelas.component';
 import { NavComponent } from './pages/nav/nav.component';
+import { PainelAdmComponent } from './pages/ADM/painel-adm/painel-adm.component';
+import { UsuarioComponent } from './pages/ADM/usuario/usuario.component';
+import { ReclamacaoComponent } from './pages/ADM/reclamacao/reclamacao.component';
+import { GerenciamentoComponent } from './pages/ADM/gerenciamento/gerenciamento.component';
+import { EditorComponent } from './pages/ADM/editor/editor.component';
+import { ConfigComponent } from './pages/ADM/config/config.component';
 
 
 export const routes: Routes = [
@@ -81,6 +87,24 @@ export const routes: Routes = [
    },
    {
        path: 'nav', component:NavComponent
-   }
+   },
+    {
+        path: 'adm',  component:PainelAdmComponent
+    },
+    {
+        path: 'usuario', component:UsuarioComponent
+    },
+    {
+        path: 'reclamacao', component:ReclamacaoComponent
+    },
+    {
+        path: 'gerenciamento', component: GerenciamentoComponent
+    },
+    {
+        path: 'editor' , component: EditorComponent
+    },
+    {
+        path: 'config', component: ConfigComponent
+    }
 
 ];

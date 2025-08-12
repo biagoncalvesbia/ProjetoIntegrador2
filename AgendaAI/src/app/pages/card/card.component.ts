@@ -6,11 +6,12 @@ import { EntrepreneurService } from '../../services/entrepreneur/entrepreneur.se
 import { RegisterComponent } from '../../pages/login-register/register/register.component';
 import { AgendamentoComponent } from '../../pages/agendamento/agendamento.component';
 import { PreAgendamentoComponent } from '../../pages/pre-agendamento/pre-agendamento.component';
+import { PainelAdmComponent } from '../ADM/painel-adm/painel-adm.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive, NgIf, CommonModule, RegisterComponent, PreAgendamentoComponent, AgendamentoComponent],
+  imports: [RouterLink,RouterLinkActive, NgIf, CommonModule, RegisterComponent, PreAgendamentoComponent, AgendamentoComponent, PainelAdmComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })
