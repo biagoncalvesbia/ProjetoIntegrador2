@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SobreComponent } from '../sobre/sobre.component';
+import { SobreComponent } from '../../sobre/sobre.component';
 import { EquipeComponent } from '../equipe/equipe.component';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { ContatoComponent } from '../contato/contato.component';

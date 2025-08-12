@@ -10,7 +10,6 @@ import { BaseboardComponent } from './pages/baseboard/baseboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
 import { AgendamentoComponent } from './pages/agendamento/agendamento.component';
-import { SobreComponent } from './pages/sobre/sobre.component';
 import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 import { ConfUserComponent } from './pages/conf-user/conf-user.component';
 import { EquipeComponent } from './pages/equipe/equipe.component';
@@ -19,8 +18,10 @@ import { CasaComponent } from './pages/casa/casa.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { CardtelasComponent } from './pages/cardtelas/cardtelas.component';
 import { NavComponent } from './pages/nav/nav.component';
-import { SenhaComponent } from './pages/senha/senha.component';
-
+import { EsqueciComponent } from './pages/esqueci/esqueci.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { CardcasaComponent } from './pages/cardcasa/cardcasa.component';
+import { PlanosComponent } from './pages/planos/planos.component';
 
 export const routes: Routes = [
 
@@ -60,9 +61,6 @@ export const routes: Routes = [
         path: 'perfil', component: PerfilUserComponent
     },
    {
-        path: 'sobre', component: SobreComponent
-   },
-   {
         path: 'conf_user ' , component: ConfUserComponent
    },
    {
@@ -84,7 +82,16 @@ export const routes: Routes = [
        path: 'nav', component:NavComponent
    },
    {
-     path: 'senha', component: SenhaComponent
+      path: 'esqueci', component:EsqueciComponent
+   },
+   {
+      path: 'sobre', component: SobreComponent
+   },
+   {
+      path: 'cardcasa', component: CardcasaComponent
+   },
+   {
+      path: 'planos', component: PlanosComponent
    }
 
 ];
