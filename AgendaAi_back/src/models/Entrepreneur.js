@@ -5,7 +5,11 @@ const entrepreneurSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    estabe: {
+    horario: {
+        type: String,
+        require: true,
+    },
+    tipo: {
         type: String,
         require: true,
     },
@@ -43,6 +47,10 @@ const entrepreneurSchema = new mongoose.Schema({
         require: true,
     },
     estado: {
+        type: String,
+        require: true,
+    },
+    image:{
         type: String,
         require: true,
     },

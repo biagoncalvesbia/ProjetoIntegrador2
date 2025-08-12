@@ -1,14 +1,8 @@
-<div class="container-fluid" style="width: 100%;">
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color:  rgb(100, 143, 128);">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">AgendaAi</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    </nav>
-    </div>
+   <header>
+        <div class="container">
+            <div class="logo" routerLink="/" >AgendaAI</div>
+        </div>
+    </header>
     <br>
                     <div class="center">
                         <div class="card">
@@ -28,6 +22,7 @@
                                     </div>
 
                                     <a routerLink="/register" style="color: rgb(110, 153, 139);"><strong>Cadastrar-se</strong></a>
+                                    <a routerLink="/esqueci" style="color: rgb(110, 153, 139);"><strong> Esqueci minha senha</strong></a>
                                   
                                     <button type="submit" class="btn-primary" [disabled]="!userLoginForm.valid" ><strong>Entrar</strong></button>
 

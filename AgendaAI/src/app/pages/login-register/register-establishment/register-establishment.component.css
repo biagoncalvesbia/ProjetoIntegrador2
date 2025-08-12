@@ -1,6 +1,6 @@
 
         .form-container {
-            background: linear-gradient(135deg, rgb(100, 143, 128) 0%, aquamarine 100%);
+            background: rgb(215, 231, 230);
             min-height: 100vh;
             padding: 20px 0;
         }
@@ -10,13 +10,13 @@
             border-radius: 15px;
         }
         .card-header {
-            background: linear-gradient(135deg, rgb(100, 143, 128) 0%, aquamarine 100%);
+            background: rgb(100, 143, 128) ;
             color: white;
             border-radius: 15px 15px 0 0 !important;
             padding: 25px;
         }
         .btn-primary {
-            background: linear-gradient(135deg, rgb(100, 143, 128) 0%, aquamarine 100%);
+            background: rgb(100, 143, 128);
             border: none;
             padding: 12px 30px;
             border-radius: 25px;
@@ -28,7 +28,7 @@
         }
         .form-control:focus {
             border-color: rgb(100, 143, 128);
-            box-shadow: 0 0 0 0.2rem aquamarine;
+            
         }
         .invalid-feedback {
             display: block;

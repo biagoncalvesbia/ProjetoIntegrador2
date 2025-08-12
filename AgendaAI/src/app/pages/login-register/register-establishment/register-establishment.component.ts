@@ -20,7 +20,8 @@ export class RegisterEstablishmentComponent implements OnInit{
   ngOnInit(): void {
     this.entrepreneurRegisterForm = this.fb.group({
       name: ['', Validators.required],
-      estabe: ['', Validators.required],
+      horario: ['', Validators.required],
+      tipo: ['', Validators.required],
       cpf: ['', Validators.required],
       telefone: ['', Validators.required],
       cep: ['', Validators.required],
@@ -30,6 +31,7 @@ export class RegisterEstablishmentComponent implements OnInit{
       bairro: ['', Validators.required],
       cidade: ['', Validators.required],
       estado: ['', Validators.required],
+      image: ['', Validators.required],
     })
   }
 

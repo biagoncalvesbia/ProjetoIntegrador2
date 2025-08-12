@@ -69,7 +69,7 @@ body {
 .btn-primary {
     width: 100%;
     padding: 10px;
-    background-color:aquamarine;
+    background-color: rgb(110, 153, 139);
     color: black;
     border: none;
     border-radius: 5px;
@@ -97,8 +97,8 @@ body {
 }
 
 .btn-social:hover {
-    color: aquamarine;
-}
+    color: rgb(110, 153, 139); 
+} 
 
 /* Definição da fonte padrão */
 body {
@@ -108,7 +108,7 @@ body {
 
 /* Botão personalizado */
 .custom-btn {
-  background-color: aquamarine;
+  background-color: rgb(110, 153, 139);
   color: black;
   border: none;
 }
@@ -118,7 +118,7 @@ body {
 }
 
 .custom-btn {
-  background-color: aquamarine;
+  background-color: rgb(110, 153, 139);
   color: black;
   border: none;
   padding: 10px 20px;
@@ -192,35 +192,21 @@ body {
   padding: 10px 10px;
   border: none;
 }
-
-
         header {
-            background-color:  rgb(100, 143, 128);
+            background: linear-gradient(135deg, rgb(110, 153, 139) 0%, rgb(110, 153, 139) 100%);
             color: white;
             padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 2rem;
+ .logo {
+            font-size: 2.5rem;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+
+
 
         .search-bar {
             display: flex;

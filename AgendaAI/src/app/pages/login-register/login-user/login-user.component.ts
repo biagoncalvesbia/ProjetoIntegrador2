@@ -7,10 +7,12 @@ import { NgIf } from '@angular/common';
 import { FooterComponent } from "../../footer/footer.component";
 import { NavBarComponent } from "../../nav-bar/nav-bar.component";
 import { CardtelasComponent } from '../../cardtelas/cardtelas.component';
+import { EsqueciComponent } from '../../esqueci/esqueci.component';
+
 
 @Component({
   selector: 'app-login-user',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, NavBarComponent, CardtelasComponent ],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, NavBarComponent, CardtelasComponent, EsqueciComponent],
   templateUrl: './login-user.component.html',
   styleUrl: './login-user.component.css',
   standalone:true
