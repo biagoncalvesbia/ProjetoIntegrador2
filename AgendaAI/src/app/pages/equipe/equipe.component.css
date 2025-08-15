@@ -103,7 +103,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(135deg, rgb(110, 153, 139) 0%, aquamarine 100%);
+            background: linear-gradient(135deg, rgb(110, 153, 139) 0%,  rgb(110, 153, 139) 100%);
             transform: translateX(-50%);
         }
 
@@ -132,7 +132,7 @@
         }
 
         .timeline-date {
-            background: linear-gradient(135deg, rgb(110, 153, 139)0%,aquamarine 100%);
+            background: linear-gradient(135deg, rgb(110, 153, 139)0%, rgb(110, 153, 139) 100%);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -189,7 +189,7 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgb(110, 153, 139) 0%, aquamarine 100%);
+            background: linear-gradient(135deg, rgb(110, 153, 139) 0%, rgb(110, 153, 139) 100%);
             margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
@@ -236,7 +236,7 @@
         }
 
         .vision-section {
-            background: linear-gradient(135deg, rgb(140, 240, 206) 0%, rgb(75, 112, 100) 100%);
+            background: linear-gradient(135deg,  rgb(110, 153, 139) 0%, rgb(75, 112, 100) 100%);
             color: rgb(255, 255, 255);
             padding: 3rem 2rem;
             border-radius: 20px;

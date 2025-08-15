@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
-    color: #1a202c;
+    background-color:  rgba(153, 197, 182, 1);
+    color: white;
     line-height: 1.6;
 }
 
@@ -16,7 +16,7 @@ body {
     background: linear-gradient(135deg, rgb(100, 143, 128) 0%,rgb(100, 143, 128));
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: white;
     top: 0;
     left: 0;
     right: 0;
@@ -144,21 +144,21 @@ body {
 .content-section h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a202c;
+    color: white;
     margin-bottom: 2rem;
 }
 
 /* Cards */
 .card {
-    background: white;
+    background:   rgb(110, 153, 139);
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: white;
     overflow: hidden;
 }
 
 .card-header {
     padding: 1.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(153, 197, 182, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,7 +167,7 @@ body {
 .card-header h3 {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #1a202c;
+    color: white;
 }
 
 .card-content {
@@ -186,7 +186,7 @@ body {
     background: white;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: white;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -249,7 +249,7 @@ body {
 
 .activity-item.orange {
     background: #fef3c7;
-    border-left-color: #f59e0b;
+    border-left-color: #f50b0b;
 }
 
 .activity-item.green {
@@ -262,8 +262,8 @@ body {
     text-align: center;
 }
 
-.activity-item.blue i { color: #3b82f6; }
-.activity-item.orange i { color: #f59e0b; }
+.activity-item.blue i { color: #10b981 }
+.activity-item.orange i { color: #f50b0b; }
 .activity-item.green i { color: #10b981; }
 
 .activity-item span {

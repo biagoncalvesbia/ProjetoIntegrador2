@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, rgb(100, 143, 128) 0%,  rgb(100, 143, 128) 100%);
+  background: linear-gradient(135deg,  rgba(153, 197, 182, 1) 0%,  rgba(153, 197, 182, 1) 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -14,10 +14,11 @@ body {
 .empresas-container {
   max-width: 1400px;
   margin: 0 auto;
+  
 }
 
 .empresas-header {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgb(110, 153, 139);
   padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
@@ -26,7 +27,7 @@ body {
 }
 
 .empresas-header h1 {
-  color: #2d3748;
+  color: white;
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
@@ -37,7 +38,7 @@ body {
 }
 
 .empresas-header p {
-  color:  rgb(100, 143, 128);
+  color: white;
   font-size: 1.1rem;
 }
 
@@ -91,7 +92,7 @@ body {
 }
 
 .empresas-table thead {
-  background: linear-gradient(135deg,rgba(153, 197, 182, 1), rgba(153, 197, 182, 1));
+  background: linear-gradient(135deg, rgb(110, 153, 139),  rgb(110, 153, 139));
   color: white;
 }
 
@@ -126,7 +127,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, rgb(110, 153, 139), rgb(110, 153, 139));
   display: flex;
   align-items: center;
   justify-content: center;

@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg,rgba(153, 197, 182, 1) 0%, rgba(153, 197, 182, 1) 100%);
   min-height: 100vh;
   padding: 20px;
 }
@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, rgb(110, 153, 139),  rgb(110, 153, 139));
   color: white;
   padding: 30px;
   text-align: center;
@@ -127,8 +127,8 @@ body {
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: #4f46e5;
-  border-color: #4f46e5;
+  background: rgb(110, 153, 139);
+  border-color: rgb(110, 153, 139);
   color: white;
 }
 
@@ -156,7 +156,7 @@ body {
 
 .search-box input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color:  rgb(110, 153, 139);
 }
 
 .users-section {
@@ -179,7 +179,7 @@ body {
 }
 
 .user-card:hover {
-  border-color: #4f46e5;
+  border-color:  rgb(110, 153, 139);
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
 }
@@ -230,7 +230,7 @@ body {
 }
 
 .user-type {
-  color: #4f46e5;
+  color:  rgba(153, 197, 182, 1);
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 5px;
@@ -344,7 +344,7 @@ body {
 
 .page-btn {
   padding: 10px 20px;
-  background: #4f46e5;
+  background:  rgb(110, 153, 139) ;
   color: white;
   border: none;
   border-radius: 8px;
@@ -354,7 +354,7 @@ body {
 }
 
 .page-btn:hover {
-  background: #4338ca;
+  background: rgb(110, 153, 139) ;
   transform: translateY(-2px);
 }
 
