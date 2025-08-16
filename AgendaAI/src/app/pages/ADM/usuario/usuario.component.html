@@ -1,0 +1,238 @@
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-users"></i> Gerenciar Usuários</h1>
+            <p>Administre todos os usuários da plataforma AgendaAI</p>
+        </header>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,247</h3>
+                        <p>Total de Usuários</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon active">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,189</h3>
+                        <p>Usuários Ativos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blocked">
+                        <i class="fas fa-user-slash"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>58</h3>
+                        <p>Usuários Bloqueados</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon new">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>23</h3>
+                        <p>Novos Hoje</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterUsers('all')">
+                    <i class="fas fa-users"></i> Todos
+                </button>
+                <button class="filter-btn" onclick="filterUsers('clients')">
+                    <i class="fas fa-user"></i> Clientes
+                </button>
+                <button class="filter-btn" onclick="filterUsers('business')">
+                    <i class="fas fa-briefcase"></i> Empresários
+                </button>
+                <button class="filter-btn" onclick="filterUsers('active')">
+                    <i class="fas fa-user-check"></i> Ativos
+                </button>
+                <button class="filter-btn" onclick="filterUsers('blocked')">
+                    <i class="fas fa-user-slash"></i> Bloqueados
+                </button>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar usuários..." onkeyup="searchUsers(this.value)">
+            </div>
+        </div>
+
+        <div class="users-section">
+            <div class="users-grid">
+                <div class="user-card" data-type="client" data-status="active">
+                    <div class="user-avatar">
+                        <img src="/placeholder.svg?height=60&width=60" alt="Maria Silva">
+                        <span class="status-badge active"></span>
+                    </div>
+                    <div class="user-info">
+                        <h3>Maria Silva</h3>
+                        <p class="user-email">maria.silvaemail.com</p>
+                        <p class="user-type">Cliente</p>
+                        <p class="user-date">Cadastrado em: 15/01/2024</p>
+                    </div>
+                    <div class="user-stats">
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Agendamentos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-label">Avaliação</span>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-view" onclick="viewUser('Maria Silva')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-edit" onclick="editUser('Maria Silva')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-block" onclick="blockUser('Maria Silva')">
+                            <i class="fas fa-ban"></i>
+                        </button>
+                        <button class="btn-delete" onclick="deleteUser('Maria Silva')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="user-card" data-type="business" data-status="active">
+                    <div class="user-avatar">
+                        <img src="/placeholder.svg?height=60&width=60" alt="João Santos">
+                        <span class="status-badge active"></span>
+                    </div>
+                    <div class="user-info">
+                        <h3>João Santos</h3>
+                        <p class="user-email">joao.santosempresa.com</p>
+                        <p class="user-type">Empresário</p>
+                        <p class="user-date">Cadastrado em: 10/01/2024</p>
+                    </div>
+                    <div class="user-stats">
+                        <div class="stat">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label">Agendamentos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Avaliação</span>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-view" onclick="viewUser('João Santos')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-edit" onclick="editUser('João Santos')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-block" onclick="blockUser('João Santos')">
+                            <i class="fas fa-ban"></i>
+                        </button>
+                        <button class="btn-delete" onclick="deleteUser('João Santos')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="user-card" data-type="client" data-status="blocked">
+                    <div class="user-avatar">
+                        <img src="/placeholder.svg?height=60&width=60" alt="Carlos Lima">
+                        <span class="status-badge blocked"></span>
+                    </div>
+                    <div class="user-info">
+                        <h3>Carlos Lima</h3>
+                        <p class="user-email">carlos.limaemail.com</p>
+                        <p class="user-type">Cliente</p>
+                        <p class="user-date">Cadastrado em: 05/01/2024</p>
+                    </div>
+                    <div class="user-stats">
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Agendamentos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2.1</span>
+                            <span class="stat-label">Avaliação</span>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-view" onclick="viewUser('Carlos Lima')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-edit" onclick="editUser('Carlos Lima')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-unblock" onclick="unblockUser('Carlos Lima')">
+                            <i class="fas fa-unlock"></i>
+                        </button>
+                        <button class="btn-delete" onclick="deleteUser('Carlos Lima')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="user-card" data-type="business" data-status="active">
+                    <div class="user-avatar">
+                        <img src="/placeholder.svg?height=60&width=60" alt="Ana Costa">
+                        <span class="status-badge active"></span>
+                    </div>
+                    <div class="user-info">
+                        <h3>Ana Costa</h3>
+                        <p class="user-email">ana.costasalao.com</p>
+                        <p class="user-type">Empresária</p>
+                        <p class="user-date">Cadastrado em: 20/12/2023</p>
+                    </div>
+                    <div class="user-stats">
+                        <div class="stat">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Agendamentos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.7</span>
+                            <span class="stat-label">Avaliação</span>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn-view" onclick="viewUser('Ana Costa')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn-edit" onclick="editUser('Ana Costa')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-block" onclick="blockUser('Ana Costa')">
+                            <i class="fas fa-ban"></i>
+                        </button>
+                        <button class="btn-delete" onclick="deleteUser('Ana Costa')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn" onclick="previousPage()">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <span class="page-info">Página 1 de 25</span>
+            <button class="page-btn" onclick="nextPage()">
+                Próxima <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="usuarios.js"></script>
+</body>
+

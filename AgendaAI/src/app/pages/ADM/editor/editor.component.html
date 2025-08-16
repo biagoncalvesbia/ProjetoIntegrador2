@@ -1,0 +1,144 @@
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-images"></i> Editor de Carrossel</h1>
+            <p>Gerencie as imagens do carrossel principal do site</p>
+        </header>
+
+        <div class="carousel-section">
+            <div class="carousel-preview">
+                <h2>Preview do Carrossel</h2>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-slide active">
+                            <img src="/placeholder.svg?height=300&width=800" alt="Slide 1">
+                            <div class="slide-overlay">
+                                <h3>Agendamento Online Fácil</h3>
+                                <p>Simplifique seus agendamentos com nossa plataforma</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="/placeholder.svg?height=300&width=800" alt="Slide 2">
+                            <div class="slide-overlay">
+                                <h3>Empresas Parceiras</h3>
+                                <p>Conecte-se com os melhores profissionais</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="/placeholder.svg?height=300&width=800" alt="Slide 3">
+                            <div class="slide-overlay">
+                                <h3>Gestão de Horários</h3>
+                                <p>Organize sua agenda de forma inteligente</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="previousSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="currentSlide(1)"></span>
+                        <span class="indicator" onclick="currentSlide(2)"></span>
+                        <span class="indicator" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slides-manager">
+                <h2>Gerenciar Slides</h2>
+                <div class="slides-list">
+                    <div class="slide-item active">
+                        <div class="slide-thumbnail">
+                            <img src="/placeholder.svg?height=80&width=120" alt="Slide 1">
+                        </div>
+                        <div class="slide-info">
+                            <input type="text" value="Agendamento Online Fácil" class="slide-title">
+                            <textarea class="slide-description">Simplifique seus agendamentos com nossa plataforma</textarea>
+                        </div>
+                        <div class="slide-actions">
+                            <button class="btn-edit" onclick="editSlide(1)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteSlide(1)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="slide-item">
+                        <div class="slide-thumbnail">
+                            <img src="/placeholder.svg?height=80&width=120" alt="Slide 2">
+                        </div>
+                        <div class="slide-info">
+                            <input type="text" value="Empresas Parceiras" class="slide-title">
+                            <textarea class="slide-description">Conecte-se com os melhores profissionais</textarea>
+                        </div>
+                        <div class="slide-actions">
+                            <button class="btn-edit" onclick="editSlide(2)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteSlide(2)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="slide-item">
+                        <div class="slide-thumbnail">
+                            <img src="/placeholder.svg?height=80&width=120" alt="Slide 3">
+                        </div>
+                        <div class="slide-info">
+                            <input type="text" value="Gestão de Horários" class="slide-title">
+                            <textarea class="slide-description">Organize sua agenda de forma inteligente</textarea>
+                        </div>
+                        <div class="slide-actions">
+                            <button class="btn-edit" onclick="editSlide(3)">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteSlide(3)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-add-slide" onclick="addSlide()">
+                    <i class="fas fa-plus"></i> Adicionar Novo Slide
+                </button>
+            </div>
+        </div>
+
+        <div class="carousel-settings">
+            <h2>Configurações do Carrossel</h2>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" checked> Autoplay
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>Intervalo (segundos):</label>
+                    <input type="number" value="5" min="1" max="10">
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" checked> Mostrar Indicadores
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" checked> Mostrar Setas
+                    </label>
+                </div>
+            </div>
+            <button class="btn-save" onclick="saveSettings()">
+                <i class="fas fa-save"></i> Salvar Configurações
+            </button>
+        </div>
+    </div>
+
+    <script src="carrossel.js"></script>
+</body>
+

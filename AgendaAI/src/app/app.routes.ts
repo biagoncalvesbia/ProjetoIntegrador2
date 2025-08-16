@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
-import path from 'path';
 import { HomeComponent } from './pages/home/home.component';
-import { NavBarComponent } from './pages/navbar/nav-bar/nav-bar.component';
 import { RegisterComponent } from './pages/login-register/register/register.component';
 import { LoginUserComponent } from './pages/login-register/login-user/login-user.component';
 import { RegisterEstablishmentComponent } from './pages/login-register/register-establishment/register-establishment.component';
@@ -22,6 +20,12 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { CardcasaComponent } from './pages/cardcasa/cardcasa.component';
 import { PlanosComponent } from './pages/planos/planos.component';
 import { RodapeComponent } from './pages/rodape/rodape.component';
+import { ConfigComponent } from './pages/ADM/config/config.component';
+import { EditorComponent } from './pages/ADM/editor/editor.component';
+import { GerenciamentoComponent } from './pages/ADM/gerenciamento/gerenciamento.component';
+import { PainelAdmComponent } from './pages/ADM/painel-adm/painel-adm.component';
+import { ReclamacaoComponent } from './pages/ADM/reclamacao/reclamacao.component';
+import { UsuarioComponent } from './pages/ADM/usuario/usuario.component';
 
 export const routes: Routes = [
 
@@ -78,6 +82,24 @@ export const routes: Routes = [
    {
        path: 'nav', component:NavComponent
    },
+    {
+        path: 'adm',  component:PainelAdmComponent
+    },
+    {
+        path: 'usuario', component:UsuarioComponent
+    },
+    {
+        path: 'reclamacao', component:ReclamacaoComponent
+    },
+    {
+        path: 'gerenciamento', component: GerenciamentoComponent
+    },
+    {
+        path: 'editor' , component: EditorComponent
+    },
+    {
+        path: 'config', component: ConfigComponent
+    },
    {
       path: 'esqueci', component:EsqueciComponent
    },
