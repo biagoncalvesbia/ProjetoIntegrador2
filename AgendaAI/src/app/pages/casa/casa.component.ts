@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from "../nav-bar/nav-bar.component";
+import { NavBarComponent } from "../navbar/nav-bar/nav-bar.component";
 import { RegisterEstablishmentComponent } from '../login-register/register-establishment/register-establishment.component';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CardcasaComponent } from '../cardcasa/cardcasa.component';

@@ -1,9 +1,11 @@
+import { RodapeComponent } from './../../rodape/rodape.component';
 import { Component, inject, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { EntrepreneurService } from '../../../services/entrepreneur/entrepreneur.service';
 import { IEntrepreneur} from '../../../types/entrepreneur';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
+
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import path from 'path';
 import { HomeComponent } from './pages/home/home.component';
-import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
+import { NavBarComponent } from './pages/navbar/nav-bar/nav-bar.component';
 import { RegisterComponent } from './pages/login-register/register/register.component';
 import { LoginUserComponent } from './pages/login-register/login-user/login-user.component';
 import { RegisterEstablishmentComponent } from './pages/login-register/register-establishment/register-establishment.component';
@@ -13,15 +13,15 @@ import { AgendamentoComponent } from './pages/agendamento/agendamento.component'
 import { PerfilUserComponent } from './pages/perfil-user/perfil-user.component';
 import { ConfUserComponent } from './pages/conf-user/conf-user.component';
 import { EquipeComponent } from './pages/equipe/equipe.component';
-import { FooterComponent } from './pages/footer/footer.component';
 import { CasaComponent } from './pages/casa/casa.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 import { CardtelasComponent } from './pages/cardtelas/cardtelas.component';
-import { NavComponent } from './pages/nav/nav.component';
+import { NavComponent } from './pages/navbar/nav/nav.component';
 import { EsqueciComponent } from './pages/esqueci/esqueci.component';
-import { SobreComponent } from './sobre/sobre.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 import { CardcasaComponent } from './pages/cardcasa/cardcasa.component';
 import { PlanosComponent } from './pages/planos/planos.component';
+import { RodapeComponent } from './pages/rodape/rodape.component';
 
 export const routes: Routes = [
 
@@ -67,9 +67,6 @@ export const routes: Routes = [
         path: 'equipe' , component: EquipeComponent
    },
    {
-        path: 'footer', component: FooterComponent
-   },
-   {
         path: 'casa', component:CasaComponent
    },
    {
@@ -92,6 +89,9 @@ export const routes: Routes = [
    },
    {
       path: 'planos', component: PlanosComponent
+   },
+   {
+      path: 'rodape', component: RodapeComponent
    }
 
 ];

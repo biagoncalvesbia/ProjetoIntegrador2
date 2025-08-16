@@ -4,15 +4,15 @@ import { UserService } from '../../../services/user/user.service';
 import {  FormGroup,  FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ILogin } from '../../../types/Login';
 import { NgIf } from '@angular/common';
-import { FooterComponent } from "../../footer/footer.component";
-import { NavBarComponent } from "../../nav-bar/nav-bar.component";
+import { NavBarComponent } from "../../navbar/nav-bar/nav-bar.component";
 import { CardtelasComponent } from '../../cardtelas/cardtelas.component';
 import { EsqueciComponent } from '../../esqueci/esqueci.component';
+import { RodapeComponent } from '../../rodape/rodape.component';
 
 
 @Component({
   selector: 'app-login-user',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, NavBarComponent, CardtelasComponent, EsqueciComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, NavBarComponent, CardtelasComponent, EsqueciComponent, RodapeComponent],
   templateUrl: './login-user.component.html',
   styleUrl: './login-user.component.css',
   standalone:true

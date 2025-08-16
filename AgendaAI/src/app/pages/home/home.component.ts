@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from "../../pages/nav-bar/nav-bar.component";
+import { NavBarComponent } from "../navbar/nav-bar/nav-bar.component";
 import { CardComponent } from '../card/card.component';
-import { FooterComponent } from "../../pages/footer/footer.component";
+import { RodapeComponent } from '../rodape/rodape.component';
+
 
 
 @Component({
   selector: 'app-home',
-  imports: [NavBarComponent, CardComponent, FooterComponent],
+  imports: [NavBarComponent, CardComponent,RodapeComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   standalone: true

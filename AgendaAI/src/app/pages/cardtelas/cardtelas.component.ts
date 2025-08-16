@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CasaComponent } from '../casa/casa.component';
-import { NavComponent } from "../nav/nav.component";
+import { NavComponent } from "../navbar/nav/nav.component";
 
 @Component({
   selector: 'app-cardtelas',

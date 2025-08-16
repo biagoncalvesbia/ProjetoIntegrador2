@@ -5,12 +5,12 @@ import { IUser } from '../../../types/User';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
 import { LoginUserComponent } from '../login-user/login-user.component';
-import { FooterComponent } from "../../footer/footer.component";
+import { RodapeComponent } from '../../rodape/rodape.component';
 
 
 @Component({
   selector: 'app-register',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, FooterComponent, LoginUserComponent],
+  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf, LoginUserComponent, RodapeComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
   standalone: true

@@ -1,19 +1,18 @@
-
+   <header>
+        <div class="container">
+            <div class="logo" routerLink="/" >AgendaAI</div>
+        </div>
+    </header>
 
     <div class="form-container">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="card">
-                        <div class="card-header text-center">
-                            <h2 class="mb-0">
-                                <i class="bi bi-building me-2"></i>
-                                Cadastro de Estabelecimento
-                            </h2>
-                            <p class="mb-0 mt-2 opacity-75">Preencha os dados para criar sua conta</p>
-                        </div>
+                       
                         <div class="card-body p-4">
-                            <form id="cadastroForm" novalidate>
+                            <form [formGroup]="establishmentRegisterForm" (ngSubmit)="registerEstablishment()">
+
                                 <!-- Dados Pessoais -->
                                 <div class="row mb-4">
                                     <div class="col-12">
@@ -30,20 +29,15 @@
                                             <i class="bi bi-person me-1"></i>
                                             Nome do Estabelecimento *
                                         </label>
-                                        <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" required>
-                                        <div class="invalid-feedback">
-                                            
-                                        </div>
-                                    </div>
+                                        <input type="text" class="form-control" id="name" formControlName="name" />
+                                 
                                     <div class="col-md-6">
-                                        <label for="email" class="form-label">
+                                        <label for="text" class="form-label">
                                             <i class="bi bi-envelope me-1"></i>
                                             Horarios de Atendimentos *
                                         </label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <div class="invalid-feedback">
-                                           
-                                        </div>
+                                        <input type="text" class="form-control" id="Horario"  placeholder="9:00 as 18:00" formControlName="horario" />
+                                    
                                     </div>
                                 </div>
 
@@ -55,20 +49,15 @@
                                             <i class="bi bi-building me-1"></i>
                                             Tipos de Atendimentos
                                         </label>
-                                        <input type="text" class="form-control" id="nomeEstabelecimento" name="nomeEstabelecimento" required>
-                                        <div class="invalid-feedback">
-                                       
-                                        </div>
+                                        <input type="text" class="form-control" id="tipo" formControlName="tipo"/>
+                                     
                                     </div>
                                     <div class="col-md-6">
                                         <label for="cnpj" class="form-label">
                                             <i class="bi bi-card-text me-1"></i>
                                             CPF *
                                         </label>
-                                        <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="000.000.000-00" maxlength="18" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe um CPF válido (000.000.000-00).
-                                        </div>
+                                        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="18" formControlName="cpf" />
                                     </div>
                                 </div>
 
@@ -88,10 +77,7 @@
                                             <i class="bi bi-phone me-1"></i>
                                             Telefone com DDD *
                                         </label>
-                                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe um telefone válido com DDD.
-                                        </div>
+                                        <input type="tel" class="form-control" id="telefone"  placeholder="(00) 00000-0000" maxlength="15" formControlName="telefone" />
                                     </div>
                                 </div>
 
@@ -111,30 +97,23 @@
                                             <i class="bi bi-mailbox me-1"></i>
                                             CEP *
                                         </label>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" maxlength="9" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe o CEP.
-                                        </div>
+                                        <input type="text" class="form-control" id="cep" placeholder="00000-000" maxlength="9" formControlName="cep" />
+
                                     </div>
                                     <div class="col-md-6">
                                         <label for="logradouro" class="form-label">
                                             <i class="bi bi-house me-1"></i>
                                             Logradouro *
                                         </label>
-                                        <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe o logradouro.
-                                        </div>
+                                        <input type="text" class="form-control" id="rua"  placeholder="Rua, Avenida, etc." formControlName="rua" />
+                                
                                     </div>
                                     <div class="col-md-3">
                                         <label for="numero" class="form-label">
                                             <i class="bi bi-hash me-1"></i>
                                             Número *
                                         </label>
-                                        <input type="text" class="form-control" id="numero" name="numero" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe o número.
-                                        </div>
+                                        <input type="text" class="form-control" id="numero" formControlName="numero" />
                                     </div>
                                 </div>
 
@@ -144,27 +123,23 @@
                                             <i class="bi bi-plus-circle me-1"></i>
                                             Complemento
                                         </label>
-                                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apto, Sala, etc.">
+                                        <input type="text" class="form-control" id="comple" placeholder="Apto, Sala, etc." formControlName="comple" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="bairro" class="form-label">
                                             <i class="bi bi-map me-1"></i>
                                             Bairro *
                                         </label>
-                                        <input type="text" class="form-control" id="bairro" name="bairro" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe o bairro.
-                                        </div>
+                                        <input type="text" class="form-control" id="bairro" formControlName="bairro" />
+                                
                                     </div>
                                     <div class="col-md-4">
                                         <label for="cidade" class="form-label">
                                             <i class="bi bi-building me-1"></i>
                                             Cidade *
                                         </label>
-                                        <input type="text" class="form-control" id="cidade" name="cidade" required>
-                                        <div class="invalid-feedback">
-                                            Por favor, informe a cidade.
-                                        </div>
+                                        <input type="text" class="form-control" id="cidade" name="cidade" formControlName="cidade" />
+                                  
                                     </div>
                                 </div>
 
@@ -174,7 +149,7 @@
                                             <i class="bi bi-flag me-1"></i>
                                             Estado *
                                         </label>
-                                        <select class="form-select" id="estado" name="estado" required>
+                                        <select class="form-select" id="estado" formControlName="estado"/>
                                             <option value="">Selecione o estado</option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
@@ -204,9 +179,7 @@
                                             <option value="SE">Sergipe</option>
                                             <option value="TO">Tocantins</option>
                                         </select>
-                                        <div class="invalid-feedback">
-                                            Por favor, selecione o estado.
-                                        </div>
+                                     
                                     </div>
                                 </div>
 
@@ -255,9 +228,8 @@
                                             <i class="bi bi-arrow-clockwise me-1"></i>
                                             Limpar
                                         </button>
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="bi bi-check-circle me-1"></i>
-                                            Cadastrar
+                                        <button type="submit" class="btn btn-primary" [disabled]="!establishmentRegisterForm.valid">
+                                          <strong>  Cadastrar</strong>
                                         </button>
                                     </div>
                                 </div>
@@ -269,4 +241,4 @@
         </div>
     </div>
 
-  
+

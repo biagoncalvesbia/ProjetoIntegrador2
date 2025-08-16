@@ -4,13 +4,14 @@ import { ContatoService } from '../../services/contato/contato.service';
 import { IContato } from '../../types/contato';
 import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms'
 import { NgIf } from '@angular/common';
-import { NavComponent } from "../nav/nav.component";
+import { NavComponent } from "../navbar/nav/nav.component";
 import { ReactiveFormsModule } from '@angular/forms';
+import { RodapeComponent } from '../rodape/rodape.component';
 
 
 @Component({
   selector: 'app-contato',
-  imports: [RouterLink, RouterLinkActive, NavComponent, FormsModule, ReactiveFormsModule, NgIf],
+  imports: [RouterLink, RouterLinkActive, NavComponent, FormsModule, ReactiveFormsModule, NgIf, RodapeComponent],
   templateUrl: './contato.component.html',
   styleUrl: './contato.component.css'
 })

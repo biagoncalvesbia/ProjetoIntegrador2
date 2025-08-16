@@ -1,7 +1,7 @@
-import { EntrepreneurService } from '../../services/entrepreneur/entrepreneur.service';
+import { EntrepreneurService } from '../../../services/entrepreneur/entrepreneur.service';
 import { Component, type OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { UserService } from '../../services/user/user.service';
+import { UserService } from '../../../services/user/user.service';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -33,8 +33,8 @@ export class NavBarComponent implements OnInit {
     console.log('perfil');
   }
 
-  config() {
-    console.log('config');
+  empresa() {
+    console.log('empresa');
   }
 
   logout() {

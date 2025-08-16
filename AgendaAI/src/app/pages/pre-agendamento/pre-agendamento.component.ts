@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NavBarComponent } from "../nav-bar/nav-bar.component";
+import { NavBarComponent } from "../navbar/nav-bar/nav-bar.component";
 import { AgendamentoComponent } from '../agendamento/agendamento.component';
 
 @Component({
