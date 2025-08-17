@@ -3,18 +3,19 @@ import createToken from "../utils/createToken.js"
 import { hashPass } from "../utils/hashPass.js"
 
 export const Register = async (req, res) => {
-  const { name, surname, email, password, confirmPass } = req.body
+  const { name, email, password, confirmPass } = req.body
+  if (password !== confirmPass) {
+    return res.status(400).json({ message: "As senhas estão diferentes" })
+  }
+
   const verifyUser = await User.findOne({
     email: email
   })
 
   if (verifyUser) {
-    return res.status(400).json({ message: "User already exists" })
+    return res.status(400).json({ message: "Usuário já existe" })
   }
 
-  if (password !== confirmPass) {
-    return res.status(400).json({ message: "Passwords do not match" })
-  }
 
   const hash = await hashPass(password)
 
@@ -23,13 +24,12 @@ export const Register = async (req, res) => {
       name: name,
       email: email,
       password: hash,
-      surname: surname
     })
     await user.save()
     return res.status(201).json(user)
   } catch (error) {
     console.error(error)
-    return res.status(500).json({ message: "Internal server error" })
+    return res.status(500).json({ message: "Problemas no servidor" })
   }
 }
 
@@ -56,5 +56,17 @@ export const Login = async (req, res) => {
     }
   } catch (error) {
     console.error(error)
+  }
+}
+
+export const GetUserById = async (req, res) => {
+  const { id } = req.params
+  try {
+    const user = await User.findById(id)
+    if(!user) {
+      return res.status(400).json({message: "Usuário não existe"})
+    }
+  } catch (error) {
+    console.log(error)
   }
 }

@@ -5,10 +5,6 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    surname: {
-      type: String,
-      required: true
-    },
     email: {
       type: String,
       required: true,
@@ -24,6 +20,10 @@ const userSchema = new mongoose.Schema({
         ref: "Scheduling"
       }
     ],
+    entrepreneur: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Entrepreneur"
+    },
     created_at: {
       type: Date,
       default: Date.now,

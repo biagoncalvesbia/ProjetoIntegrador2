@@ -63,9 +63,3 @@ const entrepreneurSchema = new mongoose.Schema({
 
 export const Entrepreneur = mongoose.model('Entrepreneur', entrepreneurSchema)
 
-//     schedulings: [
- //       {
-   //         type: mongoose.Schema.Types.ObjectId,
-     //       ref: "Scheduling"
-       // }
-   // ],
