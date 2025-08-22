@@ -2,7 +2,7 @@ import { Entrepreneur } from "../models/Entrepreneur.js"
 import createToken from "../utils/createToken.js"
 import { hashPass } from "../utils/hashPass.js"
 export const Register = async (req, res) => {
-  const {name, horario, tipo, cpf, telefone, cep, rua, numero, comple, bairro, cidade, estado, image} = req.body
+  const {name, cpf, telefone, cep, rua, numero, comple, bairro, cidade, estado, image} = req.body
   const verifyEntrepreneur = await Entrepreneur.findOne({
     email: email
   })
@@ -20,8 +20,6 @@ export const Register = async (req, res) => {
   try {
     const entrepreneur = await Entrepreneur.create({
      name,
-     horario,
-     tipo,
      cpf,
      telefone,
      cep,
@@ -43,23 +41,19 @@ export const Register = async (req, res) => {
   }
 }
 
-export const Login = async (req, res)  => {
-  const {email, password} = req.body
+//export const Login = async (req, res)  => {
+  //const {email, password} = req.body
 
-  const verifyEntrepreneur = await Entrepreneur.findOne({
-    email: email
-  })
-
-  if(verifyEntrepreneur) {
-    try {
-      const token = createToken({name: verifyEntrepreneur.password})
-      res.status(200).json({
-        ...verifyEntrepreneur,
-        password: undefined,
-        token: token
-      })
-    } catch (error) {
-      console.error(error)
-    }
-  }
-}
+ // if(verifyEntrepreneur) {
+   // try {
+     // const token = createToken({name: verifyEntrepreneur.password})
+   //   res.status(200).json({
+      //  ...verifyEntrepreneur,
+     //   password: undefined,
+     //   token: token
+     // })
+   // } catch (error) {
+     // console.error(error)
+   // }
+  //}
+//}

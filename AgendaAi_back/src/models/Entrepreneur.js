@@ -5,14 +5,6 @@ const entrepreneurSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    horario: {
-        type: String,
-        require: true,
-    },
-    tipo: {
-        type: String,
-        require: true,
-    },
     cpf: {
         type: String,
         require: true,
