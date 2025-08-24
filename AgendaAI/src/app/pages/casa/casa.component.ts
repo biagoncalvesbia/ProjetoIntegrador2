@@ -4,10 +4,11 @@ import { RegisterEstablishmentComponent } from '../login-register/register-estab
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CardcasaComponent } from '../cardcasa/cardcasa.component';
 import { PlanosComponent } from '../planos/planos.component';
+import { NavComponent } from '../navbar/nav/nav.component';
 
 @Component({
   selector: 'app-casa',
-  imports: [NavBarComponent, RegisterEstablishmentComponent, RouterLink, RouterLinkActive, CardcasaComponent, PlanosComponent],
+  imports: [NavBarComponent, RegisterEstablishmentComponent, RouterLink, RouterLinkActive, CardcasaComponent, PlanosComponent, NavComponent],
   templateUrl: './casa.component.html',
   standalone: true,
   styleUrl: './casa.component.css'

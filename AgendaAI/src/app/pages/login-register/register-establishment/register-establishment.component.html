@@ -1,252 +1,55 @@
-   <header>
-        <div class="container">
-            <div class="logo" routerLink="/" >AgendaAI</div>
-        </div>
-    </header>
+<form [formGroup]="entrepreneurRegisterForm" (ngSubmit)="registerEntrepreneur()">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Nome Estabecimento</label>
+    <input type="text" class="form-control" id="name" placeholder="Escreva o nome do estabelecimento"
+      formControlName="name" />
+  </div>
+  <div class="col-md-6">
+    <label for="cep" class="form-label">CPF</label>
+    <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" formControlName="cpf" />
+  </div>
+  <div class="col-12">
+    <label for="telefone" class="form-label">Telefone</label>
+    <input type="text" class="form-control" id="telefone" placeholder="(16) 99999-9999" formControlName="telefone" />
+  </div>
+  <div class="col-12">
+    <label for="cep" class="form-label">CEP</label>
+    <input type="text" class="form-control" id="cep" placeholder="Escrreva seu CEP" formControlName="cep" />
+  </div>
+  <div class="col-12">
+    <label for="rua" class="form-label">rua</label>
+    <input type="text" class="form-control" id="rua" placeholder="Escrreva sua rua" formControlName="rua" />
+  </div>
+  <div class="col-12">
+    <label for="numero" class="form-label">numero</label>
+    <input type="text" class="form-control" id="numero" placeholder="Escreva o numero" formControlName="numero" />
+  </div>
+  <div class="col-12">
+    <label for="comple" class="form-label">complemento</label>
+    <input type="text" class="form-control" id="comple" placeholder="Escrreva se haver um complemento"
+      formControlName="comple" />
+  </div>
+  <div class="col-12">
+    <label for="bairro" class="form-label">Bairro</label>
+    <input type="text" class="form-control" id="bairro" placeholder="Escreva seu bairro" formControlName="bairro" />
+  </div>
+  <div class="col-12">
+    <label for="cidade" class="form-label">Cidade</label>
+    <input type="text" class="form-control" id="cidade" placeholder="Escrreva sua cidade" formControlName="cidade" />
+  </div>
 
-    <div class="form-container">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div class="card">
-                       
-                        <div class="card-body p-4">
-                            <form [formGroup]="establishmentRegisterForm" (ngSubmit)="registerEstablishment()">
-
-                                <!-- Dados Pessoais -->
-                                <div class="row mb-4">
-                                    <div class="col-12">
-                                        <h5 class="text-primary mb-3">
-                                            <i class="bi bi-person-circle me-2"></i>
-                                            Dados do Estabelecimento
-                                        </h5>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="nomeCompleto" class="form-label">
-                                            <i class="bi bi-person me-1"></i>
-                                            Nome do Estabelecimento *
-                                        </label>
-                                        <input type="text" class="form-control" id="name" formControlName="name" />
-                                 
-                                    <div class="col-md-6">
-                                        <label for="text" class="form-label">
-                                            <i class="bi bi-envelope me-1"></i>
-                                            Horarios de Atendimentos *
-                                        </label>
-                                        <input type="text" class="form-control" id="Horario"  placeholder="9:00 as 18:00" formControlName="horario" />
-                                    
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="nomeEstabelecimento" class="form-label">
-                                            <i class="bi bi-building me-1"></i>
-                                            Tipos de Atendimentos
-                                        </label>
-                                        <input type="text" class="form-control" id="tipo" formControlName="tipo"/>
-                                     
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="cnpj" class="form-label">
-                                            <i class="bi bi-card-text me-1"></i>
-                                            CPF *
-                                        </label>
-                                        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="18" formControlName="cpf" />
-                                    </div>
-                                </div>
-
-                                <!-- Contato -->
-                                <div class="row mb-4 mt-4">
-                                    <div class="col-12">
-                                        <h5 class="text-primary mb-3">
-                                            <i class="bi bi-telephone me-2"></i>
-                                            Contato
-                                        </h5>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="telefone" class="form-label">
-                                            <i class="bi bi-phone me-1"></i>
-                                            Telefone com DDD *
-                                        </label>
-                                        <input type="tel" class="form-control" id="telefone"  placeholder="(00) 00000-0000" maxlength="15" formControlName="telefone" />
-                                    </div>
-                                </div>
-
-                                <!-- Endereço -->
-                                <div class="row mb-4 mt-4">
-                                    <div class="col-12">
-                                        <h5 class="text-primary mb-3">
-                                            <i class="bi bi-geo-alt me-2"></i>
-                                            Endereço Completo
-                                        </h5>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-3">
-                                        <label for="cep" class="form-label">
-                                            <i class="bi bi-mailbox me-1"></i>
-                                            CEP *
-                                        </label>
-                                        <input type="text" class="form-control" id="cep" placeholder="00000-000" maxlength="9" formControlName="cep" />
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="logradouro" class="form-label">
-                                            <i class="bi bi-house me-1"></i>
-                                            Logradouro *
-                                        </label>
-                                        <input type="text" class="form-control" id="rua"  placeholder="Rua, Avenida, etc." formControlName="rua" />
-                                
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="numero" class="form-label">
-                                            <i class="bi bi-hash me-1"></i>
-                                            Número *
-                                        </label>
-                                        <input type="text" class="form-control" id="numero" formControlName="numero" />
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-4">
-                                        <label for="complemento" class="form-label">
-                                            <i class="bi bi-plus-circle me-1"></i>
-                                            Complemento
-                                        </label>
-                                        <input type="text" class="form-control" id="comple" placeholder="Apto, Sala, etc." formControlName="comple" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="bairro" class="form-label">
-                                            <i class="bi bi-map me-1"></i>
-                                            Bairro *
-                                        </label>
-                                        <input type="text" class="form-control" id="bairro" formControlName="bairro" />
-                                
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="cidade" class="form-label">
-                                            <i class="bi bi-building me-1"></i>
-                                            Cidade *
-                                        </label>
-                                        <input type="text" class="form-control" id="cidade"  formControlName="cidade" />
-                                  
-                                    </div>
-                                </div>
-
-                                    <div class="col-md-4">
-                                        <label for="cidade" class="form-label">
-                                            <i class="bi bi-building me-1"></i>
-                                            qualquer coisa
-                                        </label>
-                                        <input type="text" class="form-control" id="cidade"  formControlName="cidade" />
-                                  
-                                    </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="estado" class="form-label">
-                                            <i class="bi bi-flag me-1"></i>
-                                            Estado *
-                                        </label>
-                                        <select class="form-select" id="estado" formControlName="estado"/>
-                                            <option value="">Selecione o estado</option>
-                                            <option value="AC">Acre</option>
-                                            <option value="AL">Alagoas</option>
-                                            <option value="AP">Amapá</option>
-                                            <option value="AM">Amazonas</option>
-                                            <option value="BA">Bahia</option>
-                                            <option value="CE">Ceará</option>
-                                            <option value="DF">Distrito Federal</option>
-                                            <option value="ES">Espírito Santo</option>
-                                            <option value="GO">Goiás</option>
-                                            <option value="MA">Maranhão</option>
-                                            <option value="MT">Mato Grosso</option>
-                                            <option value="MS">Mato Grosso do Sul</option>
-                                            <option value="MG">Minas Gerais</option>
-                                            <option value="PA">Pará</option>
-                                            <option value="PB">Paraíba</option>
-                                            <option value="PR">Paraná</option>
-                                            <option value="PE">Pernambuco</option>
-                                            <option value="PI">Piauí</option>
-                                            <option value="RJ">Rio de Janeiro</option>
-                                            <option value="RN">Rio Grande do Norte</option>
-                                            <option value="RS">Rio Grande do Sul</option>
-                                            <option value="RO">Rondônia</option>
-                                            <option value="RR">Roraima</option>
-                                            <option value="SC">Santa Catarina</option>
-                                            <option value="SP">São Paulo</option>
-                                            <option value="SE">Sergipe</option>
-                                            <option value="TO">Tocantins</option>
-                                        </select>
-                                     
-                                    </div>
-                                </div>
-
-                                <!-- Upload de Documento -->
-                                <div class="row mb-4 mt-4">
-                                    <div class="col-12">
-                                        <h5 class="text-primary mb-3">
-                                            <i class="bi bi-file-earmark-arrow-up me-2"></i>
-                                            Documentos
-                                        </h5>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-4">
-                                    <div class="col-md-6">
-                                        <label for="documento" class="form-label">
-                                            <i class="bi bi-paperclip me-1"></i>
-                                            Upload de Documento (Opcional)
-                                        </label>
-                                        <input type="file" class="form-control" id="documento" name="documento" accept=".pdf,.jpg,.jpeg,.png">
-                                        <div class="form-text">
-                                            Formatos aceitos: PDF, JPG, JPEG, PNG (máx. 5MB)
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Termos e Condições -->
-                                <div class="row mb-4">
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="termos" name="termos" required>
-                                            <label class="form-check-label" for="termos">
-                                                Eu concordo com os <a href="#" class="text-primary">Termos de Uso</a> e <a href="#" class="text-primary">Política de Privacidade</a> *
-                                            </label>
-                                            <div class="invalid-feedback">
-                                                Você deve concordar com os termos para continuar.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Botões -->
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <button type="button" class="btn btn-outline-secondary me-3" onclick="limparFormulario()">
-                                            <i class="bi bi-arrow-clockwise me-1"></i>
-                                            Limpar
-                                        </button>
-
-                                        <button type="submit" class="btn btn-primary" [disabled]="!establishmentRegisterForm.valid">
-                                          <strong>  Cadastrar</strong>
-                                        </button>
-                                    </div>
-                                </div>
-                        
-                        </div>
-                
-   
-        </div>
-    </div>
-
+  <div class="col-12">
+    <label for="estado">Estado</label>
+    <select class="form-select" aria-label="Default select example" id="estado" formControlName="estado">
+      <option selected> São paulo </option>
+      <option value="1">sp</option>
+      <option value="2">Rj</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" [disabled]="!entrepreneurRegisterForm.valid">
+      <strong>Cadastrar</strong>
+    </button>
+  </div>
+</form>

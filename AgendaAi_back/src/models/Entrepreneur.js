@@ -1,17 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const entrepreneurSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-    },
-    horario: {
-        type: String,
-        require: true,
-    },
-    tipo: {
-        type: String,
-        require: true,
     },
     cpf: {
         type: String,
@@ -28,17 +20,17 @@ const entrepreneurSchema = new mongoose.Schema({
     },
     rua: {
         type: String,
-        require:true,
+        require: true,
     },
-    numero:{
+    numero: {
         type: String,
         require: true,
     },
     comple: {
         type: String,
         require: true
-    },  
-    bairro:{
+    },
+    bairro: {
         type: String,
         require: true,
     },
@@ -50,15 +42,18 @@ const entrepreneurSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    image:{
+    image: {
         type: String,
         require: true,
     },
     created_at: {
         type: Date,
         default: Date.now,
-      }
-
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
 })
 
 export const Entrepreneur = mongoose.model('Entrepreneur', entrepreneurSchema)

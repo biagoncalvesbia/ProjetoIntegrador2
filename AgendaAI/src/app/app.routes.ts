@@ -3,7 +3,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/login-register/register/register.component';
 import { LoginUserComponent } from './pages/login-register/login-user/login-user.component';
 import { RegisterEstablishmentComponent } from './pages/login-register/register-establishment/register-establishment.component';
-import { LoginEstablishmentComponent } from './pages/login-register/login-establishment/login-establishment.component';
 import { BaseboardComponent } from './pages/baseboard/baseboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { PreAgendamentoComponent } from './pages/pre-agendamento/pre-agendamento.component';
@@ -25,7 +24,7 @@ import { EditorComponent } from './pages/ADM/editor/editor.component';
 import { GerenciamentoComponent } from './pages/ADM/gerenciamento/gerenciamento.component';
 import { PainelAdmComponent } from './pages/ADM/painel-adm/painel-adm.component';
 import { ReclamacaoComponent } from './pages/ADM/reclamacao/reclamacao.component';
-import { UsuarioComponent } from './pages/ADM/usuario/usuario.component';
+import { UsuarioComponent } from './pages/ADM/usuario/usuario.component'
 
 export const routes: Routes = [
 
@@ -42,9 +41,6 @@ export const routes: Routes = [
     }, 
     {
         path: 'register-establishment', component: RegisterEstablishmentComponent
-    },
-    {
-        path: 'login-establishment', component: LoginEstablishmentComponent
     },
     {
         path: 'baseboard', component: BaseboardComponent

@@ -19,7 +19,7 @@ export class NavBarComponent implements OnInit {
   constructor(private userService: UserService, private entrepreneurService: EntrepreneurService, private router: Router) {}
 
   ngOnInit(): void {
-    this.logged = this.userService.getUserData() || this.entrepreneurService.getUserData()
+    this.logged = this.userService.getUserData() 
     this.name = this.logged?._doc?.name
     this.primary_letter = this.name ? this.name.charAt(0) : ''
     console.log(this.primary_letter)
@@ -39,7 +39,6 @@ export class NavBarComponent implements OnInit {
 
   logout() {
     this.userService.logout();
-    this.entrepreneurService.logout();
     console.log('Usuário deslogado');
     window.location.reload()
   }

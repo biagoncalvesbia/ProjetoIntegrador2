@@ -76,7 +76,7 @@ export class UserService {
   // Gets the data of the logged-in user
   // This method might become redundant if userLogged is always up-to-date
   // Consider if you really need a public method for this, or if accessing userLogged directly is enough
-  getUserData(): ILogin | null {
+  getUserData(): any {
     // Ensure userLogged is current (though checkAuthentication and authenticate should handle this)
     if (this.userLogged) {
       return this.userLogged;
