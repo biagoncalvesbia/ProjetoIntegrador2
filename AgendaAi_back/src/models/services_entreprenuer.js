@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+/*import mongoose from "mongoose";
 
 const servicesEntreprenuerSchema = new mongoose.Schema({ 
 
@@ -24,4 +24,4 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
   }
 
 
-})
+})*/

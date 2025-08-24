@@ -1,9 +1,9 @@
-import {servicesEntreprenuer} from "../models/services_entreprenuer.js"
+//import {servicesEntreprenuer} from "../models/services_entreprenuer.js"
 
-export const Register = async (req, res) => {
-    const { Horarios, Servicos, Atendimentos } = req.body;
+//export const Register = async (req, res) => {
+  //  const { Horarios, Servicos, Atendimentos } = req.body;
 
-    try {
+   /* try {
         const createService = await servicesEntreprenuer.create({
             Horarios,
             Servicos,
@@ -17,4 +17,4 @@ export const Register = async (req, res) => {
         console.error(error)
         return res.status(500).json({message: "Internal server error"})
     }
-}
+}*/
