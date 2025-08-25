@@ -21,6 +21,6 @@ export class CardComponent implements OnInit {
   constructor(private userService: UserService, private entrepreneurService: EntrepreneurService){}
 
   ngOnInit(): void {
-    this.logged = this.userService.getUserData() || this.entrepreneurService.getUserData()
+    this.logged = this.userService.getUserData() 
   }
 }

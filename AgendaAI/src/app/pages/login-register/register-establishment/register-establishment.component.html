@@ -1,56 +1,55 @@
 <form [formGroup]="entrepreneurRegisterForm" (ngSubmit)="registerEntrepreneur()">
-
-<form class="row g-3" style="margin: 50px;">
   <div class="col-md-6">
     <label for="name" class="form-label">Nome Estabecimento</label>
-   <input type="text" class="form-control" id="name" placeholder="Escreva o nome do estabelecimento" formControlName="name"/>
+    <input type="text" class="form-control" id="name" placeholder="Escreva o nome do estabelecimento"
+      formControlName="name" />
   </div>
   <div class="col-md-6">
     <label for="cep" class="form-label">CPF</label>
-   <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" formControlName="cpf"/>
+    <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" formControlName="cpf" />
   </div>
   <div class="col-12">
     <label for="telefone" class="form-label">Telefone</label>
-    <input type="text" class="form-control" id="telefone" placeholder="(16) 99999-9999" formControlName="telefone"/>
+    <input type="text" class="form-control" id="telefone" placeholder="(16) 99999-9999" formControlName="telefone" />
   </div>
   <div class="col-12">
     <label for="cep" class="form-label">CEP</label>
-    <input type="text" class="form-control" id="cep" placeholder="Escrreva seu CEP" formControlName="cep"/>
+    <input type="text" class="form-control" id="cep" placeholder="Escrreva seu CEP" formControlName="cep" />
   </div>
-    <div class="col-12">
+  <div class="col-12">
     <label for="rua" class="form-label">rua</label>
-    <input type="text" class="form-control" id="rua" placeholder="Escrreva sua rua" formControlName="rua"/>
+    <input type="text" class="form-control" id="rua" placeholder="Escrreva sua rua" formControlName="rua" />
   </div>
-    <div class="col-12">
+  <div class="col-12">
     <label for="numero" class="form-label">numero</label>
-    <input type="text" class="form-control" id="numero" placeholder="Escreva o numero" formControlName="numero"/>
+    <input type="text" class="form-control" id="numero" placeholder="Escreva o numero" formControlName="numero" />
   </div>
-    <div class="col-12">
+  <div class="col-12">
     <label for="comple" class="form-label">complemento</label>
-    <input type="text" class="form-control" id="comple" placeholder="Escrreva se haver um complemento" formControlName="comple"/>
+    <input type="text" class="form-control" id="comple" placeholder="Escrreva se haver um complemento"
+      formControlName="comple" />
   </div>
-    <div class="col-12">
+  <div class="col-12">
     <label for="bairro" class="form-label">Bairro</label>
-    <input type="text" class="form-control" id="bairro" placeholder="Escreva seu bairro" formControlName="bairro"/>
+    <input type="text" class="form-control" id="bairro" placeholder="Escreva seu bairro" formControlName="bairro" />
   </div>
-      <div class="col-12">
+  <div class="col-12">
     <label for="cidade" class="form-label">Cidade</label>
-    <input type="text" class="form-control" id="cidade" placeholder="Escrreva sua cidade" formControlName="cidade"/>
+    <input type="text" class="form-control" id="cidade" placeholder="Escrreva sua cidade" formControlName="cidade" />
   </div>
- 
+
   <div class="col-12">
- <label for="estado" >Estado</label>
-<select class="form-select" aria-label="Default select example" id="estado" formControlName="estado"/>
-  <option selected> São paulo  </option>
-  <option value="1">sp</option>
-  <option value="2">Rj</option>
-  <option value="3">Three</option>
-</select>
-</div> 
-  <div class="col-12">
-   <button type="submit" class="btn btn-primary" [disabled]="!entrepreneurRegisterForm.valid">
-  <strong>Cadastrar</strong>
-</button>
+    <label for="estado">Estado</label>
+    <select class="form-select" aria-label="Default select example" id="estado" formControlName="estado">
+      <option selected> São paulo </option>
+      <option value="1">sp</option>
+      <option value="2">Rj</option>
+      <option value="3">Three</option>
+    </select>
   </div>
-</form>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" [disabled]="!entrepreneurRegisterForm.valid">
+      <strong>Cadastrar</strong>
+    </button>
+  </div>
 </form>

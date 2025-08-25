@@ -1,23 +1,33 @@
-import { RodapeComponent } from './../../rodape/rodape.component';
-import { Component, inject, type OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { EntrepreneurService } from '../../../services/entrepreneur/entrepreneur.service';
-import { IEntrepreneur} from '../../../types/entrepreneur';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
-import { NgIf } from '@angular/common';
-
-
+import { NgIf } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { FormsModule, ReactiveFormsModule, Validators, FormGroup, FormBuilder } from "@angular/forms";
+import { RouterLink, RouterLinkActive, Router } from "@angular/router";
+import { EntrepreneurService } from "../../../services/entrepreneur/entrepreneur.service";
+import { IEntrepreneur } from "../../../types/entrepreneur";
+import { RodapeComponent } from "../../rodape/rodape.component";
 
 @Component({
   selector: 'app-register-establishment',
-  imports: [RouterLink, RouterLinkActive, FormsModule, ReactiveFormsModule, NgIf ],
+  standalone: true,
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    FormsModule,
+    ReactiveFormsModule,
+    NgIf,
+    RodapeComponent   // add if you use <app-rodape>
+  ],
   templateUrl: './register-establishment.component.html',
-  styleUrl: './register-establishment.component.css',
-  standalone: true
+  styleUrls: ['./register-establishment.component.css'] // ✅ fixed
 })
-export class RegisterEstablishmentComponent implements OnInit{
+export class RegisterEstablishmentComponent implements OnInit {
   public entrepreneurRegisterForm!: FormGroup;
-  constructor(private entrepreneurService: EntrepreneurService, private fb: FormBuilder, private router: Router) { } 
+
+  constructor(
+    private entrepreneurService: EntrepreneurService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.entrepreneurRegisterForm = this.fb.group({
@@ -32,26 +42,21 @@ export class RegisterEstablishmentComponent implements OnInit{
       cidade: ['', Validators.required],
       estado: ['', Validators.required],
       image: ['', Validators.required],
-    })
+    });
   }
 
   async registerEntrepreneur() {
-    if(this.entrepreneurRegisterForm.valid) {
-      const entrepreneur: IEntrepreneur = this.entrepreneurRegisterForm.value
-      try {
-         this.entrepreneurService.register(entrepreneur).subscribe({
-          next: (data) => {
-            console.log('Empresa registrada', data)
-            this.router.navigate(['/', '/'])
-          },
-          error: (error) => console.log(error)
-        })
-      } catch (error) {
-        console.error('Erro ao registrar usuário', error);
-      }
+    if (this.entrepreneurRegisterForm.valid) {
+      const entrepreneur: IEntrepreneur = this.entrepreneurRegisterForm.value;
+      this.entrepreneurService.register(entrepreneur).subscribe({
+        next: (data) => {
+          console.log('Empresa registrada', data);
+          this.router.navigate(['/']);
+        },
+        error: (error) => console.log(error),
+      });
     } else {
-      console.log("Tem alguma coisa de errado");
+      console.log('Tem alguma coisa de errado');
     }
   }
-
 }

@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, Router} from '@angular/router';
-import { RegisterEstablishmentComponent } from '../login-register/register-establishment/register-establishment.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-cardcasa',
-  imports: [RouterLink, RouterLinkActive, RegisterEstablishmentComponent],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],  
   templateUrl: './cardcasa.component.html',
-  styleUrl: './cardcasa.component.css'
+  styleUrls: ['./cardcasa.component.css']    
 })
-export class CardcasaComponent {
-
-}
+export class CardcasaComponent {}
