@@ -40,6 +40,10 @@ export const Login = async (req, res) => {
   try {
     const verifyUser = await User.findOne({
       email: email
+    })  
+
+    console.log({
+      user: verifyUser
     })
 
     if (verifyUser) {
@@ -66,6 +70,8 @@ export const GetUserById = async (req, res) => {
     if(!user) {
       return res.status(400).json({message: "Usuário não existe"})
     }
+
+    res.status(200).json(user)
   } catch (error) {
     console.log(error)
   }
