@@ -67,6 +67,7 @@ export const GetUserById = async (req, res) => {
   const { id } = req.params
   try {
     const user = await User.findById(id)
+    console.log(user)
     if(!user) {
       return res.status(400).json({message: "Usuário não existe"})
     }
