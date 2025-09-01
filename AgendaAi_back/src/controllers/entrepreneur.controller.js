@@ -33,7 +33,7 @@ export const Register = async (req, res) => {
     });
 
     // Atualiza o usuário adicionando o id do empreendedor
-    await User.findByIdAndUpdate(userId, { $push: { entrepreneur: entrepreneur._id } }, { new: true });
+    await User.findByIdAndUpdate(userId, { $push: { entrepreneur: entrepreneur._id, roles: 'entrepreneur' } }, { new: true });
 
     // Retorna o empreendedor criado
     res.status(201).json(entrepreneur);

@@ -50,6 +50,10 @@ const entrepreneurSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    status: {
+        type: String,
+        enum: ['pending', 'authorized', 'denegad']
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
