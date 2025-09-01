@@ -1,4 +1,4 @@
-import { Entrepreneur } from "../models/Entrepreneur"
+import { Entrepreneur } from "../models/Entrepreneur.js"
 
 export const GetAll = async (req, res) => {
   try {
