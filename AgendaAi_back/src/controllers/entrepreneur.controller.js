@@ -66,3 +66,11 @@ export const Delete = async (req, res) => {
     res.status(500).json({ message: "Erro ao excluir empresa" })
   }
 }
+
+export const AllEntrepreneur = async (req, res) => {
+  const entreprenuers = await Entrepreneur.find()
+
+  res.status(200).json({
+    empresas: entreprenuers
+  })
+}

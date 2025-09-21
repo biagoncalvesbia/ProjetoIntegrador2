@@ -1,16 +1,31 @@
-/*import mongoose from "mongoose";
+import mongoose from "mongoose";
 
 const servicesEntreprenuerSchema = new mongoose.Schema({ 
-
-  Horarios:{
+  nome: {
     type: String,
-    required: true,              
+    required: true,
   },
-  Servicos:{
+  categoria:{
     type: String,
-    required: true,              
+    required: true,
   },
-  Atendimentos:{
+  descricao: {
+    type: String,
+    required: true,
+  },
+  duração: {
+    type: String,
+    required: true,
+  },
+  horainicio: {
+    type: String,
+    required: true,
+  },
+  horafim: {
+    type: String,
+    required: true,
+  },
+  dias:{
     type: String,
     required: true,
   },
@@ -24,4 +39,4 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
   }
 
 
-})*/
+})
