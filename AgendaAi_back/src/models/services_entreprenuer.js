@@ -13,7 +13,7 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  duração: {
+  duracao: {
     type: String,
     required: true,
   },
@@ -40,3 +40,5 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
 
 
 })
+
+ export const servicesEntreprenuer = mongoose.model('servicesEntreprenuer', servicesEntreprenuerSchema)

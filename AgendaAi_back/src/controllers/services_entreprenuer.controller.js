@@ -1,15 +1,15 @@
-import { servicesEntreprenuer } from "../models/services_entreprenuer.js";
+import {servicesEntreprenuer } from "../models/services_entreprenuer.js";
 
 export const Register = async (req, res) => {
-  const { nome, categoria, descricao, duração, horainicio, horafim, dias } =
+  const { nome, categoria, descricao, duracao, horainicio, horafim, dias } =
     req.body;
 
   try {
-    const createService = await servicesEntreprenuer.create({
+     const servicesEntreprenuer = await servicesEntreprenuer.create({
       nome,
       categoria,
       descricao,
-      duração,
+      duracao,
       horainicio,
       horafim,
       dias,
