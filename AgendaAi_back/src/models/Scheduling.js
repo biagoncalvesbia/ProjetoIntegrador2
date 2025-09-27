@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const schedulingSchema = new mongoose.Schema({
     age: {
         type: Number,
-        require: true,
+        required: true,
     },
     horario: {
-        type: String,
-        require: true,
+        type: Date,
+        required: true,
     },
     tamanho_cabelo: {
         type: String,
@@ -23,11 +23,13 @@ const schedulingSchema = new mongoose.Schema({
     },
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
     },
     entrepreneur_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Entrepreneur"
+        ref: "Entrepreneur",
+        required: true
     },
     created_at: {
         type: Date,

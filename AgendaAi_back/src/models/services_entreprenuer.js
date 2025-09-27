@@ -14,15 +14,15 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
     required: true,
   },
   duracao: {
-    type: String,
+    type: Number,
     required: true,
   },
   horainicio: {
-    type: String,
+    type: Date,
     required: true,
   },
   horafim: {
-    type: String,
+    type: Date,
     required: true,
   },
   dias:{
@@ -35,7 +35,8 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
   },
   entreprenuer: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Entreprenuer"
+    ref: "Entreprenuer",
+    required: true
   }
 
 

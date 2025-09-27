@@ -40,7 +40,7 @@ export const Login = async (req, res) => {
   try {
     const verifyUser = await User.findOne({
       email: email
-    })  
+    }).select("-password")
 
     console.log({
       user: verifyUser
@@ -50,8 +50,7 @@ export const Login = async (req, res) => {
       try {
         const token = createToken({ name: verifyUser.name, id: verifyUser._id })
         res.status(200).json({
-          ...verifyUser,
-          password: undefined,
+          user: verifyUser,
           token: token
         })
       } catch (error) {
