@@ -1,22 +1,26 @@
 import mongoose from "mongoose";
 
 const schedulingSchema = new mongoose.Schema({
+     Name: {
+        type: String,
+        require: true,
+     },
     age: {
         type: Number,
         required: true,
     },
-    horario: {
-        type: Date,
-        required: true,
-    },
-    tamanho_cabelo: {
-        type: String,
-        required: false
-    }, 
     descricao: {
         type: String,
         required: false,
     },
+    date: {
+        type: String,
+        required: true,
+    },
+        horario: {
+        type: Date,
+        required: true,
+    }, 
     imagem: {
         type: String,
         required: false,
