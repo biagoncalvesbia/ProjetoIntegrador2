@@ -69,4 +69,3 @@ const entrepreneurSchema = new mongoose.Schema({
 })
 
 export const Entrepreneur = mongoose.model('Entrepreneur', entrepreneurSchema)
-

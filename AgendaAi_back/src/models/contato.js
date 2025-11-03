@@ -1,28 +1,26 @@
 import mongoose from "mongoose";
 
-const contatoSchema = new mongoose.Schema({
-    email:{
-        type: String,
-        require: true,
+const contatoSchema = new mongoose.Schema(
+  {
+    email: {
+      type: String,
+      required: true, // ✅ corrigido
     },
-    telefone:{
-        type: String,
-        require: true,
-        maxLenght: 12
+    telefone: {
+      type: String,
+      required: true, // ✅ corrigido
+      maxLength: 12, // ✅ corrigido
     },
-    assunto:{
-        type: String,
-        require: true,
+    assunto: {
+      type: String,
+      required: true,
     },
-    mensagem:{
-        type: String,
-        require: true,
+    mensagem: {
+      type: String,
+      required: true,
     },
-        created_at: {
-        type: Date,
-        default: Date.now,
-    }
+  },
+  { timestamps: true } // ✅ cria automaticamente createdAt e updatedAt
+);
 
-})
-
-export const Contato = mongoose.model( 'contato', contatoSchema)
+export const Contato = mongoose.model("Contato", contatoSchema);

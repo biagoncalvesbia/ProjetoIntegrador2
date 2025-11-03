@@ -37,16 +37,18 @@ export const Register = async (req, res) => {
 
 export const Login = async (req, res) => {
   const { email, password } = req.body
-
+  console.log('LOGIN REQ BODY', req.body)
   if (!email || !password) throw new Error("Email e senha são obrigatórios")
   try {
     const verifyUser = await User.findOne({
       email: email
-    }).select("-password")
-
-    console.log({
-      user: verifyUser
     })
+
+    const verifyPass = await bcrypt.compare(password, verifyUser.password)
+    console.log('VERIFICANDO SENHA:', verifyPass)
+    if(!verifyPass){
+      return  res.status(400).json({ message: "Usuário ou senha inválidos" })
+    }
 
     if (verifyUser) {
       try {
@@ -55,9 +57,12 @@ export const Login = async (req, res) => {
           user: verifyUser,
           token: token
         })
+        console.log('USUÁRIO LOGADO:', verifyUser)
       } catch (error) {
         console.error(error)
       }
+    } else {
+      res.status(400).json({ message: "Usuário ou senha inválidos" })
     }
   } catch (error) {
     console.error(error)
@@ -146,5 +151,15 @@ export const resetPassword = async (req, res, next) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+export const GetAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.status(200).json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };

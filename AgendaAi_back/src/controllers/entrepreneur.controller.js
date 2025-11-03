@@ -83,9 +83,7 @@ export const AllEntrepreneur = async (req, res) => {
 export const GetEntreprenuerById = async (req, res) => {
   try {
     const { id } = req.params
-    const entrepreneur = await Entrepreneur.find({
-      user: id
-    })
+    const entrepreneur = await Entrepreneur.find({ _id: id}).populate('services_entreprenuer')
     if (!entrepreneur) res.status(400).json({ message: 'Empresa não encontrada' })
     res.status(200).json(entrepreneur)
   } catch (error) {
