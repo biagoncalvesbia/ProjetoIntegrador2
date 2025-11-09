@@ -4,6 +4,7 @@ import { hashPass } from "../utils/hashPass.js"
 import nodemailer from "nodemailer"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
+
 export const Register = async (req, res) => {
   const { name, email, password, confirmPass } = req.body
   if (password !== confirmPass) {
@@ -163,3 +164,4 @@ export const GetAllUsers = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+

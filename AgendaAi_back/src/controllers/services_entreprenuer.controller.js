@@ -41,3 +41,38 @@ export const GetAllServicesEntreprenuer = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+export const UpdateServiceEntreprenuer = async (req, res) => {
+  try {
+    const { serviceId } = req.params;
+    const updatedService = await servicesEntreprenuer.findByIdAndUpdate(
+      serviceId,
+      req.body,
+      { new: true }
+    );
+    if (!updatedService) {
+      return res.status(404).json({ message: "Serviço não encontrado" });
+    }
+    res.json(updatedService);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Erro ao atualizar serviço" });
+  }
+};
+
+export const DeleteServiceEntreprenuer = async (req, res) => {
+  try {
+    const { serviceId } = req.params;
+
+    const deleted = await servicesEntreprenuer.findByIdAndDelete(serviceId);
+
+    if (!deleted) {
+      return res.status(404).json({ message: "Serviço não encontrado" });
+    }
+
+    res.status(200).json({ message: "Serviço excluído com sucesso!" });
+  } catch (error) {
+    console.error("Erro ao excluir serviço:", error);
+    res.status(500).json({ message: "Erro interno ao excluir serviço" });
+  }
+};
