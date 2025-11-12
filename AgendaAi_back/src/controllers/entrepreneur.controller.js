@@ -114,3 +114,53 @@ export const UpdateEntreprenuer = async (req, res) => {
     res.status(500).json({ error: "Internal server error" })
   }
 }
+
+export const ToggleStatusEntrepreneur = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { isActive } = req.body;
+
+    const entrepreneur = await Entrepreneur.findByIdAndUpdate(
+      id,
+      { isActive },
+      { new: true }
+    );
+
+    if (!entrepreneur) {
+      return res.status(404).json({ message: "Empreendedor não encontrado" });
+    }
+
+    res.status(200).json({
+      message: `Empreendedor ${isActive ? "ativado" : "inativado"} com sucesso!`,
+      entrepreneur,
+    });
+  } catch (error) {
+    console.error("Erro ao alterar status:", error);
+    res.status(500).json({ message: "Erro ao alterar status do empreendedor." });
+  }
+};
+
+
+export const SearchEntrepreneurByName = async (req, res) => {
+  try {
+    const { name } = req.query;
+
+    if (!name || name.trim() === "") {
+      return res.status(400).json({ message: "Informe o nome da empresa para buscar." });
+    }
+
+    // Busca por nome parcial, sem diferenciar maiúsculas/minúsculas
+    const results = await Entrepreneur.find({
+      name: { $regex: name, $options: "i" },
+    });
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: "Nenhuma empresa encontrada." });
+    }
+
+    res.status(200).json(results);
+  } catch (error) {
+    console.error("Erro ao buscar empresa:", error);
+    res.status(500).json({ message: "Erro interno ao buscar empresa." });
+  }
+};

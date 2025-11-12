@@ -65,7 +65,8 @@ const entrepreneurSchema = new mongoose.Schema({
             ref: "servicesEntreprenuer",
             required: true
         }
-    ]
+    ],
+    isActive: { type: Boolean, default: true },
 })
 
 export const Entrepreneur = mongoose.model('Entrepreneur', entrepreneurSchema)

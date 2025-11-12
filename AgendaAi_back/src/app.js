@@ -6,6 +6,7 @@ import { routerSched } from './routes/scheduling.router.js';
 import { routerCont } from './routes/contato.router.js';
 //import { routerAdmin } from './routes/admin.route.js';
 import { routerServicesEntreprenuer } from './routes/services_entreprenuer.js';
+import { routerChat as chatbotRoutes } from './routes/chatbot.router.js';
 
 import cors from 'cors'
 export const app = express();
@@ -17,3 +18,4 @@ app.use("/scheduling", routerSched);
 app.use("/contato", routerCont);
 //app.use("/admin", routerAdmin)
 app.use("/servicesEntreprenuer", routerServicesEntreprenuer);
+app.use('/api/chat', chatbotRoutes);
