@@ -1,22 +1,46 @@
-// src/controllers/chatbot.controller.js
+// ====================================================================
+// 🤖 Controller do Chatbot com OpenAI API
+// ====================================================================
 
-export const chatController = (req, res) => {
-  const { mensagem } = req.body;
+/*import OpenAI from "openai";
+import dotenv from "dotenv";
+dotenv.config();
 
-  if (!mensagem) {
-    return res.json({ resposta: 'Por favor, digite uma mensagem.' });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+export const responderMensagem = async (req, res) => {
+  try {
+    const { mensagem } = req.body;
+
+    if (!mensagem) {
+      return res.status(400).json({ resposta: "Por favor, envie uma mensagem." });
+    }
+
+    // Prompt base do chatbot
+    const contexto = `
+      Você é o assistente virtual de um sistema de agendamento chamado AgendaAI.
+      Responda sempre em português, de forma amigável, objetiva e natural.
+      Seja educado, breve e evite respostas muito longas.
+    `;
+
+    // Requisição para o modelo GPT
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini", // rápido e econômico
+      messages: [
+        { role: "system", content: contexto },
+        { role: "user", content: mensagem }
+      ],
+    });
+
+    const resposta = completion.choices[0].message.content;
+
+    res.json({ resposta });
+  } catch (error) {
+    console.error("Erro ao gerar resposta:", error);
+    res.status(500).json({
+      resposta: "❌ Ocorreu um erro ao se comunicar com a IA. Tente novamente mais tarde.",
+    });
   }
-
-  const msg = mensagem.toLowerCase();
-  let resposta = 'Desculpe, não entendi. Pode reformular?';
-
-  if (msg.includes('oi') || msg.includes('olá')) {
-    resposta = 'Oi! 😊 Como posso te ajudar hoje?';
-  } else if (msg.includes('empresa')) {
-    resposta = 'Para cadastrar uma empresa, vá até o menu “Empresas” e clique em “Cadastrar”.';
-  } else if (msg.includes('agendar')) {
-    resposta = 'Para agendar um horário, escolha o serviço e depois a data e hora disponíveis.';
-  }
-
-  return res.json({ resposta });
-};
+};*/

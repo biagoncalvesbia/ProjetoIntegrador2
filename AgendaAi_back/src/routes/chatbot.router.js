@@ -1,10 +1,7 @@
-// src/routes/chatbot.routes.js
-import express from 'express';
-import { Router } from 'express';
-import { chatController } from '../controllers/chatbot.controller.js';
+//import express from "express";
+//import { responderMensagem } from "../controllers/chatbot.controller.js";
 
-export const routerChat = Router()
+//const router = express.Router();
+//router.post("/", responderMensagem);
 
-routerChat.post('/', chatController);
-
-export default routerChat;
+//export default router;
