@@ -4,88 +4,112 @@ import { hashPass } from "../utils/hashPass.js"
 import nodemailer from "nodemailer"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
+import { sendWelcomeEmail } from "../utils/mailer.js"
 
+// ===============================================================
+// REGISTER (ALTERADO COM ENVIO DE EMAIL DE BOAS-VINDAS)
+// ===============================================================
 export const Register = async (req, res) => {
-  const { name, email, password, confirmPass } = req.body
+  const { name, email, password, confirmPass } = req.body;
+
   if (password !== confirmPass) {
-    return res.status(400).json({ message: "As senhas estão diferentes" })
+    return res.status(400).json({ message: "As senhas estão diferentes" });
   }
 
-  const verifyUser = await User.findOne({
-    email: email
-  })
+  const verifyUser = await User.findOne({ email });
 
   if (verifyUser) {
-    return res.status(400).json({ message: "Usuário já existe" })
+    return res.status(400).json({ message: "Usuário já existe" });
   }
 
-
-  const hash = await hashPass(password)
+  const hash = await hashPass(password);
 
   try {
     const user = await User.create({
-      name: name,
-      email: email,
+      name,
+      email,
       password: hash,
-    })
-    await user.save()
-    return res.status(201).json(user)
-  } catch (error) {
-    console.error(error)
-    return res.status(500).json({ message: "Problemas no servidor" })
-  }
-}
+    });
 
+    await user.save();
+
+    // ------------------------------------------------
+    // 📩 Enviar e-mail de boas-vindas após o cadastro
+    // ------------------------------------------------
+    try {
+      await sendWelcomeEmail(user.email, user.name);
+      console.log("Email de boas-vindas enviado!");
+    } catch (err) {
+      console.error("Erro ao enviar e-mail de boas-vindas:", err);
+    }
+
+    return res.status(201).json(user);
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Problemas no servidor" });
+  }
+};
+
+// ===============================================================
+// LOGIN
+// ===============================================================
 export const Login = async (req, res) => {
-  const { email, password } = req.body
-  console.log('LOGIN REQ BODY', req.body)
-  if (!email || !password) throw new Error("Email e senha são obrigatórios")
+  const { email, password } = req.body;
+
+  if (!email || !password)
+    return res.status(400).json({ message: "Email e senha são obrigatórios" });
+
   try {
-    const verifyUser = await User.findOne({
-      email: email
-    })
+    const verifyUser = await User.findOne({ email });
 
-    const verifyPass = await bcrypt.compare(password, verifyUser.password)
-    console.log('VERIFICANDO SENHA:', verifyPass)
-    if(!verifyPass){
-      return  res.status(400).json({ message: "Usuário ou senha inválidos" })
-    }
+    if (!verifyUser)
+      return res.status(400).json({ message: "Usuário ou senha inválidos" });
 
-    if (verifyUser) {
-      try {
-        const token = createToken({ name: verifyUser.name, id: verifyUser._id }, '3d')
-        res.status(200).json({
-          user: verifyUser,
-          token: token
-        })
-        console.log('USUÁRIO LOGADO:', verifyUser)
-      } catch (error) {
-        console.error(error)
-      }
-    } else {
-      res.status(400).json({ message: "Usuário ou senha inválidos" })
-    }
+    const verifyPass = await bcrypt.compare(password, verifyUser.password);
+
+    if (!verifyPass)
+      return res.status(400).json({ message: "Usuário ou senha inválidos" });
+
+    const token = createToken(
+      { name: verifyUser.name, id: verifyUser._id },
+      "3d"
+    );
+
+    res.status(200).json({
+      user: verifyUser,
+      token,
+    });
+
+    console.log("USUÁRIO LOGADO:", verifyUser.name);
+
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};
 
+// ===============================================================
+// GET USER BY ID
+// ===============================================================
 export const GetUserById = async (req, res) => {
-  const { id } = req.params
+  const { id } = req.params;
   try {
-    const user = await User.findById(id)
-    console.log(user)
-    if (!user) {
-      return res.status(400).json({ message: "Usuário não existe" })
-    }
+    const user = await User.findById(id);
 
-    res.status(200).json(user)
+    if (!user)
+      return res.status(400).json({ message: "Usuário não existe" });
+
+    res.status(200).json(user);
+
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-export const requestPasswordReset = async (req, res, next) => {
+// ===============================================================
+// REQUEST PASSWORD RESET
+// ===============================================================
+export const requestPasswordReset = async (req, res) => {
   const { email } = req.body;
 
   try {
@@ -93,75 +117,86 @@ export const requestPasswordReset = async (req, res, next) => {
     if (!user) return res.status(404).json({ message: "Usuário não encontrado" });
 
     const secret = process.env.SECRET_KEY + user.password;
-    const token = jwt.sign({ id: user._id, email: user.email }, secret, { expiresIn: '15m' });
+    const token = jwt.sign({ id: user._id, email: user.email }, secret, {
+      expiresIn: "15m",
+    });
 
     const resetURL = `http://localhost:3000/user/resetpassword?id=${user._id}&token=${token}`;
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
-        user: 'brunocapita.dev@gmail.com',
-        pass: 'rphp tdwn ynhw wphp',
+        user: "brunocapita.dev@gmail.com",
+        pass: "rphp tdwn ynhw wphp",
       },
     });
 
     const mailOptions = {
       to: user.email,
-      from: 'brunocapita.dev@gmail.com',
-      subject: 'Esqueci minha senha',
-      text: `Você está recebendo esta mensagem porque você (ou outra pessoa) solicitou a redefinição da senha da sua conta.
-Clique no link a seguir ou cole-o no seu navegador para concluir o processo.:\n\n
-      ${resetURL}\n\n
-      Se você não solicitou isso, ignore este e-mail e sua senha permanecerá inalterada.\n`,
+      from: "brunocapita.dev@gmail.com",
+      subject: "Esqueci minha senha",
+      text: `Clique no link para redefinir sua senha:\n\n${resetURL}`,
     };
 
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ message: 'Link de reset senha foi enviando com sucesso!' });
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ message: 'Internal server error' });
-  }
-};
+    res.status(200).json({ message: "Link de reset enviado!" });
 
-export const resetPassword = async (req, res, next) => {
-  const { id, token } = req.query;
-  const { password } = req.body;
-  console.log('id', id)
-  console.log('token', token)
-  try {
-    const oldUser = await User.findOne({ _id: id });
-    if (!oldUser) {
-      res.status(400).json({ message: "Usuário não encontrado!" });
-    }
-    const secret = process.env.SECRET_KEY + oldUser.password;
-    try {
-      const verify = jwt.verify(token, secret)
-      if (verify) {
-        const newPassword = await bcrypt.hash(password, 10)
-        const user = await User.findByIdAndUpdate({ _id: oldUser._id }, { $set: { password: newPassword } })
-        console.log(user)
-        res.status(200).json("Senha redefinada")
-      } else {
-        res.status(400).json("Token inválido!")
-      }
-    } catch (error) {
-      console.error(error)
-      res.status(400).json(error)
-    }
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-};
-
-export const GetAllUsers = async (req, res) => {
-  try {
-    const users = await User.find().select("-password");
-    res.status(200).json(users);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
 
+// ===============================================================
+// RESET PASSWORD
+// ===============================================================
+export const resetPassword = async (req, res) => {
+  const { id, token } = req.query;
+  const { password } = req.body;
+
+  try {
+    const oldUser = await User.findById(id);
+
+    if (!oldUser)
+      return res.status(400).json({ message: "Usuário não encontrado!" });
+
+    const secret = process.env.SECRET_KEY + oldUser.password;
+
+    try {
+      const verify = jwt.verify(token, secret);
+
+      if (!verify) {
+        return res.status(400).json({ message: "Token inválido!" });
+      }
+
+      const newPassword = await bcrypt.hash(password, 10);
+
+      await User.findByIdAndUpdate(id, { password: newPassword });
+
+      res.status(200).json("Senha redefinida");
+
+    } catch (error) {
+      console.error(error);
+      res.status(400).json(error);
+    }
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+// ===============================================================
+// GET ALL USERS
+// ===============================================================
+export const GetAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.status(200).json(users);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
