@@ -1,27 +1,41 @@
-/*import mongoose from "mongoose";
+import mongoose from "mongoose";
 
 const servicesEntreprenuerSchema = new mongoose.Schema({ 
-
-  Horarios:{
-    type: String,
-    required: true,              
-  },
-  Servicos:{
-    type: String,
-    required: true,              
-  },
-  Atendimentos:{
+  nome: {
     type: String,
     required: true,
   },
+  categoria:{
+    type: String,
+    required: true,
+  },
+  descricao: {
+    type: String,
+    required: true,
+  },
+  duracao: {
+    type: Number,
+    required: true,
+  },
+  time: [{
+    id: { type: String, required: true },
+    label: { type: String, required: true }
+  }],
+  dias: [{
+    id: { type: String, required: true },
+    label: { type: String, required: true }
+  }],
   created_at: {
     type: Date,
     default: Date.now,
   },
-  entreprenuer: {
+  entrepreneur: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Entreprenuer"
+    ref: "Entrepreneur",
+    required: true
   }
 
 
-})*/
+})
+
+ export const servicesEntreprenuer = mongoose.model('servicesEntreprenuer', servicesEntreprenuerSchema)
