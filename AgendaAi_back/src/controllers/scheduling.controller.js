@@ -1,15 +1,16 @@
-import { Entrepreneur } from "../models/Entrepreneur.js";
+                                                        import { Entrepreneur } from "../models/Entrepreneur.js";
 import { Scheduling } from "../models/Scheduling.js"
 import { User } from "../models/User.js";
 export const Register = async (req, res) => {
-    const { age, horario, tamanho_cabelo, descricao, imagem, user_id, entrepreneur_id } = req.body;
+    const { name, age, descricao, date, horario, imagem, user_id, entrepreneur_id } = req.body;
 
     try {
         const createScheduling = await Scheduling.create({
+            name,
             age,
-            horario,
-            tamanho_cabelo,
             descricao,
+            date,
+            horario,
             imagem,
             user_id,
             entrepreneur_id

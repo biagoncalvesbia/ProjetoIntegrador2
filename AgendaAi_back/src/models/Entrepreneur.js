@@ -56,9 +56,17 @@ const entrepreneurSchema = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    }
+        ref: "User",
+        required: true
+    },
+    services_entreprenuer: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "servicesEntreprenuer",
+            required: true
+        }
+    ],
+    isActive: { type: Boolean, default: true },
 })
 
 export const Entrepreneur = mongoose.model('Entrepreneur', entrepreneurSchema)
-
