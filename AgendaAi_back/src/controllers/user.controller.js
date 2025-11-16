@@ -85,73 +85,83 @@ export const GetUserById = async (req, res) => {
   }
 }
 
-export const requestPasswordReset = async (req, res, next) => {
+// 1 - PEDIR RESET DE SENHA
+export const requestPasswordReset = async (req, res) => {
   const { email } = req.body;
-
+  console.log(email)
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: "Usuário não encontrado" });
+    if (!user) {
+      return res.status(404).json({ error: "Email não cadastrado" });
+    }
 
     const secret = process.env.SECRET_KEY + user.password;
-    const token = jwt.sign({ id: user._id, email: user.email }, secret, { expiresIn: '15m' });
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      secret,
+      { expiresIn: "15m" }
+    );
 
-    const resetURL = `http://localhost:3000/user/resetpassword?id=${user._id}&token=${token}`;
+    const resetURL = `http://localhost:4200/new-password/${user._id}/${token}`;
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
         user: 'brunocapita.dev@gmail.com',
         pass: 'rphp tdwn ynhw wphp',
       },
     });
 
-    const mailOptions = {
+    await transporter.sendMail({
       to: user.email,
-      from: 'brunocapita.dev@gmail.com',
-      subject: 'Esqueci minha senha',
-      text: `Você está recebendo esta mensagem porque você (ou outra pessoa) solicitou a redefinição da senha da sua conta.
-Clique no link a seguir ou cole-o no seu navegador para concluir o processo.:\n\n
-      ${resetURL}\n\n
-      Se você não solicitou isso, ignore este e-mail e sua senha permanecerá inalterada.\n`,
-    };
+      from: "brunocapita.dev@gmail.com",
+      subject: "Redefinição de senha",
+      html: `
+        <p>Você solicitou a redefinição da senha.</p>
+        <p>Clique no link abaixo:</p>
+        <a href="${resetURL}">${resetURL}</a>
+        <p>Link expira em 15 minutos.</p>
+      `
+    });
 
-    await transporter.sendMail(mailOptions);
+    res.json({ message: "Email enviado com sucesso!" });
 
-    res.status(200).json({ message: 'Link de reset senha foi enviando com sucesso!' });
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ message: 'Internal server error' });
+    console.error(error);
+    res.status(500).json({ error: "Erro interno" });
   }
 };
 
-export const resetPassword = async (req, res, next) => {
-  const { id, token } = req.query;
+
+// 2 - RESETAR SENHA
+export const resetPassword = async (req, res) => {
+  const id = req.query.id;
+  const token = req.query.token;
   const { password } = req.body;
-  console.log('id', id)
-  console.log('token', token)
+  console.log(token)
   try {
-    const oldUser = await User.findOne({ _id: id });
+    const oldUser = await User.findById(id);
+
     if (!oldUser) {
-      res.status(400).json({ message: "Usuário não encontrado!" });
+      return res.status(404).json({ error: "Usuário não encontrado" });
     }
+
     const secret = process.env.SECRET_KEY + oldUser.password;
+
     try {
-      const verify = jwt.verify(token, secret)
-      if (verify) {
-        const newPassword = await bcrypt.hash(password, 10)
-        const user = await User.findByIdAndUpdate({ _id: oldUser._id }, { $set: { password: newPassword } })
-        console.log(user)
-        res.status(200).json("Senha redefinada")
-      } else {
-        res.status(400).json("Token inválido!")
-      }
-    } catch (error) {
-      console.error(error)
-      res.status(400).json(error)
+      const verified = jwt.verify(token, secret);
+      const hashed = await bcrypt.hash(password, 10);
+      await User.findByIdAndUpdate(id, { password: hashed });
+      console.log('SENHA REDEFINIDA PARA USUÁRIO:', id);
+      res.json({ message: "Senha redefinida com sucesso!" });
+
+    } catch (err) {
+      return res.status(400).json({ error: "Token inválido ou expirado" });
     }
+
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.error(error);
+    res.status(500).json({ error: "Erro interno" });
   }
 };
 

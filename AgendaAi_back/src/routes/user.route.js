@@ -6,7 +6,7 @@ export const router = Router()
 router.post("/register", Register)
 router.post("/login", Login)
 router.get("/get/:id", GetUserById)
-router.post('/requestPasswordReset', requestPasswordReset);
+router.post('/requestpasswordreset', requestPasswordReset);
 router.post('/resetpassword', resetPassword);
 router.get('/all', GetAllUsers);
 router.patch('/Status/:id', ToggleStatusUser);
