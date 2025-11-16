@@ -1,33 +1,39 @@
 import mongoose from "mongoose";
 
 const schedulingSchema = new mongoose.Schema({
+     Name: {
+        type: String,
+        require: true,
+     },
     age: {
         type: Number,
-        require: true,
+        required: true,
     },
-    horario: {
-        type: String,
-        require: true,
-    },
-    tamanho_cabelo: {
-        type: String,
-        required: false
-    }, 
     descricao: {
         type: String,
         required: false,
     },
+    date: {
+        type: String,
+        required: true,
+    },
+        horario: {
+        type: Date,
+        required: true,
+    }, 
     imagem: {
         type: String,
         required: false,
     },
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
     },
     entrepreneur_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Entrepreneur"
+        ref: "Entrepreneur",
+        required: true
     },
     created_at: {
         type: Date,
