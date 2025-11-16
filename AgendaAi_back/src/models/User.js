@@ -29,10 +29,11 @@ const userSchema = new mongoose.Schema({
       default: Date.now,
     },
     roles: {
-      type: String,
+      type: [String],
       enum: ['user', 'admin', 'entrepreneur'],
-      default: 'user'
+      default: ['user'],
     }
 })
+
 
 export const User = mongoose.model('User', userSchema)

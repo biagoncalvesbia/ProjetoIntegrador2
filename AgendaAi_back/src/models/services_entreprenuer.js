@@ -17,25 +17,21 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  horainicio: {
-    type: Date,
-    required: true,
-  },
-  horafim: {
-    type: Date,
-    required: true,
-  },
-  dias:{
-    type: String,
-    required: true,
-  },
+  time: [{
+    id: { type: String, required: true },
+    label: { type: String, required: true }
+  }],
+  dias: [{
+    id: { type: String, required: true },
+    label: { type: String, required: true }
+  }],
   created_at: {
     type: Date,
     default: Date.now,
   },
-  entreprenuer: {
+  entrepreneur: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Entreprenuer",
+    ref: "Entrepreneur",
     required: true
   }
 

@@ -1,7 +1,10 @@
 import { Router } from "express";
-import { Register } from '../controllers/contato.controller.js'
+import { Register, ListarContatos } from "../controllers/contato.controller.js";
 
+export const routerCont = Router();
 
-export const routerCont = Router()
+// Rota para salvar um novo contato
+routerCont.post("/register", Register);
 
-routerCont.post("/register", Register)
+// 🆕 Rota para listar todos os contatos
+routerCont.get("/", ListarContatos);
