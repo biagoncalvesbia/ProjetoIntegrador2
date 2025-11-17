@@ -30,9 +30,9 @@ const schedulingSchema = new mongoose.Schema({
         ref: "User",
         required: true
     },
-    entrepreneur_id: {
+    services_entrepreneur_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Entrepreneur",
+        ref: "ServicesEntrepreneur",
         required: true
     },
     created_at: {

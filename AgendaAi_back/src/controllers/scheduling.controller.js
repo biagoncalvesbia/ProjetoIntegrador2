@@ -1,4 +1,4 @@
-                                                        import { Entrepreneur } from "../models/Entrepreneur.js";
+import { Entrepreneur } from "../models/Entrepreneur.js";
 import { Scheduling } from "../models/Scheduling.js"
 import { User } from "../models/User.js";
 export const Register = async (req, res) => {
