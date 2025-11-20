@@ -25,16 +25,18 @@ const servicesEntreprenuerSchema = new mongoose.Schema({
     id: { type: String, required: true },
     label: { type: String, required: true }
   }],
+  
   created_at: {
     type: Date,
     default: Date.now,
   },
+  isActive: { type: Boolean, default: true },
+  created_at: { type: Date, default: Date.now },
   entrepreneur: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Entrepreneur",
     required: true
   }
-
 
 })
 

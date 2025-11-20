@@ -1,46 +1,43 @@
 import mongoose from "mongoose";
 
-const schedulingSchema = new mongoose.Schema({
-     Name: {
-        type: String,
-        require: true,
-     },
-    age: {
-        type: Number,
-        required: true,
-    },
-    descricao: {
-        type: String,
-        required: false,
-    },
-    date: {
-        type: String,
-        required: true,
-    },
-        horario: {
-        type: Date,
-        required: true,
-    }, 
-    imagem: {
-        type: String,
-        required: false,
-    },
-    user_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true
-    },
-    services_entrepreneur_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "ServicesEntrepreneur",
-        required: true
-    },
-    created_at: {
-        type: Date,
-        default: Date.now,
-      }
+const SchedulingSchema = new mongoose.Schema({
+
+  services_entrepreneur_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "servicesEntreprenuer",
+    required: true
+  },
+
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+
+  name: {
+    type: String,
+    required: true
+  },
+
+  age: {
+    type: Number,
+    required: true
+  },
+
+  description: {
+    type: String
+  },
+
+  date: {
+    type: String, // ex: 2025-12-05
+    required: true
+  },
+
+  time: {
+    type: String, // ex: "08:00"
+    required: true
+  },
+  }, { timestamps: true });
 
 
-})
-
-export const Scheduling = mongoose.model('Scheduling', schedulingSchema )
+ export const scheduling = mongoose.model('scheduling', SchedulingSchema)

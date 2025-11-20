@@ -1,9 +1,14 @@
-import { Router } from "express"
-import { Register} from "../controllers/scheduling.controller.js"
-import auth from "../utils/auth.js"
-import { authorize } from "../utils/authorize.js"
+import { Router } from "express";
+import {
+  createScheduling,
+  getSchedulingByService,
+  getAvailableDates,
+  getAvailableHours
+} from "../controllers/scheduling.controller.js";
 
-export const routerSched = Router()
+export const routerSche = Router();
 
-routerSched.post("/register", auth,  Register, authorize('user'))
-
+routerSche.post("/", createScheduling);
+routerSche.get("/service/:serviceId", getSchedulingByService);
+routerSche.get("/dates/:id", getAvailableDates);
+routerSche.get("/hours/:serviceId/:date", getAvailableHours);
