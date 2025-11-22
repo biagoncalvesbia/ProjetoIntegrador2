@@ -1,9 +1,8 @@
 import { scheduling } from "../models/Scheduling.js";
 import { servicesEntreprenuer } from "../models/services_entreprenuer.js";
 
-// ----------------------
 // CRIAR AGENDAMENTO
-// ----------------------
+
 export const createScheduling = async (req, res) => {
   try {
     const {
@@ -47,9 +46,9 @@ export const createScheduling = async (req, res) => {
   }
 };
 
-// ----------------------
+
 // LISTAR AGENDAMENTOS DE UM SERVIÇO
-// ----------------------
+
 export const getSchedulingByService = async (req, res) => {
   try {
     const { serviceId } = req.params;
@@ -65,9 +64,8 @@ export const getSchedulingByService = async (req, res) => {
   }
 };
 
-// ----------------------
 // PEGAR DATAS DISPONÍVEIS
-// ----------------------
+
 export const getAvailableDates = async (req, res) => {
   try {
     const { id } = req.params;
@@ -111,9 +109,8 @@ export const getAvailableDates = async (req, res) => {
   }
 };
 
-// ----------------------
 // PEGAR HORÁRIOS DISPONÍVEIS
-// ----------------------
+
 export const getAvailableHours = async (req, res) => {
   try {
     const { serviceId, date } = req.params;

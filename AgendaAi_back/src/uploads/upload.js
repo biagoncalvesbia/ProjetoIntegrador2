@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 // Onde salvar as imagens
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, "uploads/entrepreur");
   },
   filename: function (req, file, cb) {
     const uniqueName = Date.now() + "-" + file.originalname;
